@@ -1,0 +1,9 @@
+@use "styles/textures";
+@use "styles/theme";
+
+#app-page {
+  width: 100%;
+  height: 100%;
+  background-color: theme.$neutral-dark;
+  @include textures.green-gobbler-texture;
+}

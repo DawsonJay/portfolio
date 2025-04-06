@@ -1,5 +1,9 @@
+import './App.scss';
+
 function App() {
-  return <>app</>;
+  return <div id={"app-page"}>
+
+  </div>;
 }
 
 export default App;

@@ -1,0 +1,90 @@
+@mixin black-thread-texture {
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://www.transparenttextures.com/patterns/black-thread.png");
+    filter: brightness(50%);
+  }
+}
+
+@mixin debut-light-texture {
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://www.transparenttextures.com/patterns/debut-light.png");
+    filter: brightness(50%);
+  }
+}
+
+@mixin green-gobbler-texture {
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://www.transparenttextures.com/patterns/green-gobbler.png");
+    filter: brightness(40%);
+  }
+}
+
+@mixin inspiration-geometry-texture {
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
+    filter: brightness(50%);
+  }
+}
+
+@mixin notebook-dark-texture {
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://www.transparenttextures.com/patterns/notebook-dark.png");
+    filter: brightness(60%);
+  }
+}
+
+@mixin stardust-texture {
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+    filter: brightness(80%);
+  }
+}
+
+@mixin gray-floral-texture {
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://www.transparenttextures.com/patterns/gray-floral.png");
+    filter: brightness(40%);
+  }
+}
