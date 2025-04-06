@@ -15,3 +15,8 @@
 - Okay, well I thought about the layout and for now all I need is a good blank home page and a sidebar. I need
   options for projects, about me and contact, maybe work history too. The menu needs to be able to have sub menus and
   to be responsive on smaller screens. I want to create a mixin to use textures on certain backgrounds.
+- Worked on creating a gradiant background effect for buttons, need to adapt it for icons.
+- The menus don't need to be multi-layered. single layer that changes screen makes perfect sense.
+- I need to setup the ability to get icons from fontawesome. They're easier to style than mui ones.
+- I'm having issues with the textures too where they're placed in front of all the other children.
+- Started on the glow effect for icons.

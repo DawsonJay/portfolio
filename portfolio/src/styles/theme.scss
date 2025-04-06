@@ -2,3 +2,7 @@ $neutral-dark: #2c3639;
 $neutral-light: #dcd7c9;
 $secondary-1: #3f4e4f;
 $secondary-2: #a27b58;
+
+@mixin gradient {
+  background: linear-gradient(45deg, #{$secondary-2}, #{$neutral-light});
+}

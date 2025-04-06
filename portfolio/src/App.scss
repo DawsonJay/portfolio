@@ -6,4 +6,19 @@
   height: 100%;
   background-color: theme.$neutral-dark;
   @include textures.green-gobbler-texture;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
+  color: theme.$secondary-2;
+  transition: color 0.5s ease, filter 0.3s ease;
+  &:hover {
+    color: theme.$neutral-light;
+    cursor: pointer;
+    filter: drop-shadow(0 0 10px rgba(220, 215, 201, 0.5));
+  }
 }
