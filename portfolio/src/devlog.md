@@ -31,4 +31,11 @@ a background and everything else can be layered on top with no background.
 two versions, vertical and compressed for wide screens and mobile respectively. It's easier to make two distinct navbars
 than to try and make one that does it all. I want a tray to slid out when you hover an icon to show the full text, so
 that's the next thing I need to work out.
-- 
+- Oddly, black just looks better for the shadow. Weird.
+- I was thinking about the navbar again. If I was putting the projects on there I would have to have a multi layered
+menu. But it could go to a page where projects were laid out in a grid like articles. It'll look terrible until I have
+a good few projects, but it'll deal better if I have a lot, and allow some form of preview.
+- Created the tray mechanics for the nav bar. The next stage is to work out the icons and how to arrange them and
+connect them to the text option on the tray, so they both light up at the same time. I'd like to do it in some clever
+css way so I don't need to complicate it with javascript, though I may have to. Probably by adding a class called "selected"
+to the selected options.
