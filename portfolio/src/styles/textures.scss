@@ -1,68 +1,34 @@
-@mixin boilerplate-texture {
-  position: relative;
-  &:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
-}
-
 @mixin black-thread-texture {
-  @include boilerplate-texture;
-  &:after {
-    background-image: url("https://www.transparenttextures.com/patterns/black-thread.png");
-    filter: brightness(50%);
-  }
+  background-image: url("https://www.transparenttextures.com/patterns/black-thread.png");
+  filter: brightness(50%);
 }
 
 @mixin debut-light-texture {
-  @include boilerplate-texture;
-  &:after {
-    background-image: url("https://www.transparenttextures.com/patterns/debut-light.png");
-    filter: brightness(50%);
-  }
+  background-image: url("https://www.transparenttextures.com/patterns/debut-light.png");
+  filter: brightness(50%);
 }
 
 @mixin green-gobbler-texture {
-  @include boilerplate-texture;
-  &:after {
-    background-image: url("https://www.transparenttextures.com/patterns/green-gobbler.png");
-    filter: brightness(40%);
-  }
+  background-image: url("https://www.transparenttextures.com/patterns/green-gobbler.png");
+  filter: brightness(40%);
 }
 
 @mixin inspiration-geometry-texture {
-  @include boilerplate-texture;
-  &:after {
-    background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
-    filter: brightness(50%);
-  }
+  background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
+  filter: brightness(50%);
 }
 
 @mixin notebook-dark-texture {
-  @include boilerplate-texture;
-  &:after {
-    background-image: url("https://www.transparenttextures.com/patterns/notebook-dark.png");
-    filter: brightness(60%);
-  }
+  background-image: url("https://www.transparenttextures.com/patterns/notebook-dark.png");
+  filter: brightness(60%);
 }
 
 @mixin stardust-texture {
-  @include boilerplate-texture;
-  &:after {
-    background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
-    filter: brightness(80%);
-  }
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  filter: brightness(80%);
 }
 
 @mixin gray-floral-texture {
-  @include boilerplate-texture;
-  &:after {
-    background-image: url("https://www.transparenttextures.com/patterns/gray-floral.png");
-    filter: brightness(40%);
-  }
+  background-image: url("https://www.transparenttextures.com/patterns/gray-floral.png");
+  filter: brightness(40%);
 }

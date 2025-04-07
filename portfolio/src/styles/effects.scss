@@ -1,0 +1,21 @@
+@use "./theme";
+
+@mixin glow-icon {
+  color: theme.$secondary-2;
+  transition:
+          color 0.5s ease,
+          filter 0.3s ease;
+  &:hover {
+    color: theme.$neutral-light;
+    cursor: pointer;
+    filter: drop-shadow(0 0 10px rgba(220, 215, 201, 0.5));
+  }
+  &:active {
+    color: #fff;
+    cursor: pointer;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+    transition:
+            color 0.1s ease,
+            filter 0.1s ease;
+  }
+}

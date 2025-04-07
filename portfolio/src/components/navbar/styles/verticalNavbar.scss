@@ -1,0 +1,8 @@
+@use "../../../styles/theme";
+
+#vertical-navbar {
+  height: 100%;
+  width: 60px;
+  background-color: theme.$neutral-dark;
+  box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+}
