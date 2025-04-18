@@ -1,0 +1,89 @@
+@use '../../../styles/theme';
+
+$max-column-container-width: 920px;
+$min-column-container-width: 360px;
+
+$max-column-width: 920px;
+$min-column-width: 360px;
+
+#column-container {
+  position: absolute;
+  width: 110vw;
+  max-width: $max-column-container-width;
+  min-width: $min-column-container-width;
+  height: 100%;
+
+  #column-shaft {
+    position: absolute;
+    background-color: theme.$accent-yellow;
+    width: 110vw;
+    max-width: $max-column-width;
+    min-width: $min-column-width;
+    min-height: calc(100vh - (15vh + 55vw));
+    height: calc(100vh - (15vh + ($max-column-width / 2)));
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  #column-tip {
+    background-color: theme.$accent-yellow;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 15vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110vw;
+    height: 110vw;
+    max-width: $max-column-width;
+    max-height: $max-column-width;
+    min-width: $min-column-width;
+    min-height: $min-column-width;
+  }
+}
+
+@media (min-aspect-ratio: 0/1) {
+  #column-container {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-aspect-ratio: 1/1) {
+  #column-container {
+    width: 50vw;
+    left: 0;
+    transform: none;
+    margin-left: 40px;
+    #column-shaft {
+      width: 70vh;
+      max-width: 450px;
+      min-height: calc(100vh - (15vh + 55vw));
+      height: calc(100vh - (15vh + (450px / 2)));
+    }
+    #column-tip {
+      width: 70vh;
+      height: 70vh;
+      max-width: 450px;
+      max-height: 450px;
+    }
+  }
+}
+
+@media (min-aspect-ratio: 1.5/1) {
+  #column-container {
+    width: 50vw;
+    left: 0;
+    transform: none;
+    #column-shaft {
+      width: 70vh;
+      max-width: 30vw;
+      min-height: calc(100vh - (15vh + 55vw));
+      height: calc(100vh - (15vh + (30vw / 2)));
+    }
+    #column-tip {
+      width: 70vh;
+      height: 70vh;
+      max-width: 30vw;
+      max-height: 30vw;
+    }
+  }
+}
