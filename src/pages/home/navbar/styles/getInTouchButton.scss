@@ -1,0 +1,21 @@
+@use '../../../../styles/theme';
+
+#get-in-touch-button {
+  background-color: theme.$accent-pink;
+  color: theme.$primary-light;
+  font-weight: 700;
+  height: fit-content;
+  padding: 4px 16px;
+  border-radius: 16px;
+  font-size: 12px;
+  transition: 0.2s ease-out;
+  &:hover {
+    filter: brightness(1.2);
+    cursor: pointer;
+  }
+  &:active {
+    background-color: theme.$primary-light;
+    color: theme.$primary-dark;
+    transition: 0s;
+  }
+}

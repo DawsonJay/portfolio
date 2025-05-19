@@ -1,0 +1,14 @@
+@use '../../../../styles/theme';
+
+#navbar {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 40px;
+  background-color: theme.$primary-dark;
+  display: flex;
+  z-index: 999999;
+  align-items: center;
+  padding: 0 8px;
+  justify-content: flex-end;
+  column-gap: 16px;
+}

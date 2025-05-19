@@ -1,0 +1,5 @@
+@use '../../../styles/theme';
+
+#home-page {
+  background-color: theme.$primary-light;
+}

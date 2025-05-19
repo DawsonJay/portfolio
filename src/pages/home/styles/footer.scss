@@ -1,0 +1,37 @@
+@use '../../../styles/theme';
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 30px;
+  background-color: theme.$primary-dark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+  column-gap: 16px;
+  .divider {
+    background-color: theme.$primary-light;
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+  }
+  p {
+    color: theme.$primary-light;
+    letter-spacing: 5px;
+    text-transform: capitalize;
+    font-size: 8px;
+  }
+}
+
+@media only screen and (max-width: 634px) {
+  #footer {
+    .divider {
+      display: none;
+    }
+    p {
+      display: none;
+    }
+  }
+}

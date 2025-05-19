@@ -1,0 +1,29 @@
+@use '../../../../styles/theme';
+
+#navbar-options {
+  display: flex;
+  column-gap: 8px;
+  .option {
+    color: theme.$primary-light;
+    font-weight: 700;
+    height: fit-content;
+    padding: 4px 16px;
+    border-radius: 16px;
+    font-size: 12px;
+    transition: 0.2s ease-out;
+    &.selected {
+      background-color: theme.$accent-blue;
+    }
+    &:not(.selected) {
+      &:hover {
+        filter: brightness(1.4);
+        cursor: pointer;
+      }
+      &:active {
+        transition: 0s;
+        background-color: theme.$primary-light;
+        color: theme.$primary-dark;
+      }
+    }
+  }
+}
