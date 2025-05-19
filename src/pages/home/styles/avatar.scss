@@ -1,0 +1,38 @@
+#avatar-container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  #avatar {
+    position: absolute;
+    z-index: 10000;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-aspect-ratio: 0/1) {
+  #avatar-container {
+    #avatar {
+      width: 100vw;
+      max-width: 60vh;
+    }
+  }
+}
+
+@media (min-aspect-ratio: 1/1) {
+  #avatar-container {
+    #avatar {
+      width: 90vw;
+    }
+  }
+}
+
+@media (min-aspect-ratio: 1.5/1) {
+  #avatar-container {
+    width: 50vw;
+    #avatar {
+      width: 50vw;
+    }
+  }
+}
