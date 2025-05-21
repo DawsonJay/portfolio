@@ -12,9 +12,7 @@ export default function Page({ id, children }: PageProps) {
   return (
     <div id={id} className={"page"}>
       <Navbar />
-      <div id={"content"}>
-        {children}
-      </div>
+      <div id={"content"}>{children}</div>
       <Footer />
     </div>
   );

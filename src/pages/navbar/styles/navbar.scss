@@ -11,4 +11,21 @@
   padding: 0 8px;
   justify-content: flex-end;
   column-gap: 16px;
+  #navbar-options {
+    display: block;
+  }
+  #burger-menu-button {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 634px) {
+  #navbar {
+    #navbar-options {
+      display: none;
+    }
+    #burger-menu-button {
+      display: flex;
+    }
+  }
 }

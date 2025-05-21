@@ -1,0 +1,16 @@
+@use '../../../../styles/theme';
+
+#popup-nav-menu {
+  .base-block {
+    width: 100%;
+    height: 200px;
+    background-color: theme.$accent-yellow;
+    position: relative;
+  }
+  .burger-menu-avatar {
+    width: 600px;
+    position: absolute;
+    top: -319px;
+    right: -150px;
+  }
+}

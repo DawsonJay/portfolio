@@ -1,0 +1,30 @@
+@use '../../../../styles/theme';
+
+#burger-menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: 0.2s ease-out;
+  .icon {
+    color: theme.$primary-light;
+    transition: 0.2s ease-out;
+  }
+  &.selected {
+    rotate: 90deg;
+  }
+  &:hover {
+    .icon {
+      filter: brightness(1.4);
+    }
+    cursor: pointer;
+  }
+  &:active {
+    transition: 0s;
+    background-color: theme.$primary-light;
+    .icon {
+      color: theme.$primary-dark;
+    }
+  }
+}
