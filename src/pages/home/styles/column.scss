@@ -3,6 +3,7 @@
 #column-container {
   position: absolute;
   height: 100%;
+  overflow: hidden;
 
   #column-shaft {
     background-color: theme.$accent-yellow;
@@ -26,12 +27,12 @@
     width: 110vw;
     #column-shaft {
       width: 110vw;
-      height: calc(100vh - (15vh + (110vw / 2)));
+      height: calc(100% - (15% + (110vw / 2)));
     }
     #column-tip {
       width: 110vw;
       height: 110vw;
-      bottom: 15vh;
+      bottom: 15%;
     }
   }
 }
@@ -43,12 +44,12 @@
     width: 100vw;
     #column-shaft {
       width: 80vw;
-      height: calc(100vh - (15vh + (80vw / 2)));
+      height: calc(100% - (15% + (80vw / 2)));
     }
     #column-tip {
       width: 80vw;
       height: 80vw;
-      bottom: 15vh;
+      bottom: 15%;
     }
   }
 }
@@ -60,12 +61,12 @@
     transform: none;
     #column-shaft {
       width: 40vw;
-      height: calc(100vh - (15vh + (40vw / 2)));
+      height: calc(100% - (15% + (40vw / 2)));
     }
     #column-tip {
       width: 40vw;
       height: 40vw;
-      bottom: 15vh;
+      bottom: 15%;
     }
   }
 }

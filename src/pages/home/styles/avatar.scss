@@ -1,11 +1,11 @@
 #avatar-container {
   position: absolute;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   #avatar {
     position: absolute;
     z-index: 10000;
-    bottom: -10px;
+    bottom: -45px;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -15,7 +15,16 @@
   #avatar-container {
     #avatar {
       width: 100vw;
-      max-width: 60vh;
+      max-width: 100%;
+    }
+  }
+}
+
+@media (min-aspect-ratio: 0.6/1) {
+  #avatar-container {
+    #avatar {
+      width: 100vw;
+      max-width: 80%;
     }
   }
 }
@@ -33,6 +42,7 @@
     width: 50vw;
     #avatar {
       width: 50vw;
+      max-width: 60%;
     }
   }
 }
