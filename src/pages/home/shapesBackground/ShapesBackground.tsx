@@ -27,7 +27,7 @@ export default function ShapesBackground() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | null>(null);
   const [dimensions, setDimensions] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
