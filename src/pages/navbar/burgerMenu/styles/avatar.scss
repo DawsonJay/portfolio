@@ -3,14 +3,14 @@
 #popup-nav-menu {
   .base-block {
     width: 100%;
-    height: 200px;
+    height: 10vh;
     background-color: theme.$accent-yellow;
     position: relative;
   }
   .burger-menu-avatar {
-    width: 600px;
+    width: 400px;
     position: absolute;
-    top: -319px;
-    right: -150px;
+    top: -213px;
+    right: -80px;
   }
 }

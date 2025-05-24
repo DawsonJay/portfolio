@@ -20,5 +20,10 @@ export default function BurgerMenu() {
 }
 
 function PopupMenu() {
-  return <div id={"popup-nav-menu"}><Options/><Avatar/></div>;
+  return (
+    <div id={"popup-nav-menu"}>
+      <Options />
+      <Avatar />
+    </div>
+  );
 }
