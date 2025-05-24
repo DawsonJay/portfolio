@@ -5,7 +5,7 @@ import Avatar from "./Avatar.tsx";
 import Options from "./Options.tsx";
 
 export default function BurgerMenu() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   function onClick() {
     setIsOpen(!isOpen);

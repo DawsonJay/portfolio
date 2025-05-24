@@ -6,16 +6,6 @@
   height: 100%;
   position: relative;
   z-index: 0;
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("https://www.transparenttextures.com/patterns/fabric-of-squares.png");
-    z-index: -1;
-  }
 
   #content {
     width: 100%;

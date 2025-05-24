@@ -1,0 +1,43 @@
+@use '../../../../styles/theme';
+
+#popup-nav-menu-options {
+  .option {
+    background-color: theme.$accent-yellow;
+    width: 80%;
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    column-gap: 16px;
+    transition: 0.2s ease-out;
+    &.selected {
+      background-color: theme.$accent-pink;
+    }
+    &:not(.selected) {
+      &:hover {
+        scale: 1.03;
+        cursor: pointer;
+      }
+      &:active {
+        scale: 0.99;
+      }
+    }
+    .title-container {
+      flex-grow: 5;
+      background-color: theme.$primary-light;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .icon-container {
+      background-color: theme.$primary-light;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: theme.$primary-dark;
+    }
+  }
+}

@@ -1,4 +1,9 @@
 #popup-nav-menu-options {
   width: 100%;
   flex-grow: 4;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  align-items: center;
+  padding-top: 24px;
 }
