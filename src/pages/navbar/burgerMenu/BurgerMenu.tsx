@@ -3,6 +3,7 @@ import BurgerMenuButton from "./BurgerMenuButton.tsx";
 import { useState } from "react";
 import Avatar from "./Avatar.tsx";
 import Options from "./Options.tsx";
+import ShapesBackground from "../../home/shapesBackground/ShapesBackground.tsx";
 
 export default function BurgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +23,7 @@ export default function BurgerMenu() {
 function PopupMenu() {
   return (
     <div id={"popup-nav-menu"}>
+      <ShapesBackground />
       <Options />
       <Avatar />
     </div>

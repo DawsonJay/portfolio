@@ -1,6 +1,6 @@
 @use '../../../../styles/theme';
 
-.title-container {
+#home-title-container {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -18,7 +18,7 @@
 }
 
 @media (min-aspect-ratio: 0/1) {
-  .title-container {
+  #home-title-container {
     .title {
       font-size: 7vw;
     }
@@ -33,7 +33,7 @@
 }
 
 @media (min-aspect-ratio: 1.5/1) {
-  .title-container {
+  #home-title-container {
     .title {
       font-size: 5vh;
     }
