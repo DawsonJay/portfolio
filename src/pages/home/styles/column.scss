@@ -10,7 +10,9 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 1000;
   }
+
   #column-tip {
     background-color: theme.$accent-yellow;
     border-radius: 50%;
@@ -25,10 +27,12 @@
     left: 50%;
     transform: translateX(-50%);
     width: 110vw;
+
     #column-shaft {
       width: 110vw;
       height: calc(100% - (15% + (110vw / 2)));
     }
+
     #column-tip {
       width: 110vw;
       height: 110vw;
@@ -42,10 +46,12 @@
     left: 50%;
     transform: translateX(-50%);
     width: 100vw;
+
     #column-shaft {
       width: 80vw;
       height: calc(100% - (15% + (80vw / 2)));
     }
+
     #column-tip {
       width: 80vw;
       height: 80vw;
@@ -59,10 +65,12 @@
     width: 50vw;
     left: 0;
     transform: none;
+
     #column-shaft {
       width: 40vw;
       height: calc(100% - (15% + (40vw / 2)));
     }
+
     #column-tip {
       width: 40vw;
       height: 40vw;

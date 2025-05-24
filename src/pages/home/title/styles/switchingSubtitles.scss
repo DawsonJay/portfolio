@@ -1,0 +1,50 @@
+@use '../../../../styles/theme';
+
+.subtitle-container {
+  position: relative;
+  width: 100%;
+
+  .subtitle {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 9px;
+    font-size: 12px;
+    text-transform: lowercase;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+
+    &.visible {
+      opacity: 1;
+      animation: slide-in 1s cubic-bezier(.36, -0.28, .65, 1.25) forwards;
+    }
+
+    &.hidden {
+      opacity: 1;
+      animation: slide-out 1s cubic-bezier(.36, -0.28, .65, 1.25) forwards;
+    }
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
