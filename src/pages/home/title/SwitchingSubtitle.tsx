@@ -4,8 +4,6 @@ import cn from "classnames";
 
 export default function SwitchingSubtitle() {
   const [isFirstVisible, setIsFirstVisible] = useState(true);
-  const [firstSubtitle, setFirstSubtitle] = useState("Professional Nerd");
-  const [secondSubtitle, setSecondSubtitle] = useState("Trained Dork");
 
   const firstSubtitleVisibleClass = isFirstVisible ? "visible" : "hidden";
   const secondSubtitleVisibleClass = isFirstVisible ? "hidden" : "visible";
@@ -56,17 +54,20 @@ export default function SwitchingSubtitle() {
     "Nerdlet",
   ];
 
-  useEffect(() => {
-    function getRandomSubtitle() {
-      const randomProfessionalSynonym =
-        professionalSynonyms[
-          Math.floor(Math.random() * professionalSynonyms.length)
-        ];
-      const randomNerdSynonym =
-        nerdSynonyms[Math.floor(Math.random() * nerdSynonyms.length)];
-      return `${randomProfessionalSynonym} ${randomNerdSynonym}`;
-    }
+  const [firstSubtitle, setFirstSubtitle] = useState(getRandomSubtitle());
+  const [secondSubtitle, setSecondSubtitle] = useState(getRandomSubtitle());
 
+  function getRandomSubtitle() {
+    const randomProfessionalSynonym =
+      professionalSynonyms[
+        Math.floor(Math.random() * professionalSynonyms.length)
+      ];
+    const randomNerdSynonym =
+      nerdSynonyms[Math.floor(Math.random() * nerdSynonyms.length)];
+    return `${randomProfessionalSynonym} ${randomNerdSynonym}`;
+  }
+
+  useEffect(() => {
     function toggleSubtitles() {
       if (isFirstVisible) setSecondSubtitle(getRandomSubtitle());
       else setFirstSubtitle(getRandomSubtitle());
