@@ -1,0 +1,69 @@
+@use '../../../../styles/theme';
+
+#projects-page {
+  .preview {
+    position: relative;
+    width: 100vw;
+    height: 50vw;
+    z-index: 0;
+
+    .preview-image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .preview-text {
+      position: absolute;
+      z-index: 1;
+      background-color: theme.$primary-dark;
+      color: theme.$primary-light;
+      width: 40vw;
+      right: 0;
+      bottom: 10%;
+      padding: 12px;
+
+      p, article {
+        font-size: 6px;
+      }
+
+      .preview-title {
+        text-transform: uppercase;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (min-aspect-ratio: 0/1) {
+  #projects-page {
+    .preview {
+      .preview-text {
+        .concise-preview-text {
+          display: block;
+        }
+
+        .long-preview-text {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (min-aspect-ratio: 1.5/1) {
+  #projects-page {
+    .preview {
+      .preview-text {
+        .concise-preview-text {
+          display: none;
+        }
+
+        .long-preview-text {
+          display: block;
+        }
+      }
+    }
+  }
+}
