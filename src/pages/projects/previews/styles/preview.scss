@@ -1,36 +1,37 @@
 @use '../../../../styles/theme';
 
 #projects-page {
-  .preview {
-    position: relative;
-    width: 100vw;
-    height: 50vw;
-    z-index: 0;
+  #content {
+    overflow-y: auto;
 
-    .preview-image {
-      position: absolute;
+    .preview {
+      position: relative;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+      max-width: 100%;
+      z-index: 0;
 
-    .preview-text {
-      position: absolute;
-      z-index: 1;
-      background-color: theme.$primary-dark;
-      color: theme.$primary-light;
-      width: 40vw;
-      right: 0;
-      bottom: 10%;
-      padding: 12px;
-
-      p, article {
-        font-size: 6px;
+      .preview-image {
+        position: absolute;
+        object-fit: cover;
       }
 
-      .preview-title {
-        text-transform: uppercase;
-        font-size: 16px;
+      .preview-text {
+        position: absolute;
+        z-index: 1;
+        background-color: theme.$primary-dark;
+        color: theme.$primary-light;
+        right: 0;
+        padding: 12px;
+        box-sizing: border-box;
+
+        p, article {
+          font-size: 6px;
+        }
+
+        .preview-title {
+          text-transform: uppercase;
+          font-size: 16px;
+        }
       }
     }
   }
@@ -39,7 +40,18 @@
 @media (min-aspect-ratio: 0/1) {
   #projects-page {
     .preview {
+      height: 50vw;
+
+      .preview-image {
+        width: 100%;
+        height: 100%;
+        object-position: left center;
+      }
+
       .preview-text {
+        width: 40vw;
+        bottom: 10%;
+
         .concise-preview-text {
           display: block;
         }
@@ -52,10 +64,25 @@
   }
 }
 
-@media (min-aspect-ratio: 1.5/1) {
+@media (min-aspect-ratio: 1/1) {
   #projects-page {
     .preview {
+      height: 100%;
+
+      .preview-image {
+        width: 50%;
+        height: 100%;
+        object-fit: contain;
+      }
+
       .preview-text {
+        height: 100%;
+        max-height: 100%;
+        width: 50%;
+        max-width: 50%;
+        bottom: 0;
+        overflow-y: auto;
+
         .concise-preview-text {
           display: none;
         }
