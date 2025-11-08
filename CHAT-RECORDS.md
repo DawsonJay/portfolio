@@ -4,10 +4,12 @@
 This document provides complete instructions for creating chat records in this portfolio project. Follow these instructions exactly when the user requests a chat record.
 
 ## File Location
-**All chat records for this project must be created at:**
+**All chat records for this project must be created in the portfolio-profile project at:**
 ```
-records/portfolio-website/chat-record-[timestamp].md
+/home/james/Documents/portfolio-profile/records/portfolio-website/chat-record-[timestamp].md
 ```
+
+**Important**: Chat records are stored in the portfolio-profile project, not in this portfolio code project. This keeps data/documentation separate from code.
 
 ## Step 1: Get Current Timestamp
 **Execute this command to get the current GMT/UTC timestamp:**
@@ -24,9 +26,9 @@ date -u +%Y-%m-%d-%H%M
 - **Always use GMT/UTC timezone**
 
 ## Step 2: Create File
-**Create a new markdown file at:**
+**Create a new markdown file in the portfolio-profile project at:**
 ```
-records/portfolio-website/chat-record-[timestamp].md
+/home/james/Documents/portfolio-profile/records/portfolio-website/chat-record-[timestamp].md
 ```
 
 Replace `[timestamp]` with the timestamp from Step 1.
@@ -165,14 +167,14 @@ When user says: "create a chat record with details on the bug we just fixed, sho
 
 **You must:**
 1. Execute `date -u +%Y-%m-%d-%H%M` to get timestamp
-2. Create file at `records/portfolio-website/chat-record-[timestamp].md`
+2. Create file at `/home/james/Documents/portfolio-profile/records/portfolio-website/chat-record-[timestamp].md`
 3. Write header: `# Chat Record - [timestamp]`
 4. Include complete Chat Context section with all subsections
 5. Add section: `## Bug Fix Details` with code examples and fix details
 
 ## Important Rules
 - **Always use GMT/UTC timezone** for timestamps
-- **Always create file in** `records/portfolio-website/` folder
+- **Always create file in** `/home/james/Documents/portfolio-profile/records/portfolio-website/` folder (portfolio-profile project, not portfolio project)
 - **Always include complete Chat Context** with all subsections
 - **Always write in past tense** for chat context
 - **Always be specific** - avoid generic boilerplate
