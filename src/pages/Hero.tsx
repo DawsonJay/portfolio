@@ -1,7 +1,7 @@
 const Hero = () => {
   return (
     <div>
-      {/* Hero page content will be implemented here */}
+      placeholder
     </div>
   );
 };
