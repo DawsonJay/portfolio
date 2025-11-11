@@ -1,6 +1,5 @@
 import { ReactComponent as Layer1Svg } from '../../../dioramas/ocean-diorama/layer1.svg';
 import LayerWrapper from './LayerWrapper';
-import { colorSpectrum } from '../../../theme';
 
 interface Layer1Props {
   themeLayerNumber: number;
