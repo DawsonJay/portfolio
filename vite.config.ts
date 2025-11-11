@@ -13,4 +13,11 @@ export default defineConfig({
       include: '**/*.svg',
     }),
   ],
+  preview: {
+    host: true,
+    allowedHosts: [
+      'portfolio-production-d427.up.railway.app',
+      '.up.railway.app', // Allow all Railway subdomains
+    ],
+  },
 })
