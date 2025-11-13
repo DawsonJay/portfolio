@@ -7,20 +7,20 @@ interface WhaleWrapperProps {
 }
 
 const WhaleWrapper = ({ themeLayerNumber, children }: WhaleWrapperProps) => {
-  // Map theme layer to color index (theme layers 2, 4, 7 for whales)
+  // Map theme layer to color index (theme layers 2, 5, 8 for whales)
   const colorIndex = themeLayerNumber - 1;
   const color = colorSpectrum[colorIndex];
   
-  // z-index: inversely proportional to theme layer number
-  // Theme layer 2 (shallower) should have higher z-index than theme layer 7 (deeper)
-  const zIndex = 11 - themeLayerNumber;
+  // z-index: inversely proportional to theme layer number (1-11)
+  // Theme layer 2 (shallower) should have higher z-index than theme layer 8 (deeper)
+  const zIndex = 12 - themeLayerNumber;
 
   // Size based on depth - deeper whales are smaller
-  // Theme layer 2 (shallower) = 50%, layer 4 = 40%, layer 7 (deeper) = 30%
+  // Theme layer 2 (shallower) = 50%, layer 5 = 40%, layer 8 (deeper) = 30%
   const sizeMap: Record<number, number> = {
     2: 50, // Shallower - largest
-    4: 40, // Medium
-    7: 30, // Deeper - smallest
+    5: 40, // Medium
+    8: 30, // Deeper - smallest
   };
   const sizePercent = sizeMap[themeLayerNumber] ?? 100;
 
@@ -28,17 +28,17 @@ const WhaleWrapper = ({ themeLayerNumber, children }: WhaleWrapperProps) => {
   // Using clockwork durations for consistency
   const scrollDurationMap: Record<number, number> = {
     2: clockworkDurations[8],  // 120 seconds - slowest
-    4: clockworkDurations[6],  // 60 seconds
-    7: clockworkDurations[4],  // 30 seconds - fastest
+    5: clockworkDurations[6],  // 60 seconds
+    8: clockworkDurations[4],  // 30 seconds - fastest
   };
   const scrollDuration = scrollDurationMap[themeLayerNumber] ?? 60000;
 
-  // Vertical positioning - Whale1 (layer 2) higher, Whale2 (layer 4) lower
+  // Vertical positioning - Whale1 (layer 2) higher, Whale2 (layer 5) lower
   // Using percentage offsets from center (50%) for responsive scaling
   const verticalOffsetMap: Record<number, string> = {
     2: '-15%', // Whale1 - 15% higher than center
-    4: '15%',  // Whale2 - 15% lower than center
-    7: '0%',   // Whale3 - centered
+    5: '15%',  // Whale2 - 15% lower than center
+    8: '0%',   // Whale3 - centered
   };
   const verticalOffset = verticalOffsetMap[themeLayerNumber] ?? '0%';
 

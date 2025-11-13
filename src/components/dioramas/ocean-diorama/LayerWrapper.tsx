@@ -7,37 +7,37 @@ interface LayerWrapperProps {
 }
 
 const LayerWrapper = ({ themeLayerNumber, children }: LayerWrapperProps) => {
-  // Map 6 layers evenly across 10 theme layers (1-10)
+  // Map 6 layers evenly across 11 theme layers (1-11)
   // Layer 1 (surface) → theme layer 1 (colorSpectrum[0] - darkest)
-  // Layer 6 (deepest) → theme layer 10 (colorSpectrum[9] - lightest)
-  // Even distribution: 1, 3, 5, 6, 8, 10
-  // Free layers for whales: 2, 4, 7, 9 (but skipping 9, so whales use 2, 4, 7)
+  // Layer 6 (deepest) → theme layer 11 (colorSpectrum[10] - lightest)
+  // Distribution: 1, 3, 4, 7, 9, 11
+  // Free layers for whales: 2, 5, 6, 8, 10
   const themeLayerMap: Record<number, number> = {
     1: 1,  // Theme layer 1 - Surface - darkest
     2: 3,  // Theme layer 3
-    3: 5,  // Theme layer 5
-    4: 6,  // Theme layer 6
-    5: 8,  // Theme layer 8
-    6: 10, // Theme layer 10 - Deepest - lightest
+    3: 4,  // Theme layer 4 (swapped with Whale2)
+    4: 7,  // Theme layer 7
+    5: 9,  // Theme layer 9
+    6: 11, // Theme layer 11 - Deepest - lightest
   };
   const actualThemeLayer = themeLayerMap[themeLayerNumber] ?? 1;
   const colorIndex = actualThemeLayer - 1;
   const color = colorSpectrum[colorIndex];
   
-  // z-index: inversely proportional to actual theme layer number (1-10)
+  // z-index: inversely proportional to actual theme layer number (1-11)
   // Theme layer 1 (surface/closest) should have highest z-index
-  // Theme layer 10 (deepest/furthest) should have lowest z-index
-  const zIndex = 11 - actualThemeLayer;
+  // Theme layer 11 (deepest/furthest) should have lowest z-index
+  const zIndex = 12 - actualThemeLayer;
 
   // Map layers to animation durations (inverse mapping - deeper = faster)
   // Layer 1 (surface) = no animation
-  // Ocean diorama uses clockworkDurations indices 4, 6, 8, 9, 10 (30s, 60s, 120s, 240s, 480s)
-  // where 30s is the fastest (Layer 6) and 480s is the slowest (Layer 2)
+  // Smooth progression: each deeper layer rotates faster than the one above
+  // Layer 2 (slowest) → Layer 6 (fastest)
   const durationMap: Record<number, number | null> = {
     1: null,        // Surface - no movement
-    2: clockworkDurations[10], // 480 seconds - slowest
-    3: clockworkDurations[9],  // 240 seconds
-    4: clockworkDurations[8],  // 120 seconds
+    2: clockworkDurations[9],  // 240 seconds - slowest
+    3: clockworkDurations[8],  // 120 seconds
+    4: clockworkDurations[7],  // 96 seconds
     5: clockworkDurations[6],  // 60 seconds
     6: clockworkDurations[4],  // 30 seconds - fastest
   };

@@ -7,28 +7,29 @@
  * - Lightest colors = deepest layers (furthest away)
  * 
  * This creates the paper-cut diorama effect where deepest layers appear almost white
- * (lit from behind) and surface layers are dark slate blue.
+ * (lit from behind) and surface layers are very dark blue-grey.
  */
 
 /**
  * Color spectrum array ordered from dark to light.
- * Index 0 = darkest (surface layer - closest), Index 9 = lightest (deepest layer - furthest away).
+ * Index 0 = darkest (surface layer - closest), Index 10 = lightest (deepest layer - furthest away).
  * Usage: colorSpectrum[layerNumber - 1]
  * 
- * Based on palette: INKWELL → LUNAR ECLIPSE → CREME BRULEE → AU LAIT
- * Surface layers are dark slate blue, transitioning through candle flame colors to almost white for deepest layers.
+ * Based on provided palette: Very dark navy → Royal blue → Bright blue → Periwinkle → Lavender → 
+ * Pink → Terracotta → Coral → Peach → Cream → Off-white (candlelight)
  */
 export const colorSpectrum = [
-  '#1A2326', // Very dark slate blue (index 0 - surface layer 1)
-  '#2C3639', // INKWELL - Dark slate blue (index 1)
-  '#3F4E4F', // LUNAR ECLIPSE - Muted teal/grey-green (index 2 - layer 2)
-  '#5A6B5F', // Medium teal-grey (index 3)
-  '#7A6B5F', // Warm teal-brown transition (index 4 - layer 3)
-  '#9A7B5F', // Warm brown (index 5 - layer 4)
-  '#B8906F', // Light caramel - candle light tones (index 6)
-  '#D4B99A', // Very light warm beige (index 7 - layer 5)
-  '#E8D4C4', // Very light warm peach (index 8)
-  '#F0DCC8', // Warm candle light - light warm peach (index 9 - layer 6, deepest)
+  '#0A0F1A', // Very dark deep navy (almost black) (index 0 - surface layer 1)
+  '#1E3A8A', // Rich vibrant royal blue (index 1)
+  '#2563EB', // Bright medium blue (index 2)
+  '#818CF8', // Soft muted periwinkle / light sky blue (index 3)
+  '#C4B5FD', // Dusty lavender / light mauve (index 4)
+  '#EC4899', // Bright medium pink / fuchsia (index 5)
+  '#C9735F', // Muted reddish-brown / terracotta (index 6)
+  '#FB7185', // Vibrant orange-pink / coral (index 7)
+  '#FBC5A0', // Pale peach / light coral (index 8)
+  '#FEF3C7', // Soft light yellow / cream (index 9)
+  '#FFFEF9', // Very light almost off-white cream - candlelight (index 10 - layer 6, deepest)
 ] as const;
 
 /**

@@ -37,8 +37,8 @@ const OceanDiorama = () => {
         <Layer5 themeLayerNumber={5} />
         <Layer6 themeLayerNumber={6} />
         <Whale1 themeLayerNumber={2} />
-        <Whale2 themeLayerNumber={4} />
-        <Whale3 themeLayerNumber={7} />
+        <Whale2 themeLayerNumber={5} />
+        <Whale3 themeLayerNumber={8} />
       </div>
       {/* Frame outside clipped container so it can extend beyond */}
       <DioramaFrame />
