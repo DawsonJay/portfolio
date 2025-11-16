@@ -8,6 +8,7 @@ interface Layer5Props {
 
 const Layer5 = ({ themeLayerNumber }: Layer5Props) => {
   const darkestColor = colorSpectrum[0];
+
   return (
     <LayerWrapper themeLayerNumber={themeLayerNumber}>
       <Layer5Svg
@@ -16,7 +17,7 @@ const Layer5 = ({ themeLayerNumber }: Layer5Props) => {
           height: '100%',
           maxWidth: '100vw',
           maxHeight: '100vh',
-          filter: `drop-shadow(rgba(10, 15, 26, 0.5) 0px 2px 2px) drop-shadow(rgba(10, 15, 26, 0.4) 0px 1px 1px)`,
+          filter: `drop-shadow(rgba(15, 18, 24, 0.7) 0px 0px 4px) drop-shadow(rgba(15, 18, 24, 0.6) 0px 0px 2px)`,
         }}
         preserveAspectRatio="xMidYMid meet"
       />

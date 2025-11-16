@@ -15,21 +15,21 @@
  * Index 0 = darkest (surface layer - closest), Index 10 = lightest (deepest layer - furthest away).
  * Usage: colorSpectrum[layerNumber - 1]
  * 
- * Based on provided palette: Very dark navy → Royal blue → Bright blue → Periwinkle → Lavender → 
- * Pink → Terracotta → Coral → Peach → Cream → Off-white (candlelight)
+ * Shadow theatre palette: Dark navy surface transitioning to warm paper lantern colors
+ * Surface layer = dark navy shadow, deeper layers = spectrum of paper lantern glow
  */
 export const colorSpectrum = [
-  '#0A0F1A', // Very dark deep navy (almost black) (index 0 - surface layer 1)
-  '#1E3A8A', // Rich vibrant royal blue (index 1)
-  '#2563EB', // Bright medium blue (index 2)
-  '#818CF8', // Soft muted periwinkle / light sky blue (index 3)
-  '#C4B5FD', // Dusty lavender / light mauve (index 4)
-  '#EC4899', // Bright medium pink / fuchsia (index 5)
-  '#C9735F', // Muted reddish-brown / terracotta (index 6)
-  '#FB7185', // Vibrant orange-pink / coral (index 7)
-  '#FBC5A0', // Pale peach / light coral (index 8)
-  '#FEF3C7', // Soft light yellow / cream (index 9)
-  '#FFFEF9', // Very light almost off-white cream - candlelight (index 10 - layer 6, deepest)
+  '#0F1218', // Dark sleek tech surface (cut open to reveal light) (index 0 - surface layer 1)
+  '#C85A3D', // Deep warm orange-red (paper lantern) (index 1)
+  '#D97A4F', // Rich warm orange (paper lantern) (index 2)
+  '#E89A61', // Bright warm orange (paper lantern) (index 3)
+  '#F0B073', // Warm orange-yellow (paper lantern) (index 4)
+  '#F5C685', // Bright warm yellow-orange (paper lantern) (index 5)
+  '#F9D897', // Warm yellow (paper lantern) (index 6)
+  '#FBE5A9', // Pale warm yellow (paper lantern) (index 7)
+  '#FDEFBB', // Light warm cream-yellow (paper lantern) (index 8)
+  '#FEF7CD', // Very light warm cream (paper lantern) (index 9)
+  '#FFF9DF', // Warm off-white cream (brightest lantern glow) (index 10 - layer 6, deepest)
 ] as const;
 
 /**

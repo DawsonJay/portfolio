@@ -21,4 +21,3 @@ const Whale2 = ({ themeLayerNumber }: Whale2Props) => {
 };
 
 export default Whale2;
-
