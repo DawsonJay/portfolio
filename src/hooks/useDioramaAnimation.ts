@@ -6,6 +6,7 @@ export type AnimationType = 'rotation' | 'scroll' | 'none' | 'custom';
 export interface AnimationConfig {
   type: AnimationType;
   duration?: number | null;
+  delay?: number;
   direction?: 'clockwise' | 'counter-clockwise' | 'left' | 'right' | 'up' | 'down';
   timingFunction?: string;
   customKeyframe?: string;

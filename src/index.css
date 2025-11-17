@@ -35,14 +35,32 @@ body {
   }
 }
 
-/* Whale scroll animation - right to left */
-/* Note: Vertical offset is applied via inline transform, animation only handles horizontal */
+/* Whale scroll animations - right to left */
+/* Different starting positions create staggered appearance without delays */
 @keyframes scroll-whale {
   from {
     transform: translateX(100%);
   }
   to {
     transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll-whale-stagger-1 {
+  from {
+    transform: translateX(66.67%);
+  }
+  to {
+    transform: translateX(-133.33%);
+  }
+}
+
+@keyframes scroll-whale-stagger-2 {
+  from {
+    transform: translateX(33.33%);
+  }
+  to {
+    transform: translateX(-166.67%);
   }
 }
 

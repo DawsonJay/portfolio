@@ -54,31 +54,41 @@ const DioramaEntity = ({
         width: '100%',
         height: '100%',
         zIndex,
-        color,
         transform: `translateY(calc(-50% + ${verticalOffset}))`,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'flex-start',
-        ...animationStyle,
       }}
     >
       <div
         style={{
-          width: `${sizePercent}%`,
-          height: `${sizePercent}%`,
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          color,
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center',
+          justifyContent: 'flex-start',
+          ...animationStyle,
         }}
       >
-        <SvgComponent
+        <div
           style={{
-            width: '100%',
-            height: '100%',
-            filter: entityConfig.filter,
+            width: `${sizePercent}%`,
+            height: `${sizePercent}%`,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
           }}
-          preserveAspectRatio="xMidYMid meet"
-        />
+        >
+          <SvgComponent
+            style={{
+              width: '100%',
+              height: '100%',
+              filter: entityConfig.filter,
+            }}
+            preserveAspectRatio="xMidYMid meet"
+          />
+        </div>
       </div>
     </div>
   );

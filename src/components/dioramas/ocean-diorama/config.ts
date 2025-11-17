@@ -106,6 +106,7 @@ export const entityConfigs = [
       type: 'scroll' as const,
       duration: clockworkDurations[8], // 120 seconds - slowest
       direction: 'left' as const, // right-to-left scroll
+      customKeyframe: 'scroll-whale', // Starts from right edge
     },
     filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.4))',
   },
@@ -124,6 +125,7 @@ export const entityConfigs = [
       type: 'scroll' as const,
       duration: clockworkDurations[6], // 60 seconds
       direction: 'left' as const,
+      customKeyframe: 'scroll-whale-stagger-1', // Starts 1/3 through cycle
     },
     filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.4))',
   },
@@ -142,6 +144,7 @@ export const entityConfigs = [
       type: 'scroll' as const,
       duration: clockworkDurations[4], // 30 seconds - fastest
       direction: 'left' as const,
+      customKeyframe: 'scroll-whale-stagger-2', // Starts 2/3 through cycle
     },
     filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.4))',
   },
