@@ -39,9 +39,9 @@ body {
 /* Slower whales (longer duration) = shorter paths, faster whales = longer paths */
 /* All start and end outside visible area, creating natural staggering */
 @keyframes scroll-whale-slow {
-  /* Slowest whale (120s): Short path - starts closer to right, ends closer to left */
+  /* Slowest whale (120s): Starts further out, appears later */
   from {
-    transform: translateX(120%);
+    transform: translateX(180%);
   }
   to {
     transform: translateX(-120%);
@@ -49,9 +49,9 @@ body {
 }
 
 @keyframes scroll-whale-medium {
-  /* Medium whale (60s): Medium path */
+  /* Medium whale (90s): Medium path, appears after Whale3 */
   from {
-    transform: translateX(150%);
+    transform: translateX(130%);
   }
   to {
     transform: translateX(-150%);
@@ -59,12 +59,12 @@ body {
 }
 
 @keyframes scroll-whale-fast {
-  /* Fastest whale (30s): Longest path - starts far right, ends far left */
+  /* Fastest whale (70s): Starts just outside visible area, appears first */
   from {
-    transform: translateX(200%);
+    transform: translateX(105%);
   }
   to {
-    transform: translateX(-200%);
+    transform: translateX(-180%);
   }
 }
 

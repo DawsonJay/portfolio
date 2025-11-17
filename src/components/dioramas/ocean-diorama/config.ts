@@ -123,7 +123,7 @@ export const entityConfigs = [
     },
     animation: {
       type: 'scroll' as const,
-      duration: clockworkDurations[6], // 60 seconds
+      duration: 90000, // 90 seconds - slowed down, still between Whale1 and Whale3
       direction: 'left' as const,
       customKeyframe: 'scroll-whale-medium', // Medium path (150% to -150%)
     },
@@ -142,9 +142,9 @@ export const entityConfigs = [
     },
     animation: {
       type: 'scroll' as const,
-      duration: clockworkDurations[4], // 30 seconds - fastest
+      duration: 70000, // 70 seconds - slowed down, still fastest
       direction: 'left' as const,
-      customKeyframe: 'scroll-whale-fast', // Longest path (200% to -200%)
+      customKeyframe: 'scroll-whale-fast', // Longer path (180% to -180%)
     },
     filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.4))',
   },
