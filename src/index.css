@@ -16,13 +16,22 @@ body {
   padding: 0;
 }
 
-/* Diorama rotation animation */
+/* Diorama rotation animations */
 @keyframes rotate-counter-clockwise {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(-360deg);
+  }
+}
+
+@keyframes rotate-clockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 
