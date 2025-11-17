@@ -1,14 +1,11 @@
 import { ReactComponent as Layer2Svg } from '../../../dioramas/ocean-diorama/layer2.svg';
 import LayerWrapper from './LayerWrapper';
-import { colorSpectrum } from '../../../theme';
 
 interface Layer2Props {
   themeLayerNumber: number;
 }
 
 const Layer2 = ({ themeLayerNumber }: Layer2Props) => {
-  const darkestColor = colorSpectrum[0];
-
   return (
     <LayerWrapper themeLayerNumber={themeLayerNumber}>
       <Layer2Svg
@@ -17,7 +14,7 @@ const Layer2 = ({ themeLayerNumber }: Layer2Props) => {
           height: '100%',
           maxWidth: '100vw',
           maxHeight: '100vh',
-          filter: `drop-shadow(rgba(15, 18, 24, 0.7) 0px 0px 4px) drop-shadow(rgba(15, 18, 24, 0.6) 0px 0px 2px)`,
+          filter: 'drop-shadow(rgba(15, 18, 24, 0.7) 0px 0px 4px) drop-shadow(rgba(15, 18, 24, 0.6) 0px 0px 2px)',
         }}
         preserveAspectRatio="xMidYMid meet"
       />

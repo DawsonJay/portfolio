@@ -1,14 +1,11 @@
 import { ReactComponent as Layer1Svg } from '../../../dioramas/ocean-diorama/layer1.svg';
 import LayerWrapper from './LayerWrapper';
-import { colorSpectrum } from '../../../theme';
 
 interface Layer1Props {
   themeLayerNumber: number;
 }
 
 const Layer1 = ({ themeLayerNumber }: Layer1Props) => {
-  const darkestColor = colorSpectrum[0];
-
   return (
     <LayerWrapper themeLayerNumber={themeLayerNumber}>
       <Layer1Svg
