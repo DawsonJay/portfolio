@@ -1,4 +1,4 @@
-import React from 'react';
+import type { ReactElement } from 'react';
 
 export type DioramaShape = 'circle' | 'rectangle';
 
@@ -40,8 +40,8 @@ export const getFrameMask = (
   outerSize: ShapeSize,
   innerSize: ShapeSize
 ): {
-  outerElement: JSX.Element;
-  innerElement: JSX.Element;
+  outerElement: ReactElement;
+  innerElement: ReactElement;
 } => {
   const centerX = outerSize.width / 2;
   const centerY = outerSize.height / 2;

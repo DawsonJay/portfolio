@@ -1,4 +1,3 @@
-import type { colorSpectrum } from '../../theme';
 
 /**
  * Maps a diorama layer number to a theme layer number.

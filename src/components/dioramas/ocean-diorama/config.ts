@@ -96,16 +96,16 @@ export const entityConfigs = [
     themeLayerMapping: {}, // Uses direct mapping (2 → 2)
     size: {
       2: 50, // Whale1 - 50% size
-    },
+    } as Record<number, number>,
     position: {
       vertical: {
         2: '-15%', // Whale1 - 15% higher than center
-      },
+      } as Record<number, string>,
     },
     animation: {
       type: 'scroll' as const,
       duration: clockworkDurations[8], // 120 seconds - slowest
-      direction: 'left', // right-to-left scroll
+      direction: 'left' as const, // right-to-left scroll
     },
     filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.4))',
   },
@@ -114,16 +114,16 @@ export const entityConfigs = [
     themeLayerMapping: {}, // Uses direct mapping (5 → 5)
     size: {
       5: 40, // Whale2 - 40% size
-    },
+    } as Record<number, number>,
     position: {
       vertical: {
         5: '15%', // Whale2 - 15% lower than center
-      },
+      } as Record<number, string>,
     },
     animation: {
       type: 'scroll' as const,
       duration: clockworkDurations[6], // 60 seconds
-      direction: 'left',
+      direction: 'left' as const,
     },
     filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.4))',
   },
@@ -132,16 +132,16 @@ export const entityConfigs = [
     themeLayerMapping: {}, // Uses direct mapping (8 → 8)
     size: {
       8: 30, // Whale3 - 30% size
-    },
+    } as Record<number, number>,
     position: {
       vertical: {
         8: '0%', // Whale3 - centered
-      },
+      } as Record<number, string>,
     },
     animation: {
       type: 'scroll' as const,
       duration: clockworkDurations[4], // 30 seconds - fastest
-      direction: 'left',
+      direction: 'left' as const,
     },
     filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.4))',
   },

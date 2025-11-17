@@ -1,4 +1,4 @@
-import type { ReactNode, ComponentType, SVGProps } from 'react';
+import type { ComponentType, SVGProps } from 'react';
 import { useThemeLayer } from '../../../hooks/useThemeLayer';
 import { useDioramaAnimation, type AnimationConfig } from '../../../hooks/useDioramaAnimation';
 
