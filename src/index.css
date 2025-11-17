@@ -36,31 +36,35 @@ body {
 }
 
 /* Whale scroll animations - right to left */
-/* Different starting positions create staggered appearance without delays */
-@keyframes scroll-whale {
+/* Slower whales (longer duration) = shorter paths, faster whales = longer paths */
+/* All start and end outside visible area, creating natural staggering */
+@keyframes scroll-whale-slow {
+  /* Slowest whale (120s): Short path - starts closer to right, ends closer to left */
   from {
-    transform: translateX(100%);
+    transform: translateX(120%);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateX(-120%);
   }
 }
 
-@keyframes scroll-whale-stagger-1 {
+@keyframes scroll-whale-medium {
+  /* Medium whale (60s): Medium path */
   from {
-    transform: translateX(66.67%);
+    transform: translateX(150%);
   }
   to {
-    transform: translateX(-133.33%);
+    transform: translateX(-150%);
   }
 }
 
-@keyframes scroll-whale-stagger-2 {
+@keyframes scroll-whale-fast {
+  /* Fastest whale (30s): Longest path - starts far right, ends far left */
   from {
-    transform: translateX(33.33%);
+    transform: translateX(200%);
   }
   to {
-    transform: translateX(-166.67%);
+    transform: translateX(-200%);
   }
 }
 
