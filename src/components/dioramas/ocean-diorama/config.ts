@@ -43,7 +43,7 @@ export const layerConfigs = [
     animation: {
       type: 'rotation' as const,
       duration: clockworkDurations[9], // 240 seconds - slowest
-      direction: 'counter-clockwise',
+      direction: 'counter-clockwise' as const,
     },
     filter: 'drop-shadow(rgba(15, 18, 24, 0.7) 0px 0px 4px) drop-shadow(rgba(15, 18, 24, 0.6) 0px 0px 2px)',
   },
@@ -53,7 +53,7 @@ export const layerConfigs = [
     animation: {
       type: 'rotation' as const,
       duration: clockworkDurations[8], // 120 seconds
-      direction: 'counter-clockwise',
+      direction: 'counter-clockwise' as const,
     },
     filter: 'drop-shadow(rgba(15, 18, 24, 0.7) 0px 0px 4px) drop-shadow(rgba(15, 18, 24, 0.6) 0px 0px 2px)',
   },
@@ -63,7 +63,7 @@ export const layerConfigs = [
     animation: {
       type: 'rotation' as const,
       duration: clockworkDurations[7], // 96 seconds
-      direction: 'counter-clockwise',
+      direction: 'counter-clockwise' as const,
     },
     filter: 'drop-shadow(rgba(15, 18, 24, 0.7) 0px 0px 4px) drop-shadow(rgba(15, 18, 24, 0.6) 0px 0px 2px)',
   },
@@ -73,7 +73,7 @@ export const layerConfigs = [
     animation: {
       type: 'rotation' as const,
       duration: clockworkDurations[6], // 60 seconds
-      direction: 'counter-clockwise',
+      direction: 'counter-clockwise' as const,
     },
     filter: 'drop-shadow(rgba(15, 18, 24, 0.7) 0px 0px 4px) drop-shadow(rgba(15, 18, 24, 0.6) 0px 0px 2px)',
   },
@@ -83,7 +83,7 @@ export const layerConfigs = [
     animation: {
       type: 'rotation' as const,
       duration: clockworkDurations[4], // 30 seconds - fastest
-      direction: 'counter-clockwise',
+      direction: 'counter-clockwise' as const,
     },
     filter: 'drop-shadow(rgba(15, 18, 24, 0.7) 0px 0px 4px) drop-shadow(rgba(15, 18, 24, 0.6) 0px 0px 2px)',
   },
