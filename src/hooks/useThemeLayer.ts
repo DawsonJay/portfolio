@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { colorSpectrum } from '../theme';
+import { useTheme } from './useTheme';
 import { mapDioramaLayerToThemeLayer, getColorForThemeLayer, calculateZIndex } from '../utils/diorama/themeLayer';
 
 interface ThemeLayerMapping {
@@ -32,6 +32,9 @@ export const useThemeLayer = ({
   mapping,
   maxLayers = 11,
 }: UseThemeLayerOptions): UseThemeLayerReturn => {
+  const theme = useTheme();
+  const colorSpectrum = theme.colors.colorSpectrum;
+
   return useMemo(() => {
     const themeLayerNumber = mapDioramaLayerToThemeLayer(dioramaLayerNumber, mapping);
     const color = getColorForThemeLayer(themeLayerNumber, colorSpectrum);
@@ -42,6 +45,6 @@ export const useThemeLayer = ({
       color,
       zIndex,
     };
-  }, [dioramaLayerNumber, mapping, maxLayers]);
+  }, [dioramaLayerNumber, mapping, maxLayers, colorSpectrum]);
 };
 

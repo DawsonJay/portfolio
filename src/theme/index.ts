@@ -59,4 +59,61 @@ export const clockworkDurations = [
   7680000, // 7680 seconds
 ] as const;
 
+/**
+ * Theme object for styled-components ThemeProvider.
+ * Provides consistent colors, fonts, and spacing across the application.
+ */
+export const theme = {
+  colors: {
+    surface: colorSpectrum[0], // '#0F1218' - Dark sleek tech surface
+    primary: colorSpectrum[0],
+    accent: colorSpectrum[1], // '#C85A3D' - Deep warm orange-red
+    colorSpectrum, // Keep the full array available for diorama system
+    // Layer colors - one source of truth for all diorama layers
+    layers: {
+      layer1: colorSpectrum[0],  // Surface layer (darkest)
+      layer2: colorSpectrum[1],
+      layer3: colorSpectrum[2],
+      layer4: colorSpectrum[3],
+      layer5: colorSpectrum[4],
+      layer6: colorSpectrum[5],
+      layer7: colorSpectrum[6],
+      layer8: colorSpectrum[7],
+      layer9: colorSpectrum[8],
+      layer10: colorSpectrum[9],
+      layer11: colorSpectrum[10], // Deepest layer (lightest)
+    },
+  },
+  fonts: {
+    body: '"IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+    heading: '"Playfair Display", serif',
+    mono: 'ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace',
+  },
+  fontSizes: {
+    xs: '0.75rem',    // 12px
+    sm: '0.875rem',   // 14px
+    base: '1rem',     // 16px
+    lg: '1.125rem',   // 18px
+    xl: '1.25rem',    // 20px
+    '2xl': '1.5rem',  // 24px
+    '3xl': '1.875rem', // 30px
+    '4xl': '2.25rem', // 36px
+  },
+  spacing: {
+    xs: '0.25rem',  // 4px
+    sm: '0.5rem',   // 8px
+    md: '1rem',     // 16px
+    lg: '1.5rem',   // 24px
+    xl: '2rem',     // 32px
+    '2xl': '3rem',  // 48px
+    '3xl': '4rem',  // 64px
+  },
+  clockworkDurations, // Keep available for diorama animations
+} as const;
+
+/**
+ * TypeScript type for the theme.
+ * Used for type-safe theme access in styled-components.
+ */
+export type Theme = typeof theme;
 
