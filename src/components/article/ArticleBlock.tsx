@@ -4,22 +4,29 @@ import { useArticleNavigation } from './ArticleNavigationContext';
 import { useArticleTitle } from './Article';
 
 const ArticleBlockContainer = styled.div`
-  position: relative;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: row;
+`;
+
+const SectionTitleColumn = styled.div`
+  width: 200px;
+  margin-right: ${(props) => props.theme.spacing.xl};
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
 `;
 
 const SectionTitle = styled.div`
-  position: absolute;
-  top: 2px;
-  right: 100%; /* Position to the left of the block */
-  margin-right: 16px; /* Increased spacing to move titles further left */
-  width: 200px; /* Match spacer width */
   text-align: right;
   white-space: nowrap;
   font-family: ${(props) => props.theme.fonts.body};
   color: ${(props) => props.theme.colors.layers.layer11};
   font-size: ${(props) => props.theme.fontSizes.base};
+  margin-top: 2px;
+`;
+
+const ContentColumn = styled.div`
+  flex: 1;
 `;
 
 interface ArticleBlockProps {
@@ -53,8 +60,12 @@ const ArticleBlock = ({ children, sectionTitle }: ArticleBlockProps) => {
 
   return (
     <ArticleBlockContainer ref={containerRef} data-section-id={sectionId}>
-      {children}
-      {sectionTitle && <SectionTitle>{sectionTitle}</SectionTitle>}
+      <SectionTitleColumn>
+        {sectionTitle && <SectionTitle>{sectionTitle}</SectionTitle>}
+      </SectionTitleColumn>
+      <ContentColumn>
+        {children}
+      </ContentColumn>
     </ArticleBlockContainer>
   );
 };

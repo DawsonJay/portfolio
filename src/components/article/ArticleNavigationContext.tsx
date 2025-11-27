@@ -136,12 +136,15 @@ export const ArticleNavigationProvider = ({ children }: ArticleNavigationProvide
     const sectionElements = document.querySelectorAll('[data-section-id]');
     if (sectionElements.length === 0) return;
 
-    const containerRect = container.getBoundingClientRect();
-    const containerTop = containerRect.top;
-    
     let closestId: string | null = null;
     let closestDistance = Infinity;
     const threshold = 100; // Consider sections within 100px of top
+
+    // Batch getBoundingClientRect calls to minimize layout thrashing
+    // Read all positions first, then calculate
+    const containerRect = container.getBoundingClientRect();
+    const containerTop = containerRect.top;
+    const positions: Array<{ id: string; distance: number }> = [];
 
     sectionElements.forEach((element) => {
       const sectionId = element.getAttribute('data-section-id');
@@ -149,23 +152,25 @@ export const ArticleNavigationProvider = ({ children }: ArticleNavigationProvide
 
       const rect = element.getBoundingClientRect();
       const distance = rect.top - containerTop;
+      positions.push({ id: sectionId, distance });
+    });
 
-      // Prefer sections that are at or just below the top (positive distance, but small)
-      // Also consider sections slightly above (negative but close to 0)
+    // Find closest section
+    positions.forEach(({ id, distance }) => {
       if (Math.abs(distance) < threshold && Math.abs(distance) < Math.abs(closestDistance)) {
         closestDistance = distance;
-        closestId = sectionId;
+        closestId = id;
       } else if (distance >= 0 && distance < closestDistance && closestDistance >= threshold) {
-        // If no section is within threshold, use the closest one below
         closestDistance = distance;
-        closestId = sectionId;
+        closestId = id;
       }
     });
 
-    if (closestId) {
+    // Only update if section changed to avoid unnecessary re-renders
+    if (closestId && closestId !== activeSectionId) {
       setActiveSectionId(closestId);
     }
-  }, []);
+  }, [activeSectionId]);
 
   const value: ArticleNavigationContextValue = {
     sections,

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import TitleBlock from './TitleBlock';
 
 const ArticleContainer = styled.article`
-  max-width: 75ch;
+  max-width: 85ch;
   margin: 0 auto;
   padding: ${(props) => props.theme.spacing.xl} ${(props) => props.theme.spacing.md};
   font-family: ${(props) => props.theme.fonts.body};

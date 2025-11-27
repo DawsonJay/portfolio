@@ -3,10 +3,16 @@ import styled from 'styled-components';
 import { useArticleNavigation } from './article/ArticleNavigationContext';
 
 const ReaderContainer = styled.div`
-  height: 100vh;
+  height: 100%;
   width: 100%;
   overflow-y: auto;
-  scroll-snap-type: y mandatory;
+  padding-top: ${(props) => props.theme.spacing['3xl']};
+  
+  &::after {
+    content: '';
+    display: block;
+    height: calc(100vh - ${(props) => props.theme.spacing['3xl']});
+  }
 `;
 
 interface ReaderProps {
@@ -19,7 +25,7 @@ const Reader = ({ children }: ReaderProps) => {
 
   useEffect(() => {
     if (containerRef.current) {
-      setScrollContainerRef(containerRef);
+      setScrollContainerRef(containerRef as React.RefObject<HTMLElement>);
     }
   }, [setScrollContainerRef]);
 
@@ -28,18 +34,28 @@ const Reader = ({ children }: ReaderProps) => {
     if (!container) return;
 
     let scrollTimeout: NodeJS.Timeout;
+    let rafId: number | null = null;
     
     const handleScroll = () => {
       // Clear previous timeout
       clearTimeout(scrollTimeout);
       
-      // Update immediately on scroll
-      updateActiveSectionFromScroll();
+      // Cancel any pending animation frame
+      if (rafId !== null) {
+        cancelAnimationFrame(rafId);
+      }
       
-      // Also update after scroll ends (for scroll snapping)
+      // Update immediately using requestAnimationFrame for smooth updates
+      // This batches DOM reads with the browser's render cycle
+      rafId = requestAnimationFrame(() => {
+        updateActiveSectionFromScroll();
+        rafId = null;
+      });
+      
+      // Also update after scroll ends to catch final position
       scrollTimeout = setTimeout(() => {
         updateActiveSectionFromScroll();
-      }, 150);
+      }, 100);
     };
 
     container.addEventListener('scroll', handleScroll, { passive: true });
@@ -50,6 +66,9 @@ const Reader = ({ children }: ReaderProps) => {
     return () => {
       container.removeEventListener('scroll', handleScroll);
       clearTimeout(scrollTimeout);
+      if (rafId !== null) {
+        cancelAnimationFrame(rafId);
+      }
     };
   }, [updateActiveSectionFromScroll]);
 
