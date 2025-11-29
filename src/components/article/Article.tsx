@@ -3,9 +3,11 @@ import styled from 'styled-components';
 import TitleBlock from './TitleBlock';
 
 const ArticleContainer = styled.article`
-  max-width: 85ch;
+  width: 100%;
+  max-width: 800px;
   margin: 0 auto;
   padding: ${(props) => props.theme.spacing.xl} ${(props) => props.theme.spacing.md};
+  box-sizing: border-box;
   font-family: ${(props) => props.theme.fonts.body};
   color: ${(props) => props.theme.colors.layers.layer11};
 `;

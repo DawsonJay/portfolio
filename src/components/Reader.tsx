@@ -6,7 +6,21 @@ const ReaderContainer = styled.div`
   height: 100%;
   width: 100%;
   overflow-y: auto;
+  overflow-x: hidden;
   padding-top: ${(props) => props.theme.spacing['3xl']};
+  padding-left: ${(props) => props.theme.spacing.xl};
+  padding-right: ${(props) => props.theme.spacing.xl};
+  padding-bottom: ${(props) => props.theme.spacing.xl};
+  box-sizing: border-box;
+  
+  @media (max-width: 1350px) {
+    padding-right: ${(props) => props.theme.spacing.xl};
+  }
+  
+  @media (max-width: 600px) {
+    padding-left: ${(props) => props.theme.spacing.md};
+    padding-right: ${(props) => props.theme.spacing.md};
+  }
   
   &::after {
     content: '';

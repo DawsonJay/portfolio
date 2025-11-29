@@ -6,6 +6,12 @@ import { useArticleTitle } from './Article';
 const ArticleBlockContainer = styled.div`
   display: flex;
   flex-direction: row;
+  max-width: 100%;
+  box-sizing: border-box;
+  
+  @media (max-width: 1350px) {
+    justify-content: center;
+  }
 `;
 
 const SectionTitleColumn = styled.div`
@@ -14,6 +20,11 @@ const SectionTitleColumn = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
+  flex-shrink: 0;
+
+  @media (max-width: 1350px) {
+    display: none;
+  }
 `;
 
 const SectionTitle = styled.div`
@@ -27,6 +38,13 @@ const SectionTitle = styled.div`
 
 const ContentColumn = styled.div`
   flex: 1;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  
+  @media (max-width: 1350px) {
+    flex: 1;
+  }
 `;
 
 interface ArticleBlockProps {

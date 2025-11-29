@@ -11,6 +11,10 @@ const ContentsPanelContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 1000px) {
+    display: none;
+  }
 `;
 
 const ContentsMenuWrapper = styled.div`
@@ -56,7 +60,7 @@ const SectionTitle = styled.div<{ $isActive: boolean }>`
 `;
 
 const ArticleGroup = styled.div`
-  margin-bottom: ${(props) => props.theme.spacing.lg};
+  margin-bottom: ${(props) => props.theme.spacing.sm};
   width: auto;
   display: flex;
   flex-direction: column;

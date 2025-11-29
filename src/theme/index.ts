@@ -107,6 +107,7 @@ export const theme = {
     xl: '2rem',     // 32px
     '2xl': '3rem',  // 48px
     '3xl': '4rem',  // 64px
+    '4xl': '5rem',  // 80px
   },
   clockworkDurations, // Keep available for diorama animations
 } as const;
