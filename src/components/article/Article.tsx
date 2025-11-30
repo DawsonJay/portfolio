@@ -35,7 +35,7 @@ const Article = ({ children }: ArticleProps) => {
       return;
     }
     
-    const childElement = child as ReactElement;
+    const childElement = child as ReactElement<{ title?: string }>;
     if (childElement.type === TitleBlock && !articleTitle) {
       articleTitle = childElement.props.title || null;
     }

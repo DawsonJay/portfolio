@@ -20,8 +20,8 @@ interface ArticleNavigationContextValue {
   scrollToSection: (id: string) => void;
   scrollToArticle: (id: string) => void;
   setActiveSection: (id: string | null) => void;
-  scrollContainerRef: React.RefObject<HTMLElement> | null;
-  setScrollContainerRef: (ref: React.RefObject<HTMLElement>) => void;
+  scrollContainerRef: React.RefObject<HTMLElement | null>;
+  setScrollContainerRef: (ref: React.RefObject<HTMLElement | null>) => void;
   updateSectionPosition: (id: string, distance: number) => void;
   updateActiveSectionFromScroll: () => void;
 }
@@ -103,7 +103,7 @@ export const ArticleNavigationProvider = ({ children }: ArticleNavigationProvide
     }
   }, []);
 
-  const setScrollContainerRef = useCallback((ref: React.RefObject<HTMLElement>) => {
+  const setScrollContainerRef = useCallback((ref: React.RefObject<HTMLElement | null>) => {
     scrollContainerRef.current = ref.current;
   }, []);
 
