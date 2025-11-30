@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
 const NavBarContainer = styled.nav`
@@ -9,8 +9,11 @@ const NavBarContainer = styled.nav`
   padding: ${(props) => props.theme.spacing.md} ${(props) => props.theme.spacing.xl};
   background-color: ${(props) => props.theme.colors.surface};
   border-bottom: 1px solid ${(props) => props.theme.colors.layers.layer2};
-  flex-shrink: 0;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 
   @media (max-width: 640px) {
     justify-content: flex-end;
@@ -38,6 +41,16 @@ const NavLink = styled(Link)`
   &:hover {
     color: ${(props) => props.theme.colors.accent};
   }
+`;
+
+const ActiveNavLink = styled.span`
+  font-family: ${(props) => props.theme.fonts.body};
+  font-size: ${(props) => props.theme.fontSizes.base};
+  color: ${(props) => props.theme.colors.layers.layer11};
+  text-decoration: none;
+  background-color: ${(props) => props.theme.colors.accent};
+  padding: ${(props) => props.theme.spacing.xs} ${(props) => props.theme.spacing.sm};
+  border-radius: 4px;
 `;
 
 const RightLink = styled(NavLink)`
@@ -129,6 +142,16 @@ const MobileNavLink = styled(Link)`
   }
 `;
 
+const ActiveMobileNavLink = styled.span`
+  font-family: ${(props) => props.theme.fonts.body};
+  font-size: ${(props) => props.theme.fontSizes.base};
+  color: ${(props) => props.theme.colors.layers.layer11};
+  text-decoration: none;
+  padding: ${(props) => props.theme.spacing.sm} ${(props) => props.theme.spacing.sm};
+  background-color: ${(props) => props.theme.colors.accent};
+  border-radius: 4px;
+`;
+
 const MobileRightLink = styled(MobileNavLink)`
   color: ${(props) => props.theme.colors.accent};
   border-top: 1px solid ${(props) => props.theme.colors.layers.layer2};
@@ -142,6 +165,7 @@ const MobileRightLink = styled(MobileNavLink)`
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -151,26 +175,73 @@ const NavBar = () => {
     setIsMenuOpen(false);
   };
 
+  const isActive = (path: string) => {
+    if (path === '/projects') {
+      return location.pathname === '/projects';
+    }
+    return location.pathname === path;
+  };
+
   return (
     <NavBarContainer>
       <LeftLinks>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/projects">Projects</NavLink>
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/immigration">Immigration</NavLink>
+        {isActive('/') ? (
+          <ActiveNavLink>Home</ActiveNavLink>
+        ) : (
+          <NavLink to="/">Home</NavLink>
+        )}
+        {isActive('/projects') ? (
+          <ActiveNavLink>Projects</ActiveNavLink>
+        ) : (
+          <NavLink to="/projects">Projects</NavLink>
+        )}
+        {isActive('/about') ? (
+          <ActiveNavLink>About</ActiveNavLink>
+        ) : (
+          <NavLink to="/about">About</NavLink>
+        )}
+        {isActive('/immigration') ? (
+          <ActiveNavLink>Immigration</ActiveNavLink>
+        ) : (
+          <NavLink to="/immigration">Immigration</NavLink>
+        )}
       </LeftLinks>
-      <RightLink to="/contact">Let's connect</RightLink>
+      {isActive('/contact') ? (
+        <ActiveNavLink>Let's connect</ActiveNavLink>
+      ) : (
+        <RightLink to="/contact">Let's connect</RightLink>
+      )}
       <BurgerButton onClick={toggleMenu} aria-label="Toggle menu">
         <BurgerLine $isOpen={isMenuOpen} />
         <BurgerLine $isOpen={isMenuOpen} />
         <BurgerLine $isOpen={isMenuOpen} />
       </BurgerButton>
       <MobileMenu $isOpen={isMenuOpen}>
-        <MobileNavLink to="/" onClick={closeMenu}>Home</MobileNavLink>
-        <MobileNavLink to="/projects" onClick={closeMenu}>Projects</MobileNavLink>
-        <MobileNavLink to="/about" onClick={closeMenu}>About</MobileNavLink>
-        <MobileNavLink to="/immigration" onClick={closeMenu}>Immigration</MobileNavLink>
-        <MobileRightLink to="/contact" onClick={closeMenu}>Let's connect</MobileRightLink>
+        {isActive('/') ? (
+          <ActiveMobileNavLink>Home</ActiveMobileNavLink>
+        ) : (
+          <MobileNavLink to="/" onClick={closeMenu}>Home</MobileNavLink>
+        )}
+        {isActive('/projects') ? (
+          <ActiveMobileNavLink>Projects</ActiveMobileNavLink>
+        ) : (
+          <MobileNavLink to="/projects" onClick={closeMenu}>Projects</MobileNavLink>
+        )}
+        {isActive('/about') ? (
+          <ActiveMobileNavLink>About</ActiveMobileNavLink>
+        ) : (
+          <MobileNavLink to="/about" onClick={closeMenu}>About</MobileNavLink>
+        )}
+        {isActive('/immigration') ? (
+          <ActiveMobileNavLink>Immigration</ActiveMobileNavLink>
+        ) : (
+          <MobileNavLink to="/immigration" onClick={closeMenu}>Immigration</MobileNavLink>
+        )}
+        {isActive('/contact') ? (
+          <ActiveMobileNavLink>Let's connect</ActiveMobileNavLink>
+        ) : (
+          <MobileRightLink to="/contact" onClick={closeMenu}>Let's connect</MobileRightLink>
+        )}
       </MobileMenu>
     </NavBarContainer>
   );

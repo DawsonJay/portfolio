@@ -68,6 +68,7 @@ export const theme = {
     surface: colorSpectrum[0], // '#0F1218' - Dark sleek tech surface
     primary: colorSpectrum[0],
     accent: colorSpectrum[1], // '#C85A3D' - Deep warm orange-red
+    contentsPanelBackground: '#0A0D12', // Darker background for contents panel sidebar
     colorSpectrum, // Keep the full array available for diorama system
     // Layer colors - one source of truth for all diorama layers
     layers: {

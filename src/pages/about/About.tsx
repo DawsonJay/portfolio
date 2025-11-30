@@ -1,4 +1,4 @@
-import ArticleReader from '../../components/ArticleReader';
+import ArticleReader from '../../components/article/ArticleReader';
 import BinaryStars from './BinaryStars';
 import ArtToTechnology from './ArtToTechnology';
 import TeamBuilding from './TeamBuilding';

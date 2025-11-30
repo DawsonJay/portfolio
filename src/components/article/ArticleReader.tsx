@@ -1,9 +1,10 @@
 import { type ReactNode } from 'react';
 import styled from 'styled-components';
 import Reader from './Reader';
-import ContentsPanel from './article/ContentsPanel';
-import NavBar from './article/NavBar';
-import { ArticleNavigationProvider } from './article/ArticleNavigationContext';
+import ContentsPanel from './ContentsPanel';
+import MobileContentsBar from './MobileContentsBar';
+import NavBar from './NavBar';
+import { ArticleNavigationProvider } from './ArticleNavigationContext';
 
 const ArticleReaderContainer = styled.div`
   width: 100vw;
@@ -28,7 +29,7 @@ const ReaderContent = styled.div`
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding-top: ${(props) => props.theme.spacing.md};
+  padding-top: calc(64px + ${(props) => props.theme.spacing.md});
 `;
 
 interface ArticleReaderProps {
@@ -46,6 +47,7 @@ const ArticleReader = ({ children }: ArticleReaderProps) => {
             <Reader>{children}</Reader>
           </ReaderContent>
         </ReaderWrapper>
+        <MobileContentsBar />
       </ArticleReaderContainer>
     </ArticleNavigationProvider>
   );

@@ -1,39 +1,7 @@
-import { type ReactNode, useRef, useEffect } from 'react';
-import styled from 'styled-components';
-import { useArticleNavigation } from './article/ArticleNavigationContext';
+import { useRef, useEffect } from 'react';
+import { useArticleNavigation } from '../ArticleNavigationContext';
 
-const ReaderContainer = styled.div`
-  height: 100%;
-  width: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding-top: ${(props) => props.theme.spacing['3xl']};
-  padding-left: ${(props) => props.theme.spacing.xl};
-  padding-right: ${(props) => props.theme.spacing.xl};
-  padding-bottom: ${(props) => props.theme.spacing.xl};
-  box-sizing: border-box;
-  
-  @media (max-width: 1350px) {
-    padding-right: ${(props) => props.theme.spacing.xl};
-  }
-  
-  @media (max-width: 600px) {
-    padding-left: ${(props) => props.theme.spacing.md};
-    padding-right: ${(props) => props.theme.spacing.md};
-  }
-  
-  &::after {
-    content: '';
-    display: block;
-    height: calc(100vh - ${(props) => props.theme.spacing['3xl']});
-  }
-`;
-
-interface ReaderProps {
-  children?: ReactNode;
-}
-
-const Reader = ({ children }: ReaderProps) => {
+export const useScrollTracking = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { setScrollContainerRef, updateActiveSectionFromScroll } = useArticleNavigation();
 
@@ -86,8 +54,6 @@ const Reader = ({ children }: ReaderProps) => {
     };
   }, [updateActiveSectionFromScroll]);
 
-  return <ReaderContainer ref={containerRef}>{children}</ReaderContainer>;
+  return containerRef;
 };
-
-export default Reader;
 

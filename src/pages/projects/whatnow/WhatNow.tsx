@@ -1,4 +1,4 @@
-import ArticleReader from '../../../components/ArticleReader';
+import ArticleReader from '../../../components/article/ArticleReader';
 import ProjectInception from './ProjectInception';
 import TechnicalArchitecture from './TechnicalArchitecture';
 import ChallengesAndSolutions from './ChallengesAndSolutions';
