@@ -499,7 +499,7 @@ const Contact = () => {
           <SuccessMessage>
             <SuccessTitle>Message Sent!</SuccessTitle>
             <SuccessText>
-              Send me a message and I'll get back to you within <Highlight>12 hours</Highlight>.
+              Thanks for getting in touch, I'll get back to you within <Highlight>12 hours</Highlight>.
             </SuccessText>
             <CenteredButton 
               type="button" 
