@@ -8,7 +8,6 @@ import Project from './pages/Project';
 import About from './pages/about/About';
 import Immigration from './pages/immigration/Immigration';
 import Contact from './pages/contact/Contact';
-import SvgPlayground from './pages/SvgPlayground';
 
 const AppContainer = styled.div`
   width: 100%;
@@ -29,7 +28,6 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/immigration" element={<Immigration />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/svg-playground" element={<SvgPlayground />} />
           </Routes>
         </BrowserRouter>
       </AppContainer>

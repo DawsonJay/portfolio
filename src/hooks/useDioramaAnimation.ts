@@ -11,6 +11,7 @@ export interface AnimationConfig {
   timingFunction?: string;
   customKeyframe?: string;
   customStyle?: React.CSSProperties;
+  transformOrigin?: string;
 }
 
 interface UseDioramaAnimationReturn {

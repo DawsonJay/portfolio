@@ -110,6 +110,9 @@ export const theme = {
     '3xl': '4rem',  // 64px
     '4xl': '5rem',  // 80px
   },
+  breakpoints: {
+    twoPanelMobile: '1060px', // Breakpoint for two-panel layout mobile mode
+  },
   clockworkDurations, // Keep available for diorama animations
 } as const;
 

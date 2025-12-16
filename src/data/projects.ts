@@ -6,7 +6,8 @@ export interface Project {
   route: string;
   status: 'complete' | 'in-progress';
   progress?: number;
-  tags: string[];
+  tags: string[]; // Full list of all tags
+  previewTags: string[]; // Most important tags for menu preview (max 7)
   category: 'ai-ml' | 'robotics' | 'hardware' | 'enterprise';
 }
 
@@ -18,7 +19,26 @@ export const projects: Project[] = [
     description: 'Self-training contextual bandits that learn from user interactions',
     route: 'what-now',
     status: 'complete',
-    tags: ['AI/ML', 'React', 'TypeScript', 'Python'],
+    previewTags: ['AI/ML', 'React', 'TypeScript', 'Python', 'AWS', 'TensorFlow', 'Redis'],
+    tags: [
+      // Languages
+      'Python',
+      'TypeScript',
+      'JavaScript',
+      // Technologies
+      'React',
+      'Redux',
+      'AWS',
+      'Docker',
+      'Redis',
+      'PostgreSQL',
+      'GraphQL',
+      'Git',
+      'Linux',
+      // AI/ML
+      'AI/ML',
+      'TensorFlow',
+    ],
     category: 'ai-ml',
   },
   {
@@ -28,8 +48,21 @@ export const projects: Project[] = [
     description: 'Hardware + software integration for autonomous underwater exploration',
     route: 'atlantis',
     status: 'in-progress',
-    progress: 60,
-    tags: ['Robotics', 'Hardware', 'Embedded Systems', 'Python'],
+    progress: 20,
+    previewTags: ['Robotics', 'Hardware', 'Embedded Systems', 'Python', 'Raspberry Pi', 'C++', 'Linux'],
+    tags: [
+      // Languages
+      'Python',
+      'C++',
+      // Technologies
+      'Linux',
+      'Git',
+      // Domains
+      'Robotics',
+      'Hardware',
+      'Embedded Systems',
+      'Raspberry Pi',
+    ],
     category: 'robotics',
   },
   {
@@ -40,7 +73,13 @@ export const projects: Project[] = [
     route: 'lunascope',
     status: 'in-progress',
     progress: 40,
-    tags: ['Hardware', 'Creative Engineering', 'Sustainability'],
+    previewTags: ['Hardware', 'Creative Engineering', 'Sustainability'],
+    tags: [
+      // Domains
+      'Hardware',
+      'Creative Engineering',
+      'Sustainability',
+    ],
     category: 'hardware',
   },
   {
@@ -50,8 +89,20 @@ export const projects: Project[] = [
     description: 'Professional work on enterprise-level component architecture',
     route: 'nexus',
     status: 'in-progress',
-    progress: 80,
-    tags: ['Enterprise', 'React', 'TypeScript', 'Architecture'],
+    progress: 60,
+    previewTags: ['Enterprise', 'React', 'TypeScript', 'Architecture', 'Systems', 'JavaScript', 'Git'],
+    tags: [
+      // Languages
+      'TypeScript',
+      'JavaScript',
+      // Technologies
+      'React',
+      'Git',
+      // Domains
+      'Enterprise',
+      'Architecture',
+      'Systems',
+    ],
     category: 'enterprise',
   },
 ];

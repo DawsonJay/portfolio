@@ -30,21 +30,31 @@ const DioramaLayer = ({
 
   const { animationStyle } = useDioramaAnimation(layerConfig.animation);
 
+  // Extract transformOrigin if present - apply to wrapper div for proper rotation
+  const { transformOrigin, ...restAnimationStyle } = animationStyle;
+  const isRotating = layerConfig.animation?.type === 'rotation';
+  const wrapperStyle: React.CSSProperties = {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    zIndex,
+    color,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    ...restAnimationStyle,
+  };
+  
+  if (transformOrigin) {
+    wrapperStyle.transformOrigin = transformOrigin;
+  }
+
   return (
-    <div
-      style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        zIndex,
-        color,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        ...animationStyle,
-      }}
+    <div 
+      style={wrapperStyle}
+      className={isRotating ? 'rotating-layer' : undefined}
     >
       <SvgComponent
         style={{

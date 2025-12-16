@@ -37,10 +37,17 @@ export const getAnimationStyle = (config: AnimationConfig): React.CSSProperties 
       ? 'rotate-clockwise' 
       : 'rotate-counter-clockwise';
     
-    return {
+    const style: React.CSSProperties = {
       animation: `${keyframeName} ${duration}ms ${timingFunction} infinite`,
       animationDelay: `${delay}ms`,
     };
+    
+    // Add transform-origin if specified in config
+    if (config.transformOrigin) {
+      style.transformOrigin = config.transformOrigin;
+    }
+    
+    return style;
   }
 
   if (config.type === 'scroll') {

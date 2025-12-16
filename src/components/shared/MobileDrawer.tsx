@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, type ReactNode } from 'react';
 import styled from 'styled-components';
-import ContentsMenu from './ContentsMenu';
 
 const MobileDrawerContainer = styled.div<{ $isOpen: boolean }>`
   position: fixed;
@@ -15,7 +14,7 @@ const MobileDrawerContainer = styled.div<{ $isOpen: boolean }>`
   transform: ${(props) => props.$isOpen ? 'translateY(0)' : 'translateY(calc(100% - 36px))'};
   overflow: hidden;
 
-  @media (max-width: 1000px) {
+  @media (max-width: ${(props) => props.theme.breakpoints.twoPanelMobile}) {
     display: flex;
   }
 `;
@@ -32,14 +31,27 @@ const MobileBarContainer = styled.div`
   -webkit-tap-highlight-color: transparent;
 `;
 
-const MenuPanel = styled.div`
+const MenuPanel = styled.div<{ $menuBackgroundColor?: string }>`
   flex: 1;
-  background-color: ${(props) => props.theme.colors.surface};
+  background-color: ${(props) => {
+    if (props.$menuBackgroundColor) {
+      // If it starts with '#', it's a hex color - use it directly
+      if (props.$menuBackgroundColor.startsWith('#')) {
+        return props.$menuBackgroundColor;
+      }
+      // Otherwise, treat it as a theme path like 'colors.contentsPanelBackground'
+      const keys = props.$menuBackgroundColor.split('.');
+      let value: any = props.theme;
+      for (const key of keys) {
+        value = value?.[key];
+      }
+      return value || props.theme.colors.surface;
+    }
+    return props.theme.colors.surface;
+  }};
   overflow-y: auto;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: ${(props) => props.theme.spacing.xl};
+  flex-direction: column;
   box-sizing: border-box;
   min-height: 0;
 `;
@@ -52,8 +64,19 @@ const CaretIcon = styled.svg<{ $isOpen: boolean }>`
   fill: ${(props) => props.theme.colors.layers.layer11};
 `;
 
-const MobileContentsBar = () => {
+interface MobileDrawerProps {
+  children: ReactNode;
+  menuBackgroundColor?: string; // Can be a hex color or theme path like 'colors.contentsPanelBackground'
+  onItemClick?: () => void; // Callback to close drawer when menu items are clicked
+}
+
+const MobileDrawer = ({ children, menuBackgroundColor, onItemClick }: MobileDrawerProps) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleItemClick = () => {
+    setIsOpen(false);
+    onItemClick?.();
+  };
 
   useEffect(() => {
     // Prevent body scroll when drawer is open
@@ -70,10 +93,6 @@ const MobileContentsBar = () => {
 
   const handleBarClick = () => {
     setIsOpen(!isOpen);
-  };
-
-  const handleItemClick = () => {
-    setIsOpen(false);
   };
 
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -94,12 +113,14 @@ const MobileContentsBar = () => {
           <path d="M7 10l5 5 5-5z" />
         </CaretIcon>
       </MobileBarContainer>
-      <MenuPanel onClick={handleBackdropClick}>
-        <ContentsMenu onItemClick={handleItemClick} />
+      <MenuPanel $menuBackgroundColor={menuBackgroundColor} onClick={handleBackdropClick}>
+        {React.isValidElement(children)
+          ? React.cloneElement(children as React.ReactElement, { onItemClick: handleItemClick })
+          : children}
       </MenuPanel>
     </MobileDrawerContainer>
   );
 };
 
-export default MobileContentsBar;
+export default MobileDrawer;
 

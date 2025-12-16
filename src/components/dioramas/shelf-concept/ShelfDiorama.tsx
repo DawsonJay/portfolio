@@ -1,27 +1,55 @@
-import BackgroundLeaves1 from './BackgroundLeaves1';
-import BackgroundLeaves2 from './BackgroundLeaves2';
+import styled from 'styled-components';
 import Shelf from './Shelf';
-import Highlights1 from './Highlights1';
-import Highlights2 from './Highlights2';
-import Supports from './Supports';
-import DioramaContainer from '../shared/DioramaContainer';
-import { dioramaSettings } from './config';
+import Lightbulb from './Lightbulb';
+
+const Container = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const ShelfWrapper = styled.div`
+  position: relative;
+  width: 800px;
+  height: 100px;
+  overflow: visible;
+`;
+
+const LightbulbWrapper = styled.div<{ left: string }>`
+  position: absolute;
+  top: -60%;
+  left: ${(props) => props.left};
+  transition: transform 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    animation: jiggle 1.5s ease-in-out infinite;
+  }
+
+  &:hover .rotating-layer svg {
+    animation: brightness-pulse 2s ease-in-out infinite;
+  }
+`;
 
 const ShelfDiorama = () => {
   return (
-    <DioramaContainer
-      size={dioramaSettings.size}
-      shape={dioramaSettings.shape}
-      backgroundColor={dioramaSettings.backgroundColor}
-      overflow="visible"
-    >
-      <Supports />
-      <BackgroundLeaves1 />
-      <BackgroundLeaves2 />
-      <Shelf />
-      <Highlights1 />
-      <Highlights2 />
-    </DioramaContainer>
+    <Container>
+      <ShelfWrapper>
+        <Shelf />
+        <LightbulbWrapper left="10%">
+          <Lightbulb />
+        </LightbulbWrapper>
+        <LightbulbWrapper left="40%">
+          <Lightbulb />
+        </LightbulbWrapper>
+        <LightbulbWrapper left="70%">
+          <Lightbulb />
+        </LightbulbWrapper>
+      </ShelfWrapper>
+    </Container>
   );
 };
 

@@ -17,7 +17,7 @@ const ReaderContainer = styled.div`
     padding-right: ${(props) => props.theme.spacing.xl};
   }
   
-  @media (max-width: 1000px) {
+  @media (max-width: ${(props) => props.theme.breakpoints.twoPanelMobile}) {
     padding-bottom: calc(${(props) => props.theme.spacing.xl} + 36px); /* Account for mobile bar */
   }
   
@@ -29,7 +29,7 @@ const ReaderContainer = styled.div`
   &::after {
     content: '';
     display: block;
-    height: calc(100vh - ${(props) => props.theme.spacing['3xl']});
+    height: calc(100% - ${(props) => props.theme.spacing['3xl']});
   }
 `;
 

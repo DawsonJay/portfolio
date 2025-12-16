@@ -1,74 +1,106 @@
+import { clockworkDurations } from '../../../theme';
+import type { AnimationConfig } from '../../../hooks/useDioramaAnimation';
 import type { ShapeSize, DioramaShape } from '../../../utils/diorama/shapes';
 
 /**
- * Shelf Diorama Configuration
+ * Shelf Concept Diorama Configuration
  * 
- * Defines the structure and settings for the shelf diorama.
+ * Defines the structure, layers, and settings for the shelf with lightbulb diorama.
  */
 
-// Diorama settings
-// Using A4 aspect ratio (595.2:841.92 ≈ 0.707) but scaled down for display
-// Keeping full viewBox for alignment purposes
+// Diorama settings - based on shelf viewBox (448.56 x 54.96)
+// Scaled to a reasonable display size
 export const dioramaSettings = {
-  size: { width: 800, height: 1132 } as ShapeSize, // Scaled A4 (maintains aspect ratio) - 2x size
+  size: { width: 800, height: 100 } as ShapeSize, // Scaled proportionally
   shape: 'rectangle' as DioramaShape,
-  backgroundColor: 'transparent', // Transparent background - no white
+  backgroundColor: 'transparent',
   frameOffset: 0,
-  frameOuterSize: { width: 800, height: 1132 } as ShapeSize,
-  frameInnerSize: { width: 800, height: 1132 } as ShapeSize,
+  frameOuterSize: { width: 800, height: 100 } as ShapeSize,
+  frameInnerSize: { width: 800, height: 100 } as ShapeSize,
 };
 
 // Theme layer mapping for layers
-// Maps diorama layer numbers (1-6) to theme layer numbers (2-7)
-// Starting from second darkest (layer2) and going lighter
-// Backmost (supports) is darkest, frontmost (highlights2) is lightest
+// Shelf layers (back) use darker colors, lightbulb layers (front) use lighter colors
 export const layerThemeMapping: Record<number, number> = {
-  1: 2,  // supports → theme layer 2 (second darkest - backmost)
-  2: 3,  // background-leaves-1 → theme layer 3
-  3: 4,  // background-leaves-2 → theme layer 4
-  4: 5,  // shelf → theme layer 5
-  5: 6,  // highlights-1 → theme layer 6
-  6: 7,  // highlights-2 → theme layer 7 (lightest - frontmost)
+  1: 2,  // Shelf layer 1 (backmost) → theme layer 2 (second darkest)
+  2: 3,  // Shelf layer 2 → theme layer 3
+  3: 2,  // Lightbulb layer 1 (topmost) → theme layer 2 (matches shelf layer 1)
+  4: 5,  // Lightbulb layer 2 → theme layer 5
+  5: 6,  // Lightbulb layer 3 → theme layer 6
+  6: 7,  // Lightbulb layer 4 → theme layer 7
+  7: 8,  // Lightbulb layer 5 → theme layer 8
+  8: 9,  // Lightbulb layer 6 (lowest) → theme layer 9 (lighter)
 };
 
-// Layer configurations - ordered from back to front
-// dioramaLayerNumber controls z-index (higher = in front)
+// Layer configurations
 export const layerConfigs = [
   {
-    dioramaLayerNumber: 6, // supports (backmost, but highest z-index to appear in front visually)
+    dioramaLayerNumber: 1, // Shelf layer 1
     themeLayerMapping: layerThemeMapping,
-    animation: null,
+    animation: null as AnimationConfig | null,
     filter: 'drop-shadow(rgba(15, 18, 24, 0.7) 0px 0px 2px) drop-shadow(rgba(15, 18, 24, 0.6) 0px 0px 1px)',
   },
   {
-    dioramaLayerNumber: 5, // background-leaves-1
+    dioramaLayerNumber: 2, // Shelf layer 2
     themeLayerMapping: layerThemeMapping,
-    animation: null,
+    animation: null as AnimationConfig | null,
     filter: 'drop-shadow(rgba(15, 18, 24, 0.7) 0px 0px 2px) drop-shadow(rgba(15, 18, 24, 0.6) 0px 0px 1px)',
   },
   {
-    dioramaLayerNumber: 4, // background-leaves-2
+    dioramaLayerNumber: 3, // Lightbulb layer 1 (topmost)
     themeLayerMapping: layerThemeMapping,
-    animation: null,
-    filter: 'drop-shadow(rgba(15, 18, 24, 0.7) 0px 0px 2px) drop-shadow(rgba(15, 18, 24, 0.6) 0px 0px 1px)',
+    animation: null as AnimationConfig | null,
+    filter: undefined,
   },
   {
-    dioramaLayerNumber: 3, // shelf
+    dioramaLayerNumber: 4, // Lightbulb layer 2
     themeLayerMapping: layerThemeMapping,
-    animation: null,
-    filter: 'drop-shadow(rgba(15, 18, 24, 0.7) 0px 0px 2px) drop-shadow(rgba(15, 18, 24, 0.6) 0px 0px 1px)',
+    animation: {
+      type: 'rotation' as const,
+      duration: 5000, // 5 seconds for testing
+      direction: 'counter-clockwise' as const,
+      transformOrigin: '37% 51%', // Pivot point left and up from center
+    },
+    filter: undefined,
   },
   {
-    dioramaLayerNumber: 2, // highlights-1
+    dioramaLayerNumber: 5, // Lightbulb layer 3
     themeLayerMapping: layerThemeMapping,
-    animation: null,
-    filter: 'drop-shadow(rgba(15, 18, 24, 0.7) 0px 0px 2px) drop-shadow(rgba(15, 18, 24, 0.6) 0px 0px 1px)',
+    animation: {
+      type: 'rotation' as const,
+      duration: clockworkDurations[7], // 96 seconds
+      direction: 'counter-clockwise' as const,
+      transformOrigin: '37% 51%', // Pivot point left and up from center
+    },
+    filter: undefined,
   },
   {
-    dioramaLayerNumber: 1, // highlights-2 (frontmost, but lowest z-index to appear in back visually)
+    dioramaLayerNumber: 6, // Lightbulb layer 4
     themeLayerMapping: layerThemeMapping,
-    animation: null,
-    filter: 'drop-shadow(rgba(15, 18, 24, 0.7) 0px 0px 2px) drop-shadow(rgba(15, 18, 24, 0.6) 0px 0px 1px)',
+    animation: {
+      type: 'rotation' as const,
+      duration: clockworkDurations[6], // 60 seconds
+      direction: 'counter-clockwise' as const,
+      transformOrigin: '37% 51%', // Pivot point left and up from center
+    },
+    filter: undefined,
+  },
+  {
+    dioramaLayerNumber: 7, // Lightbulb layer 5
+    themeLayerMapping: layerThemeMapping,
+    animation: {
+      type: 'rotation' as const,
+      duration: clockworkDurations[5], // 48 seconds
+      direction: 'counter-clockwise' as const,
+      transformOrigin: '37% 51%', // Pivot point left and up from center
+    },
+    filter: undefined,
+  },
+  {
+    dioramaLayerNumber: 8, // Lightbulb layer 6 (lowest)
+    themeLayerMapping: layerThemeMapping,
+    animation: null as AnimationConfig | null,
+    filter: undefined,
   },
 ];
 
