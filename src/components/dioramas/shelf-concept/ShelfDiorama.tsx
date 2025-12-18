@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import Shelf from './Shelf';
-import Lightbulb from './Lightbulb';
+// TODO: Shelf and Lightbulb components need to be created
+// import Shelf from './Shelf';
+// import Lightbulb from './Lightbulb';
 
 const Container = styled.div`
   position: relative;
@@ -18,27 +19,29 @@ const ShelfWrapper = styled.div`
   overflow: visible;
 `;
 
-const LightbulbWrapper = styled.div<{ left: string }>`
-  position: absolute;
-  top: -60%;
-  left: ${(props) => props.left};
-  transition: transform 0.3s ease;
-  cursor: pointer;
-
-  &:hover {
-    animation: jiggle 1.5s ease-in-out infinite;
-  }
-
-  &:hover .rotating-layer svg {
-    animation: brightness-pulse 2s ease-in-out infinite;
-  }
-`;
+// TODO: Uncomment when Lightbulb component is created
+// const LightbulbWrapper = styled.div<{ left: string }>`
+//   position: absolute;
+//   top: -60%;
+//   left: ${(props) => props.left};
+//   transition: transform 0.3s ease;
+//   cursor: pointer;
+//
+//   &:hover {
+//     animation: jiggle 1.5s ease-in-out infinite;
+//   }
+//
+//   &:hover .rotating-layer svg {
+//     animation: brightness-pulse 2s ease-in-out infinite;
+//   }
+// `;
 
 const ShelfDiorama = () => {
+  // TODO: Implement when Shelf and Lightbulb components are created
   return (
     <Container>
       <ShelfWrapper>
-        <Shelf />
+        {/* <Shelf />
         <LightbulbWrapper left="10%">
           <Lightbulb />
         </LightbulbWrapper>
@@ -47,7 +50,7 @@ const ShelfDiorama = () => {
         </LightbulbWrapper>
         <LightbulbWrapper left="70%">
           <Lightbulb />
-        </LightbulbWrapper>
+        </LightbulbWrapper> */}
       </ShelfWrapper>
     </Container>
   );

@@ -31,12 +31,17 @@ import {
   SiTailwindcss,
   SiStyledcomponents,
   SiRedux,
+  SiRedis,
   SiGraphql,
   SiPrometheus,
   SiGrafana,
   SiGithubactions,
+  SiNumpy,
+  SiPandas,
+  SiScikitlearn,
+  SiSqlite,
 } from 'react-icons/si';
-import { FaCode, FaCog, FaLeaf, FaBuilding, FaMicrochip, FaProjectDiagram } from 'react-icons/fa';
+import { FaCode, FaCog, FaLeaf, FaBuilding, FaMicrochip, FaProjectDiagram, FaMapMarkedAlt, FaDna } from 'react-icons/fa';
 
 /**
  * Technology icon category mapping
@@ -66,6 +71,7 @@ const technologyCategoryMap: Record<string, 'language' | 'technology' | 'domain'
   'Vite': 'technology',
   'MongoDB': 'technology',
   'PostgreSQL': 'technology',
+  'Redis': 'technology',
   'AWS': 'technology',
   'Google Cloud': 'technology',
   'Docker': 'technology',
@@ -77,6 +83,13 @@ const technologyCategoryMap: Record<string, 'language' | 'technology' | 'domain'
   'AI': 'technology',
   'ML': 'technology',
   'Machine Learning': 'technology',
+  'XGBoost': 'technology',
+  'scikit-learn': 'technology',
+  'NumPy': 'technology',
+  'Pandas': 'technology',
+  'GeoPandas': 'technology',
+  'SciPy': 'technology',
+  'SQLite': 'technology',
   'Redux': 'technology',
   'GraphQL': 'technology',
   'Prometheus': 'technology',
@@ -131,6 +144,13 @@ const technologyIconMap: Record<string, () => ReactElement> = {
   'Machine Learning': () => <SiTensorflow />,
   'TensorFlow': () => <SiTensorflow />,
   'PyTorch': () => <SiPytorch />,
+  'XGBoost': () => <FaDna />,
+  'scikit-learn': () => <SiScikitlearn />,
+  'NumPy': () => <SiNumpy />,
+  'Pandas': () => <SiPandas />,
+  'GeoPandas': () => <FaMapMarkedAlt />,
+  'SciPy': () => <FaCode />,
+  'SQLite': () => <SiSqlite />,
   
   // Robotics & Hardware
   'Robotics': () => <SiRobotframework />,
@@ -149,6 +169,7 @@ const technologyIconMap: Record<string, () => ReactElement> = {
   // Databases
   'MongoDB': () => <SiMongodb />,
   'PostgreSQL': () => <SiPostgresql />,
+  'Redis': () => <SiRedis />,
   
   // Tools
   'Git': () => <SiGit />,

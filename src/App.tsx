@@ -8,6 +8,7 @@ import Project from './pages/Project';
 import About from './pages/about/About';
 import Immigration from './pages/immigration/Immigration';
 import Contact from './pages/contact/Contact';
+import Resume from './pages/Resume';
 
 const AppContainer = styled.div`
   width: 100%;
@@ -24,7 +25,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Hero />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/preview/:projectName" element={<Projects />} />
             <Route path="/projects/:projectName" element={<Project />} />
+            <Route path="/resume" element={<Resume />} />
             <Route path="/about" element={<About />} />
             <Route path="/immigration" element={<Immigration />} />
             <Route path="/contact" element={<Contact />} />

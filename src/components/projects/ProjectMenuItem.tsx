@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { MdCancel } from 'react-icons/md';
 import { type Project } from '../../data/projects';
 import { getTechnologyIcons } from '../../utils/technologyIcons';
 
-const MenuItemContainer = styled.div`
+const MenuItemContainer = styled.div<{ $isSelected?: boolean }>`
   width: 100%;
   padding: ${(props) => props.theme.spacing.lg} ${(props) => props.theme.spacing.md};
   display: flex;
@@ -12,11 +13,16 @@ const MenuItemContainer = styled.div`
   gap: ${(props) => props.theme.spacing.md};
   border-bottom: 1px solid ${(props) => props.theme.colors.layers.layer2};
   box-sizing: border-box;
-  transition: background-color 0.2s ease;
   cursor: pointer;
+  background-color: ${(props) =>
+    props.$isSelected ? props.theme.colors.layers.layer1 : 'transparent'};
+  transition: background-color 0.2s ease;
 
   &:hover {
-    background-color: ${(props) => props.theme.colors.layers.layer1};
+    background-color: ${(props) =>
+      props.$isSelected 
+        ? props.theme.colors.layers.layer1 
+        : 'rgba(255, 255, 255, 0.05)'};
   }
 `;
 
@@ -140,21 +146,29 @@ const PercentageText = styled.div`
 const CompleteText = styled.div`
   font-family: ${(props) => props.theme.fonts.body};
   font-size: ${(props) => props.theme.fontSizes.xs};
-  color: ${(props) => props.theme.colors.layers.layer8};
+  color: #fff;
   margin: 0;
   margin-top: ${(props) => props.theme.spacing.xs};
 `;
 
+const CancelledIcon = styled(MdCancel)`
+  color: ${(props) => props.theme.colors.layers.layer11};
+  font-size: ${(props) => props.theme.fontSizes['2xl']};
+`;
+
 interface ProjectMenuItemProps {
   project: Project;
+  isSelected?: boolean;
+  onSelect?: () => void;
 }
 
-const ProjectMenuItem = ({ project }: ProjectMenuItemProps) => {
+const ProjectMenuItem = ({ project, isSelected, onSelect }: ProjectMenuItemProps) => {
   const technologyIconGroups = getTechnologyIcons(project.previewTags);
   const progress = project.status === 'complete' ? 100 : (project.progress || 0);
+  const isCancelled = project.status === 'cancelled';
 
   return (
-    <MenuItemContainer>
+    <MenuItemContainer $isSelected={isSelected} onClick={onSelect}>
       <ContentSection>
         <ProjectTitle>The {project.name} Project</ProjectTitle>
         <IconsContainer>
@@ -173,8 +187,17 @@ const ProjectMenuItem = ({ project }: ProjectMenuItemProps) => {
         </IconsContainer>
       </ContentSection>
       <ProgressBox>
-        <PercentageText>{progress}%</PercentageText>
-        <CompleteText>complete</CompleteText>
+        {isCancelled ? (
+          <>
+            <CancelledIcon />
+            <CompleteText>cancelled</CompleteText>
+          </>
+        ) : (
+          <>
+            <PercentageText>{progress}%</PercentageText>
+            <CompleteText>complete</CompleteText>
+          </>
+        )}
       </ProgressBox>
     </MenuItemContainer>
   );

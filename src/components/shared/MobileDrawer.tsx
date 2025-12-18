@@ -114,8 +114,8 @@ const MobileDrawer = ({ children, menuBackgroundColor, onItemClick }: MobileDraw
         </CaretIcon>
       </MobileBarContainer>
       <MenuPanel $menuBackgroundColor={menuBackgroundColor} onClick={handleBackdropClick}>
-        {React.isValidElement(children)
-          ? React.cloneElement(children as React.ReactElement, { onItemClick: handleItemClick })
+        {React.isValidElement(children) && typeof (children as React.ReactElement).type !== 'string'
+          ? React.cloneElement(children as React.ReactElement<any>, { onItemClick: handleItemClick })
           : children}
       </MenuPanel>
     </MobileDrawerContainer>

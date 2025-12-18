@@ -43,7 +43,7 @@ const NavLink = styled(Link)`
   }
 `;
 
-const ActiveNavLink = styled.span`
+const ActiveNavLink = styled(Link)`
   font-family: ${(props) => props.theme.fonts.body};
   font-size: ${(props) => props.theme.fontSizes.base};
   color: ${(props) => props.theme.colors.layers.layer11};
@@ -51,6 +51,12 @@ const ActiveNavLink = styled.span`
   background-color: ${(props) => props.theme.colors.accent};
   padding: ${(props) => props.theme.spacing.xs} ${(props) => props.theme.spacing.sm};
   border-radius: 4px;
+  transition: color 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    color: ${(props) => props.theme.colors.layers.layer11};
+  }
 `;
 
 const RightLink = styled(NavLink)`
@@ -142,7 +148,7 @@ const MobileNavLink = styled(Link)`
   }
 `;
 
-const ActiveMobileNavLink = styled.span`
+const ActiveMobileNavLink = styled(Link)`
   font-family: ${(props) => props.theme.fonts.body};
   font-size: ${(props) => props.theme.fontSizes.base};
   color: ${(props) => props.theme.colors.layers.layer11};
@@ -150,6 +156,12 @@ const ActiveMobileNavLink = styled.span`
   padding: ${(props) => props.theme.spacing.sm} ${(props) => props.theme.spacing.sm};
   background-color: ${(props) => props.theme.colors.accent};
   border-radius: 4px;
+  transition: color 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    color: ${(props) => props.theme.colors.layers.layer11};
+  }
 `;
 
 const MobileRightLink = styled(MobileNavLink)`
@@ -176,38 +188,46 @@ const NavBar = () => {
   };
 
   const isActive = (path: string) => {
-    if (path === '/projects') {
-      return location.pathname === '/projects';
+    // Home route should only match exactly
+    if (path === '/') {
+      return location.pathname === '/';
     }
-    return location.pathname === path;
+    // For other routes, check if pathname starts with the path
+    // This allows /projects to highlight for /projects/preview/what-now, /projects/what-now, etc.
+    return location.pathname === path || location.pathname.startsWith(path + '/');
   };
 
   return (
     <NavBarContainer>
       <LeftLinks>
         {isActive('/') ? (
-          <ActiveNavLink>Home</ActiveNavLink>
+          <ActiveNavLink to="/">Home</ActiveNavLink>
         ) : (
           <NavLink to="/">Home</NavLink>
         )}
         {isActive('/projects') ? (
-          <ActiveNavLink>Projects</ActiveNavLink>
+          <ActiveNavLink to="/projects">Projects</ActiveNavLink>
         ) : (
           <NavLink to="/projects">Projects</NavLink>
         )}
         {isActive('/about') ? (
-          <ActiveNavLink>About</ActiveNavLink>
+          <ActiveNavLink to="/about">About</ActiveNavLink>
         ) : (
           <NavLink to="/about">About</NavLink>
         )}
         {isActive('/immigration') ? (
-          <ActiveNavLink>Immigration</ActiveNavLink>
+          <ActiveNavLink to="/immigration">Immigration</ActiveNavLink>
         ) : (
           <NavLink to="/immigration">Immigration</NavLink>
         )}
+        {isActive('/resume') ? (
+          <ActiveNavLink to="/resume">Resume</ActiveNavLink>
+        ) : (
+          <NavLink to="/resume">Resume</NavLink>
+        )}
       </LeftLinks>
       {isActive('/contact') ? (
-        <ActiveNavLink>Let's connect</ActiveNavLink>
+        <ActiveNavLink to="/contact">Let's connect</ActiveNavLink>
       ) : (
         <RightLink to="/contact">Let's connect</RightLink>
       )}
@@ -218,27 +238,32 @@ const NavBar = () => {
       </BurgerButton>
       <MobileMenu $isOpen={isMenuOpen}>
         {isActive('/') ? (
-          <ActiveMobileNavLink>Home</ActiveMobileNavLink>
+          <ActiveMobileNavLink to="/" onClick={closeMenu}>Home</ActiveMobileNavLink>
         ) : (
           <MobileNavLink to="/" onClick={closeMenu}>Home</MobileNavLink>
         )}
         {isActive('/projects') ? (
-          <ActiveMobileNavLink>Projects</ActiveMobileNavLink>
+          <ActiveMobileNavLink to="/projects" onClick={closeMenu}>Projects</ActiveMobileNavLink>
         ) : (
           <MobileNavLink to="/projects" onClick={closeMenu}>Projects</MobileNavLink>
         )}
         {isActive('/about') ? (
-          <ActiveMobileNavLink>About</ActiveMobileNavLink>
+          <ActiveMobileNavLink to="/about" onClick={closeMenu}>About</ActiveMobileNavLink>
         ) : (
           <MobileNavLink to="/about" onClick={closeMenu}>About</MobileNavLink>
         )}
         {isActive('/immigration') ? (
-          <ActiveMobileNavLink>Immigration</ActiveMobileNavLink>
+          <ActiveMobileNavLink to="/immigration" onClick={closeMenu}>Immigration</ActiveMobileNavLink>
         ) : (
           <MobileNavLink to="/immigration" onClick={closeMenu}>Immigration</MobileNavLink>
         )}
+        {isActive('/resume') ? (
+          <ActiveMobileNavLink to="/resume" onClick={closeMenu}>Resume</ActiveMobileNavLink>
+        ) : (
+          <MobileNavLink to="/resume" onClick={closeMenu}>Resume</MobileNavLink>
+        )}
         {isActive('/contact') ? (
-          <ActiveMobileNavLink>Let's connect</ActiveMobileNavLink>
+          <ActiveMobileNavLink to="/contact" onClick={closeMenu}>Let's connect</ActiveMobileNavLink>
         ) : (
           <MobileRightLink to="/contact" onClick={closeMenu}>Let's connect</MobileRightLink>
         )}

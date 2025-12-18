@@ -1,14 +1,20 @@
 import ArticleReader from '../../../components/article/ArticleReader';
-import ProjectInception from './ProjectInception';
-import TechnicalArchitecture from './TechnicalArchitecture';
-import ChallengesAndSolutions from './ChallengesAndSolutions';
+import TheDatasetProblem from './TheDatasetProblem';
+import FromMetadataToEmbeddings from './FromMetadataToEmbeddings';
+import TwoLayerLearning from './TwoLayerLearning';
+import PlatformMigration from './PlatformMigration';
+import FrontendEvolution from './FrontendEvolution';
+import Demos from './Demos';
 
 const WhatNow = () => {
   return (
     <ArticleReader>
-      <ProjectInception />
-      <TechnicalArchitecture />
-      <ChallengesAndSolutions />
+      <TheDatasetProblem />
+      <FromMetadataToEmbeddings />
+      <TwoLayerLearning />
+      <PlatformMigration />
+      <FrontendEvolution />
+      <Demos />
     </ArticleReader>
   );
 };

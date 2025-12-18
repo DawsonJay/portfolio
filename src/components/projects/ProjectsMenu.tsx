@@ -12,11 +12,25 @@ const MenuContainer = styled.div`
   box-sizing: border-box;
 `;
 
-const ProjectsMenu = () => {
+interface ProjectsMenuProps {
+  selectedRoute?: string;
+  onSelect: (route: string) => void;
+  onItemClick?: () => void;
+}
+
+const ProjectsMenu = ({ selectedRoute, onSelect, onItemClick }: ProjectsMenuProps) => {
   return (
     <MenuContainer>
       {projects.map((project) => (
-        <ProjectMenuItem key={project.id} project={project} />
+        <ProjectMenuItem
+          key={project.id}
+          project={project}
+          isSelected={project.route === selectedRoute}
+          onSelect={() => {
+            onSelect(project.route);
+            onItemClick?.();
+          }}
+        />
       ))}
     </MenuContainer>
   );
