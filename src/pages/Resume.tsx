@@ -3,13 +3,21 @@ import { FiDownload } from 'react-icons/fi';
 import NavBar from '../components/article/NavBar';
 
 const ResumeContainer = styled.div`
-  min-height: 100vh;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: ${(props) => props.theme.colors.layers.layer1};
   padding: ${(props) => props.theme.spacing['2xl']} ${(props) => props.theme.spacing.lg};
-  padding-top: calc(64px + ${(props) => props.theme.spacing['2xl']});
+  padding-bottom: ${(props) => props.theme.spacing['2xl']};
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
 
   @media (max-width: 768px) {
     padding: ${(props) => props.theme.spacing.xl} ${(props) => props.theme.spacing.md};
+    padding-bottom: ${(props) => props.theme.spacing.xl};
   }
 `;
 
@@ -79,28 +87,12 @@ const PDFViewerContainer = styled.div`
 
 const PDFViewer = styled.iframe`
   width: 100%;
-  height: calc(100vh - 200px);
+  height: calc(100vh - 280px);
   border: none;
   display: block;
 
   @media (max-width: 768px) {
     height: calc(100vh - 250px);
-  }
-`;
-
-const FallbackMessage = styled.div`
-  padding: ${(props) => props.theme.spacing['2xl']};
-  text-align: center;
-  font-family: ${(props) => props.theme.fonts.body};
-  color: ${(props) => props.theme.colors.layers.layer9};
-
-  p {
-    margin-bottom: ${(props) => props.theme.spacing.lg};
-    font-size: ${(props) => props.theme.fontSizes.lg};
-  }
-
-  @media (max-width: 768px) {
-    padding: ${(props) => props.theme.spacing.xl};
   }
 `;
 
@@ -148,19 +140,6 @@ const Resume = () => {
             aria-label="Resume PDF viewer"
           />
         </PDFViewerContainer>
-
-        <FallbackMessage>
-          <p>
-            If the resume doesn't display above, your browser may not support embedded PDFs.
-          </p>
-          <DownloadButton 
-            href="/james-dawson-cv.pdf" 
-            download="James-Dawson-Resume.pdf"
-          >
-            <FiDownload />
-            Download Resume
-          </DownloadButton>
-        </FallbackMessage>
       </ContentWrapper>
     </ResumeContainer>
     </>
