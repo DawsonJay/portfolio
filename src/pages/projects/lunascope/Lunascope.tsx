@@ -4,6 +4,7 @@ import ConstraintDrivenDesign from './ConstraintDrivenDesign';
 import LongevityEngineering from './LongevityEngineering';
 import ArtisticIntegration from './ArtisticIntegration';
 import ComponentSourcing from './ComponentSourcing';
+import FutureVision from './FutureVision';
 
 const Lunascope = () => {
   return (
@@ -13,6 +14,7 @@ const Lunascope = () => {
       <LongevityEngineering />
       <ArtisticIntegration />
       <ComponentSourcing />
+      <FutureVision />
     </ArticleReader>
   );
 };

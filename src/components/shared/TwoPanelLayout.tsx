@@ -56,6 +56,11 @@ const RightPanel = styled.div`
   overflow: hidden;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 640px) {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
 `;
 
 interface TwoPanelLayoutProps {

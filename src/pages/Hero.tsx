@@ -14,6 +14,11 @@ const HeroContainer = styled.div`
   padding-top: 64px;
   padding-bottom: ${(props) => props.theme.spacing['2xl']};
   box-sizing: border-box;
+
+  @media (max-width: 640px) {
+    min-height: 100dvh;
+    overflow-y: auto;
+  }
 `;
 
 const ContentWrapper = styled.div`

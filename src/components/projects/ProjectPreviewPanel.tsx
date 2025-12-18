@@ -178,6 +178,10 @@ const ReadOnContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   padding-bottom: ${(props) => props.theme.spacing.xl};
+
+  @media (max-width: 600px) {
+    padding-bottom: ${(props) => props.theme.spacing['2xl']};
+  }
 `;
 
 const ReadOnButton = styled(Link)`

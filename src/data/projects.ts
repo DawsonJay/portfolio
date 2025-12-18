@@ -9,7 +9,7 @@ export interface Project {
   progress?: number;
   tags: string[]; // Full list of all tags
   previewTags: string[]; // Most important tags for menu preview (max 7)
-  category: 'ai-ml' | 'robotics' | 'hardware' | 'enterprise';
+  category: 'ai-ml' | 'robotics' | 'hardware' | 'enterprise' | 'web-development';
 }
 
 export const projects: Project[] = [
@@ -152,6 +152,48 @@ export const projects: Project[] = [
       'NOAA Data',
     ],
     category: 'ai-ml',
+  },
+  {
+    id: 'portfolio-website',
+    name: 'Portfolio Project',
+    tagline: 'This Site - React Portfolio with Theatrical Diorama System',
+    description: 'The site you\'re viewing now - a modern portfolio built with React, TypeScript, and styled-components featuring a unique theatrical diorama design system',
+    previewDescription:
+      'This site you\'re currently viewing is itself a portfolio project, built with modern web technologies and featuring a unique theatrical diorama design system inspired by shadow theatre and paper lantern aesthetics.\n\nThe site demonstrates React/TypeScript expertise through a reusable component architecture. The theatrical diorama system uses layered SVG animations with a color spectrum that transitions from dark tech surfaces to warm paper lantern colors, creating visual depth. Each layer is independently animated using a "clockwork" timing system for synchronized movement.\n\nKey technical features include a configuration-driven diorama system supporting multiple shapes and animations, route-driven project previews with URL state management, a comprehensive article system with reusable block components (text, code, demos), responsive two-panel layouts with shared components, and systematic refactoring documented through 40+ development sessions showing iterative problem-solving and architectural evolution.',
+    route: 'portfolio-website',
+    status: 'complete',
+    progress: 100,
+    previewTags: ['React', 'TypeScript', 'styled-components', 'Design Systems', 'Component Architecture'],
+    tags: [
+      // Languages
+      'React',
+      'TypeScript',
+      // Build Tools
+      'Vite',
+      // Styling
+      'styled-components',
+      // Routing
+      'React Router',
+      // Optimization
+      'SVG Optimization',
+      'Performance Optimization',
+      // Architecture
+      'Design Systems',
+      'Component Architecture',
+      'Theme Systems',
+      'State Management',
+      'Navigation Patterns',
+      // Design
+      'Responsive Design',
+      'Mobile-First Design',
+      'Animation',
+      'CSS Masking',
+      'Accessibility',
+      // Practices
+      'Code Refactoring',
+      'Documentation',
+    ],
+    category: 'web-development',
   },
 ];
 

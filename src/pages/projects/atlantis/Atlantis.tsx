@@ -4,6 +4,7 @@ import DesignEvolution from './DesignEvolution';
 import EnclosureDesign from './EnclosureDesign';
 import ComponentFailures from './ComponentFailures';
 import HardwareIntegration from './HardwareIntegration';
+import FutureVision from './FutureVision';
 import Demos from './Demos';
 
 const Atlantis = () => {
@@ -14,6 +15,7 @@ const Atlantis = () => {
       <EnclosureDesign />
       <ComponentFailures />
       <HardwareIntegration />
+      <FutureVision />
       <Demos />
     </ArticleReader>
   );

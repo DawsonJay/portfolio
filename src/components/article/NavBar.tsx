@@ -210,11 +210,6 @@ const NavBar = () => {
         ) : (
           <NavLink to="/projects">Projects</NavLink>
         )}
-        {isActive('/about') ? (
-          <ActiveNavLink to="/about">About</ActiveNavLink>
-        ) : (
-          <NavLink to="/about">About</NavLink>
-        )}
         {isActive('/immigration') ? (
           <ActiveNavLink to="/immigration">Immigration</ActiveNavLink>
         ) : (
@@ -246,11 +241,6 @@ const NavBar = () => {
           <ActiveMobileNavLink to="/projects" onClick={closeMenu}>Projects</ActiveMobileNavLink>
         ) : (
           <MobileNavLink to="/projects" onClick={closeMenu}>Projects</MobileNavLink>
-        )}
-        {isActive('/about') ? (
-          <ActiveMobileNavLink to="/about" onClick={closeMenu}>About</ActiveMobileNavLink>
-        ) : (
-          <MobileNavLink to="/about" onClick={closeMenu}>About</MobileNavLink>
         )}
         {isActive('/immigration') ? (
           <ActiveMobileNavLink to="/immigration" onClick={closeMenu}>Immigration</ActiveMobileNavLink>
