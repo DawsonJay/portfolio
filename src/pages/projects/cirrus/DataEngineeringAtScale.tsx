@@ -8,8 +8,8 @@ const DataEngineeringAtScale = () => {
     <Article>
       <TitleBlock title="Data Engineering at Scale" />
       <TextBlock 
-        text="TL;DR: 6-stage pipeline processes 56M weather records + 438K wildfire events. Chunked loading bypasses fiona validation errors. Wide format schema optimizes ML queries. Modular stages enable independent testing."
-        sectionTitle="Overview"
+        text="6-stage pipeline processes 56M weather records + 438K wildfire events. Chunked loading bypasses fiona validation errors. Wide format schema optimizes ML queries. Modular stages enable independent testing."
+        sectionTitle="Overview" 
       />
       <TextBlock 
         text="The Cirrus data pipeline processed 56 million weather records from NOAA's GHCN-Daily dataset and 438,000 wildfire events from the Canadian Forest Service, creating a 7.86GB SQLite database optimized for AI training."

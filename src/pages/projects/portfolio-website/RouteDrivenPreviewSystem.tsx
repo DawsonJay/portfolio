@@ -9,7 +9,7 @@ const RouteDrivenPreviewSystem = () => {
       <TitleBlock title="Route-Driven Previews" />
 
       <TextBlock
-        text="TL;DR: URL as state makes previews bookmarkable and shareable at /projects/preview/:projectName. useParams hook drives UI from route parameters. NavBar highlights when pathname starts with path (not just exact match), and active items remain clickable to navigate back to base routes. Mobile drawer closes automatically when project selected."
+        text="URL as state makes previews bookmarkable and shareable at /projects/preview/:projectName. useParams hook drives UI from route parameters. NavBar highlights when pathname starts with path (not just exact match), and active items remain clickable to navigate back to base routes. Mobile drawer closes automatically when project selected."
         sectionTitle="Overview"
       />
 

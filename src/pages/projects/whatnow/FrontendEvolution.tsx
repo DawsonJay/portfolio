@@ -8,7 +8,7 @@ const FrontendEvolution = () => {
     <Article>
       <TitleBlock title="Frontend Evolution" />
       <TextBlock 
-        text="TL;DR: Started with vanilla JS prototype to validate UX. Migrated to React+TypeScript for state management. Did complete clean rebuild when codebase got janky. Mobile-first redesign after testing on real devices."
+        text="Started with vanilla JS prototype to validate UX. Migrated to React+TypeScript for state management. Did complete clean rebuild when codebase got janky. Mobile-first redesign after testing on real devices."
         sectionTitle="Overview" 
       />
       <TextBlock 

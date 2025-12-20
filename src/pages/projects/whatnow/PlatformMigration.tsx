@@ -8,7 +8,7 @@ const PlatformMigration = () => {
     <Article>
       <TitleBlock title="Platform Migration" />
       <TextBlock 
-        text="TL;DR: Migrated from Railway to Render. scikit-learn wouldn't compile on Render's free tier. Built lightweight SGD classifier using only NumPy—faster for online learning and deployment-friendly."
+        text="Migrated from Railway to Render. scikit-learn wouldn't compile on Render's free tier. Built lightweight SGD classifier using only NumPy—faster for online learning and deployment-friendly."
         sectionTitle="Overview" 
       />
       <TextBlock 

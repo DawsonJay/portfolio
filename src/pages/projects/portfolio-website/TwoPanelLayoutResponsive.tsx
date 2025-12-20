@@ -9,7 +9,7 @@ const TwoPanelLayoutResponsive = () => {
       <TitleBlock title="Layout & Responsiveness" />
 
       <TextBlock
-        text="TL;DR: TwoPanelLayout component eliminates duplication across Projects, About, and Immigration pages. Desktop shows fixed-width left panel + flexible right panel. Mobile replaces left panel with bottom drawer using shared MobileDrawer component. Theme breakpoint extraction (twoPanelMobile: 1060px) ensures consistent responsive behavior across components."
+        text="TwoPanelLayout component eliminates duplication across Projects, About, and Immigration pages. Desktop shows fixed-width left panel + flexible right panel. Mobile replaces left panel with bottom drawer using shared MobileDrawer component. Theme breakpoint extraction (twoPanelMobile: 1060px) ensures consistent responsive behavior across components."
         sectionTitle="Overview"
       />
 

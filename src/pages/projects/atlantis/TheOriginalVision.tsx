@@ -7,7 +7,7 @@ const TheOriginalVision = () => {
     <Article>
       <TitleBlock title="The Original Vision" />
       <TextBlock 
-        text="TL;DR: $500 underwater drone with Raspberry Pi 4, Pi Pico dual processing, four brushless motors, emergency systems. Philosophy: Survivability Over Perfection."
+        text="$500 underwater drone with Raspberry Pi 4, Pi Pico dual processing, four brushless motors, emergency systems. Philosophy: Survivability Over Perfection."
         sectionTitle="Overview" 
       />
       <TextBlock 

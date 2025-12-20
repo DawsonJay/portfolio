@@ -7,8 +7,8 @@ const ProjectCancellation = () => {
     <Article>
       <TitleBlock title="Why It Was Cancelled" />
       <TextBlock 
-        text="TL;DR: Data coverage crisis: 31% precipitation, 0% wind/humidity after interpolation. Can't predict wildfires without critical variables. Professional judgment: stop building on unsound foundation."
-        sectionTitle="Overview"
+        text="Data coverage crisis: 31% precipitation, 0% wind/humidity after interpolation. Can't predict wildfires without critical variables. Professional judgment: stop building on unsound foundation."
+        sectionTitle="Overview" 
       />
       <TextBlock 
         text="After weeks of development building sophisticated interpolation systems, spatial indexing, and database optimization, comprehensive testing revealed fundamental data quality issues that made accurate wildfire prediction impossible. The raw NOAA weather data had severe coverage gaps: temperature coverage was 83%, precipitation only 83%, snow depth 36%, and critically—wind speed and humidity were completely missing (0% coverage). After interpolation, the situation worsened: precipitation dropped to 31% coverage and snow depth to 20%. Wind and humidity remained entirely absent. These aren't minor gaps that sophisticated algorithms can compensate for—they're fundamental missing data that no amount of technical skill can interpolate into existence."

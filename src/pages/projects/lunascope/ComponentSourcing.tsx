@@ -7,7 +7,7 @@ const ComponentSourcing = () => {
     <Article>
       <TitleBlock title="Component Sourcing Strategy" />
       <TextBlock 
-        text="TL;DR: Hybrid sourcing: AliExpress for expensive long-lead items (£20-30 savings), Amazon Prime for testing components (immediate). Volume ordering provides spares and future project stock."
+        text="Hybrid sourcing: AliExpress for expensive long-lead items (£20-30 savings), Amazon Prime for testing components (immediate). Volume ordering provides spares and future project stock."
         sectionTitle="Overview"
       />
       <TextBlock 

@@ -8,7 +8,7 @@ const FutureVision = () => {
       <TitleBlock title="Future Vision" />
 
       <TextBlock
-        text="TL;DR: Expand beyond single ocean diorama to multiple themed dioramas in rectangular arches. Support rectangular diorama shapes alongside circles. Add entity variety (characters, objects, different animations). Integrate dioramas with blog patterns (tags, related articles, reading time). Expand content with project deep dives and development stories."
+        text="Expand beyond single ocean diorama to multiple themed dioramas in rectangular arches. Support rectangular diorama shapes alongside circles. Add entity variety (characters, objects, different animations). Integrate dioramas with blog patterns (tags, related articles, reading time). Expand content with project deep dives and development stories."
         sectionTitle="Overview"
       />
 

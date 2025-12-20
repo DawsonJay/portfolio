@@ -8,8 +8,8 @@ const TheGridSystem = () => {
     <Article>
       <TitleBlock title="The Grid System" />
       <TextBlock 
-        text="TL;DR: Divided Canada into 121,484 curvature-adjusted 10km grid cells. KD-tree indexing assigns 30 nearest weather stations per cell in quality tiers. Discretization enables parallelization."
-        sectionTitle="Overview"
+        text="Divided Canada into 121,484 curvature-adjusted 10km grid cells. KD-tree indexing assigns 30 nearest weather stations per cell in quality tiers. Discretization enables parallelization."
+        sectionTitle="Overview" 
       />
       <TextBlock 
         text="The Cirrus project required transforming the continuous geography of southern Canada into a discrete computational grid—essentially turning the country into a game board where each cell could be analyzed independently. The system divided the region into 121,484 cells, each representing a 10km × 10km area. This wasn't arbitrary gridding: the cells were curvature-adjusted to account for Earth's spherical shape, ensuring consistent area calculations across different latitudes. The grid covered 41.75°N to 60.0°N latitude (southern Canada only, excluding northern territories), providing comprehensive coverage for wildfire prediction while maintaining computational feasibility."

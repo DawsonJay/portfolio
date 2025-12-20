@@ -8,8 +8,8 @@ const ThePowerChallenge = () => {
     <Article>
       <TitleBlock title="The Power Challenge" />
       <TextBlock 
-        text="TL;DR: TEG harvests 0.96-14.4Wh/day from temperature gradients. 4.0F supercapacitors provide 91-day backup. System draws 27.5mW average. Black copper patina maximizes heat absorption."
-        sectionTitle="Overview"
+        text="TEG harvests 0.96-14.4Wh/day from temperature gradients. 4.0F supercapacitors provide 91-day backup. System draws 27.5mW average. Black copper patina maximizes heat absorption."
+        sectionTitle="Overview" 
       />
       <TextBlock 
         text="The Lunascope's core challenge is straightforward: track lunar phases for 20-30 years without external power or maintenance. Most clocks rely on batteries or wall power—both require periodic intervention. Batteries need replacement every few years. Wall power requires accessible outlets and creates dependency. The solution: harvest energy from the environment itself using thermoelectric generators (TEGs) that convert temperature differences into electricity. TEGs have no moving parts, degrade slowly, and generate power as long as temperature gradients exist. This approach eliminates maintenance while demonstrating energy harvesting applicable to extreme environments where traditional power isn't viable." 

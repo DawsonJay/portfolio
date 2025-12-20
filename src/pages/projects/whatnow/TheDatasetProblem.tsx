@@ -7,7 +7,7 @@ const TheDatasetProblem = () => {
     <Article>
       <TitleBlock title="The Dataset Problem" />
       <TextBlock 
-        text="TL;DR: Learned from CV project failures that dataset quality matters more than model architecture. Pivoted to activity recommendations where user interactions generate training data automatically."
+        text="Learned from CV project failures that dataset quality matters more than model architecture. Pivoted to activity recommendations where user interactions generate training data automatically."
         sectionTitle="Overview" 
       />
       <TextBlock 

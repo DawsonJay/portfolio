@@ -7,8 +7,8 @@ const SystemUnderstandingFirst = () => {
     <Article>
       <TitleBlock title="System Understanding First" />
       <TextBlock 
-        text="TL;DR: Processing Threads (job producers) vs Worker Threads (job consumers). DueCount is key health metric. Dashboard shows patterns, not precise numbers."
-        sectionTitle="Overview"
+        text="Processing Threads (job producers) vs Worker Threads (job consumers). DueCount is key health metric. Dashboard shows patterns, not precise numbers."
+        sectionTitle="Overview" 
       />
       <TextBlock 
         text="Before designing a single component, I spent significant time understanding the Job Manager system architecture. This wasn't optional—you can't design an effective dashboard without understanding what you're visualizing. The system is complex: a distributed job processing orchestrator managing 49 queue types across multi-tenant SaaS infrastructure, with multiple job entry points and a hierarchy of queues organized by application, deployment slot, queue type, customer instance, and priority level."

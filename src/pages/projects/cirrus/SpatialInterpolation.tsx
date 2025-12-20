@@ -8,8 +8,8 @@ const SpatialInterpolation = () => {
     <Article>
       <TitleBlock title="Spatial Interpolation" />
       <TextBlock 
-        text="TL;DR: Dual-tier interpolation: station-based (70.7%) uses distance weighting, neighbor-based (29.3%) fills gaps. 120x faster through vectorization: 21,000+ records/sec. But you can't interpolate missing data."
-        sectionTitle="Overview"
+        text="Dual-tier interpolation: station-based (70.7%) uses distance weighting, neighbor-based (29.3%) fills gaps. 120x faster through vectorization: 21,000+ records/sec. But you can't interpolate missing data."
+        sectionTitle="Overview" 
       />
       <TextBlock 
         text="Weather stations don't cover every location uniformly—they cluster near population centers and leave large gaps in remote areas. The Cirrus interpolation system had to estimate weather conditions for 121,484 grid cells using data from roughly 9,000 weather stations scattered unevenly across Canada. This spatial interpolation challenge required sophisticated algorithms to fill gaps intelligently, using distance-weighted calculations that preferentially trusted nearby stations while incorporating distant data when local coverage was poor. The system achieved 100% grid coverage through a dual-tier approach that balanced accuracy with completeness."

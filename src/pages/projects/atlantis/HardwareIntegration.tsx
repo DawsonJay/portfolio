@@ -8,7 +8,7 @@ const HardwareIntegration = () => {
     <Article>
       <TitleBlock title="Hardware Integration Challenges" />
       <TextBlock 
-        text="TL;DR: Hardware failures are silent—no error messages. Datasheets show specs but not real-world behavior. Physical constraints can't be abstracted. Testing is manual and slow."
+        text="Hardware failures are silent—no error messages. Datasheets show specs but not real-world behavior. Physical constraints can't be abstracted. Testing is manual and slow."
         sectionTitle="Overview" 
       />
       <TextBlock 

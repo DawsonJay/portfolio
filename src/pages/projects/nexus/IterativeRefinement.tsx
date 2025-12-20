@@ -7,8 +7,8 @@ const IterativeRefinement = () => {
     <Article>
       <TitleBlock title="Iterative Refinement" />
       <TextBlock 
-        text="TL;DR: Multiple polish passes: badge extraction, floating labels, z-index layering. Separation of concerns localizes changes."
-        sectionTitle="Overview"
+        text="Multiple polish passes: badge extraction, floating labels, z-index layering. Separation of concerns localizes changes."
+        sectionTitle="Overview" 
       />
       <TextBlock 
         text="The foundation block system went through multiple distinct refinement passes, each improving a specific aspect without disrupting the overall structure. This iterative approach wasn't about getting it wrong initially—it was about working in broad brushstrokes first, establishing a solid foundation, then perfecting the details. I don't think it's possible to have one perfect idea upfront, and depending too much on that leads easily to failure. Better to have a really good broad structure and then perfect the details."

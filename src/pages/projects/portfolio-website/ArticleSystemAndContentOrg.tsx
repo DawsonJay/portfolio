@@ -9,7 +9,7 @@ const ArticleSystemAndContentOrg = () => {
       <TitleBlock title="Article System" />
 
       <TextBlock
-        text="TL;DR: Reusable article blocks (TitleBlock, TextBlock, DemoBlock, CodeBlock) compose into full articles. ArticleBlock base component wraps content, registers section titles with ArticleNavigationContext, and positions titles in left margin using absolute positioning. Common pitfall: TextBlock uses text prop, not children."
+        text="Reusable article blocks (TitleBlock, TextBlock, DemoBlock, CodeBlock) compose into full articles. ArticleBlock base component wraps content, registers section titles with ArticleNavigationContext, and positions titles in left margin using absolute positioning. Common pitfall: TextBlock uses text prop, not children."
         sectionTitle="Overview"
       />
 

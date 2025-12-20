@@ -8,7 +8,7 @@ const TwoLayerLearning = () => {
     <Article>
       <TitleBlock title="Two-Layer Learning Architecture" />
       <TextBlock 
-        text="TL;DR: Built dual-AI system: Base AI (0.02 learning rate, persistent) learns long-term patterns; Session AI (0.8 rate, temporary) adapts to current session. Separates stability from responsiveness."
+        text="Built dual-AI system: Base AI (0.02 learning rate, persistent) learns long-term patterns; Session AI (0.8 rate, temporary) adapts to current session. Separates stability from responsiveness."
         sectionTitle="Overview" 
       />
       <TextBlock 

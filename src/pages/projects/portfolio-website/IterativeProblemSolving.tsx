@@ -9,7 +9,7 @@ const IterativeProblemSolving = () => {
       <TitleBlock title="Iterative Problem Solving" />
 
       <TextBlock
-        text="TL;DR: Best solutions often start as complex ideas that simplify through iteration. Sections panel: opacity-based duplication → absolute positioning. Navigation: exact matches → prefix matches, static items → clickable active items. Hover effects: repeated refinement until visible. Knowing when to stop: texture work abandoned after recognizing diminishing returns. First clever idea is often wrong; obvious simple solution emerges through iteration."
+        text="Best solutions often start as complex ideas that simplify through iteration. Sections panel: opacity-based duplication → absolute positioning. Navigation: exact matches → prefix matches, static items → clickable active items. Hover effects: repeated refinement until visible. Knowing when to stop: texture work abandoned after recognizing diminishing returns. First clever idea is often wrong; obvious simple solution emerges through iteration."
         sectionTitle="Overview"
       />
 

@@ -8,7 +8,7 @@ const FromMetadataToEmbeddings = () => {
     <Article>
       <TitleBlock title="From Metadata to Embeddings" />
       <TextBlock 
-        text="TL;DR: Started with 15+ manual metadata fields per activity. Couldn't scale to 1,258 activities. Pivoted to sentence transformer embeddings (384 dimensions) that learn semantic meaning automatically."
+        text="Started with 15+ manual metadata fields per activity. Couldn't scale to 1,258 activities. Pivoted to sentence transformer embeddings (384 dimensions) that learn semantic meaning automatically."
         sectionTitle="Overview" 
       />
       <TextBlock 

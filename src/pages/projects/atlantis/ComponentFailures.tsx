@@ -7,7 +7,7 @@ const ComponentFailures = () => {
     <Article>
       <TitleBlock title="Component Failures and Recovery" />
       <TextBlock 
-        text="TL;DR: LCD backlight glows but no text—traced to timing issues. IMU I2C conflicts. Joystick calibration drift. Hardware debugging requires systematic isolation, not stack traces."
+        text="LCD backlight glows but no text—traced to timing issues. IMU I2C conflicts. Joystick calibration drift. Hardware debugging requires systematic isolation, not stack traces."
         sectionTitle="Overview" 
       />
       <TextBlock 

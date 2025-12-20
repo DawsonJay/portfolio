@@ -7,8 +7,8 @@ const FoundationBlockArchitecture = () => {
     <Article>
       <TitleBlock title="Foundation Block Architecture" />
       <TextBlock 
-        text="TL;DR: Four-layer atomic design: Foundation blocks (layout), Basic blocks (styling), Ratio wrappers (1x1, 2x1, etc.), Assembled blocks (data). Separation of concerns enables composition."
-        sectionTitle="Overview"
+        text="Four-layer atomic design: Foundation blocks (layout), Basic blocks (styling), Ratio wrappers (1x1, 2x1, etc.), Assembled blocks (data). Separation of concerns enables composition."
+        sectionTitle="Overview" 
       />
       <TextBlock 
         text="The Nexus Job Manager dashboard required a component system that could handle complex data visualization while remaining flexible enough to evolve with changing backend APIs. Rather than building one-off components for each use case, I designed a foundation block architecture based on atomic design principles—small, composable pieces that combine to create any layout."

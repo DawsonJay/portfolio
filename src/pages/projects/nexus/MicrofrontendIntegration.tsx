@@ -7,8 +7,8 @@ const MicrofrontendIntegration = () => {
     <Article>
       <TitleBlock title="Microfrontend Integration" />
       <TextBlock 
-        text="TL;DR: Dashboard integrates into existing MFE architecture using Module Federation. Standalone development with shared dependencies. Consistent theming through MUI."
-        sectionTitle="Overview"
+        text="Dashboard integrates into existing MFE architecture using Module Federation. Standalone development with shared dependencies. Consistent theming through MUI."
+        sectionTitle="Overview" 
       />
       <TextBlock 
         text="The Nexus platform uses a microfrontend architecture where independently developed applications plug into a central portal host. Each microfrontend (MFE) is like a game cartridge—it exposes specific components (App and navigation) through Module Federation, and the Nexus portal loads them dynamically at runtime. This enables independent development and deployment: teams can work on their MFEs without coordinating releases with the entire platform."

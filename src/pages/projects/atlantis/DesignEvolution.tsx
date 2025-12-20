@@ -7,7 +7,7 @@ const DesignEvolution = () => {
     <Article>
       <TitleBlock title="Design Evolution" />
       <TextBlock 
-        text="TL;DR: Pivoted from underwater drone to surface boat + towed probe. Eliminated waterproofing complexity while keeping lake bed mapping capability. Adapted to constraints rather than abandoning project."
+        text="Pivoted from underwater drone to surface boat + towed probe. Eliminated waterproofing complexity while keeping lake bed mapping capability. Adapted to constraints rather than abandoning project."
         sectionTitle="Overview" 
       />
       <TextBlock 

@@ -8,7 +8,7 @@ const FutureVision = () => {
       <TitleBlock title="Future Vision" />
 
       <TextBlock
-        text="TL;DR: Four-phase build: TEG power system with supercapacitor storage and voltage regulation, precision timing circuit with crystal oscillator and frequency dividers, copper clockface with heat treatment and black patina engraving, mechanical integration with stepper motor and long-term testing. Components sourced, design validated, ready for assembly."
+        text="Four-phase build: TEG power system with supercapacitor storage and voltage regulation, precision timing circuit with crystal oscillator and frequency dividers, copper clockface with heat treatment and black patina engraving, mechanical integration with stepper motor and long-term testing. Components sourced, design validated, ready for assembly."
         sectionTitle="Overview"
       />
 

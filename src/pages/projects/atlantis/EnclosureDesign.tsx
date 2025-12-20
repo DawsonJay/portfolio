@@ -7,7 +7,7 @@ const EnclosureDesign = () => {
     <Article>
       <TitleBlock title="Enclosure Design Iterations" />
       <TextBlock 
-        text="TL;DR: 3D printed modular enclosure with snap-fit assembly. Three iterations to solve access/retention trade-offs. OnShape parametric design enables rapid testing."
+        text="3D printed modular enclosure with snap-fit assembly. Three iterations to solve access/retention trade-offs. OnShape parametric design enables rapid testing."
         sectionTitle="Overview" 
       />
       <TextBlock 

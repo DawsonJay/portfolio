@@ -9,7 +9,7 @@ const TheatricalDioramaDesign = () => {
       <TitleBlock title="Diorama Design System" />
 
       <TextBlock
-        text="TL;DR: Shadow theatre aesthetic with 11-layer color spectrum transitioning from dark tech surface (#0F1218) to warm paper lantern colors. SVG viewBox optimization shrinks files 66% and eliminates whitespace. DioramaFrame uses SVG masks to clip outer shadows while preserving depth between layers."
+        text="Shadow theatre aesthetic with 11-layer color spectrum transitioning from dark tech surface (#0F1218) to warm paper lantern colors. SVG viewBox optimization shrinks files 66% and eliminates whitespace. DioramaFrame uses SVG masks to clip outer shadows while preserving depth between layers."
         sectionTitle="Overview"
       />
 

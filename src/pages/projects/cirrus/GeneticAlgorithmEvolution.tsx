@@ -8,8 +8,8 @@ const GeneticAlgorithmEvolution = () => {
     <Article>
       <TitleBlock title="Genetic Algorithm Evolution" />
       <TextBlock 
-        text="TL;DR: 50 XGBoost AIs compete. Top 5 survive (elite preservation). Crossover blends hyperparameters. Mutation explores new configs. Log loss fitness encourages calibrated probabilities."
-        sectionTitle="Overview"
+        text="50 XGBoost AIs compete. Top 5 survive (elite preservation). Crossover blends hyperparameters. Mutation explores new configs. Log loss fitness encourages calibrated probabilities."
+        sectionTitle="Overview" 
       />
       <TextBlock 
         text="The Cirrus AI system used genetic algorithms to evolve optimal wildfire prediction models rather than hand-tuning hyperparameters or using grid search. Each AI in the population was an XGBoost classifier with unique hyperparameters: max_depth (3-15), n_estimators (50-500), learning_rate (0.01-0.3), subsample ratios, regularization values. The population of 50 AI models competed on the same prediction tasks, with fitness measured by log loss on wildfire predictions. Top performers survived to the next generation, while poor performers were eliminated. This evolutionary approach explored hyperparameter space more efficiently than exhaustive search while discovering configurations optimized specifically for the wildfire prediction task."

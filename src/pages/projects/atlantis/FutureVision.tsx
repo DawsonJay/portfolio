@@ -8,7 +8,7 @@ const FutureVision = () => {
       <TitleBlock title="Future Vision" />
 
       <TextBlock
-        text="TL;DR: Five-phase implementation: controller with LoRa communication, DNA-style error correction system, GPS-equipped surface boat with winch, two-part sphere probe with ultrasonic array, mapping software for 3D lake bed visualization. Current focus on 3D-printed controller design."
+        text="Five-phase implementation: controller with LoRa communication, DNA-style error correction system, GPS-equipped surface boat with winch, two-part sphere probe with ultrasonic array, mapping software for 3D lake bed visualization. Current focus on 3D-printed controller design."
         sectionTitle="Overview"
       />
 

@@ -7,7 +7,7 @@ const LongevityEngineering = () => {
     <Article>
       <TitleBlock title="Longevity Engineering" />
       <TextBlock 
-        text="TL;DR: 20-30 year target requires eliminating wear mechanisms. Crystal oscillator (no drift), stepper motor (no brushes), supercapacitor (100K cycles). Copper patina protects surface."
+        text="20-30 year target requires eliminating wear mechanisms. Crystal oscillator (no drift), stepper motor (no brushes), supercapacitor (100K cycles). Copper patina protects surface."
         sectionTitle="Overview"
       />
       <TextBlock 

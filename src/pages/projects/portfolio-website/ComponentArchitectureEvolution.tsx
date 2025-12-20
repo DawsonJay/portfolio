@@ -9,7 +9,7 @@ const ComponentArchitectureEvolution = () => {
       <TitleBlock title="Component Architecture" />
 
       <TextBlock
-        text="TL;DR: Generic DioramaLayer and DioramaEntity components replace tightly-coupled implementations. Configuration-driven design in config.ts files enables new dioramas without writing new components. ArticleBlock base component provides consistent section titles and TOC registration. Simplicity wins: sections panel evolved from complex opacity-block duplication to simple absolute positioning with right: 100%."
+        text="Generic DioramaLayer and DioramaEntity components replace tightly-coupled implementations. Configuration-driven design in config.ts files enables new dioramas without writing new components. ArticleBlock base component provides consistent section titles and TOC registration. Simplicity wins: sections panel evolved from complex opacity-block duplication to simple absolute positioning with right: 100%."
         sectionTitle="Overview"
       />
 

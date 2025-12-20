@@ -7,7 +7,7 @@ const ArtisticIntegration = () => {
     <Article>
       <TitleBlock title="Artistic Integration" />
       <TextBlock 
-        text="TL;DR: Black copper patina serves dual purpose: 90-95% heat absorption (power) + aesthetic beauty. Engraved moon phases reveal bright copper through black surface."
+        text="Black copper patina serves dual purpose: 90-95% heat absorption (power) + aesthetic beauty. Engraved moon phases reveal bright copper through black surface."
         sectionTitle="Overview"
       />
       <TextBlock 

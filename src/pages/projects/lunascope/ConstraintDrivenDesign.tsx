@@ -7,7 +7,7 @@ const ConstraintDrivenDesign = () => {
     <Article>
       <TitleBlock title="Constraint-Driven Design" />
       <TextBlock 
-        text="TL;DR: $128 budget and 27.5mW power constraint forced creative solutions. NEMA 8 motor instead of unavailable PTX05. Worm gear £14 vs commercial gearbox £50. Constraints shaped better design."
+        text="$128 budget and 27.5mW power constraint forced creative solutions. NEMA 8 motor instead of unavailable PTX05. Worm gear £14 vs commercial gearbox £50. Constraints shaped better design."
         sectionTitle="Overview"
       />
       <TextBlock 

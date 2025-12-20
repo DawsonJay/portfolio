@@ -7,8 +7,8 @@ const EnterpriseConstraints = () => {
     <Article>
       <TitleBlock title="Enterprise Constraints" />
       <TextBlock 
-        text="TL;DR: Existing MFE architecture, shared dependencies, authentication integration. Must fit patterns while innovating within boundaries."
-        sectionTitle="Overview"
+        text="Existing MFE architecture, shared dependencies, authentication integration. Must fit patterns while innovating within boundaries."
+        sectionTitle="Overview" 
       />
       <TextBlock 
         text="Enterprise software development means working within constraints that don't exist in personal projects. The Nexus Job Manager had to integrate with an existing microfrontend architecture, follow established patterns for authentication and API access, use specific technologies (MUI, Recharts), and be maintainable by a team with varying skill levels. These constraints aren't limitations—they're the reality of building software that needs to work reliably in production and be maintained by people other than yourself."
