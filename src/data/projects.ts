@@ -45,49 +45,46 @@ export const projects: Project[] = [
     category: 'ai-ml',
   },
   {
-    id: 'atlantis',
-    name: 'Atlantis',
-    tagline: 'Underwater Robotics Platform',
-    description: 'Hardware + software integration for autonomous underwater exploration',
+    id: 'portfolio-website',
+    name: 'Portfolio',
+    tagline: 'This Site - React Portfolio with Theatrical Diorama System',
+    description: 'The site you\'re viewing now - a modern portfolio built with React, TypeScript, and styled-components featuring a unique theatrical diorama design system',
     previewDescription:
-      'Atlantis began as an ambitious underwater exploration drone project with a $500 budget constraint. The initial design featured autonomous navigation, a hybrid Raspberry Pi 4 + Pico processing architecture, brushless motor propulsion, camera systems, and comprehensive safety mechanisms including emergency weight release and acoustic beacons. The drone was named "The Momo" after a graphic novel character, and the project emphasized "Survivability Over Perfection"—prioritizing systems that ensure safe return over technical sophistication.\n\nI started Atlantis to expand from web development into robotics and hardware integration, demonstrating cross-domain engineering capabilities. The project evolved significantly through development: from autonomous underwater drone to surface boat with towed probe, from complex motor systems to simpler mapping-focused architecture, from ambitious AI navigation to practical lake bed surveying. These pivots weren\'t failures but responses to practical constraints—component damage during assembly, testing limitations, and clearer understanding of achievable scope within timeline and budget.\n\nThe project demonstrates hardware engineering through extensive 3D-printed enclosure design iterations, systematic component testing and failure analysis, and practical problem-solving when components fail. The controller enclosure went through multiple design attempts, learning that PLA+ clips are too brittle, that raised platforms solve alignment issues, and that 2mm clearances provide reliable friction fits. Component damage from soldering revealed the importance of breadboard testing before permanent assembly. The evolution from grand vision to practical implementation shows engineering maturity: recognizing when to pivot, learning from component failures, and building systems that actually work rather than chasing perfect designs that never finish.',
-    route: 'atlantis',
-    status: 'in-progress',
-    progress: 20,
-    previewTags: ['Robotics', 'Hardware', 'Embedded Systems', 'Python', 'Raspberry Pi', 'C++', 'Linux'],
+      'This site you\'re currently viewing is itself a portfolio project, built with modern web technologies and featuring a unique theatrical diorama design system inspired by shadow theatre and paper lantern aesthetics.\n\nThe site demonstrates React/TypeScript expertise through a reusable component architecture. The theatrical diorama system uses layered SVG animations with a color spectrum that transitions from dark tech surfaces to warm paper lantern colors, creating visual depth. Each layer is independently animated using a "clockwork" timing system for synchronized movement.\n\nKey technical features include a configuration-driven diorama system supporting multiple shapes and animations, route-driven project previews with URL state management, a comprehensive article system with reusable block components (text, code, demos), responsive two-panel layouts with shared components, and systematic refactoring documented through 40+ development sessions showing iterative problem-solving and architectural evolution.',
+    route: 'portfolio-website',
+    status: 'complete',
+    progress: 100,
+    previewTags: ['React', 'TypeScript', 'styled-components', 'Design Systems', 'Component Architecture'],
     tags: [
       // Languages
-      'Python',
-      'C++',
-      // Technologies
-      'Linux',
-      'Git',
-      // Domains
-      'Robotics',
-      'Hardware',
-      'Embedded Systems',
-      'Raspberry Pi',
+      'React',
+      'TypeScript',
+      // Build Tools
+      'Vite',
+      // Styling
+      'styled-components',
+      // Routing
+      'React Router',
+      // Optimization
+      'SVG Optimization',
+      'Performance Optimization',
+      // Architecture
+      'Design Systems',
+      'Component Architecture',
+      'Theme Systems',
+      'State Management',
+      'Navigation Patterns',
+      // Design
+      'Responsive Design',
+      'Mobile-First Design',
+      'Animation',
+      'CSS Masking',
+      'Accessibility',
+      // Practices
+      'Code Refactoring',
+      'Documentation',
     ],
-    category: 'robotics',
-  },
-  {
-    id: 'lunascope',
-    name: 'Lunascope',
-    tagline: 'Creative Hardware Project',
-    description: 'Art + tech fusion with sustainable design principles',
-    previewDescription:
-      'Lunascope is a self-powered lunar phase clock using thermoelectric generator (TEG) energy harvesting to run indefinitely without external power or maintenance. The design captures ambient temperature differences and sunlight through a black-patinated copper clockface, generating 40-200mW to power ultra-low consumption electronics that track lunar cycles with 0.001125° precision. A 4.0F supercapacitor provides 91-day backup power for seasonal variations. The system is engineered for 20-30 year operation at 27.5mW average power, with conservative estimates showing 95%+ uptime across decades.\n\nI started Lunascope to explore constraint-driven innovation where limitations become design advantages. The $128 budget forced simplification that improved reliability—fewer components mean fewer failure points. The TEG power constraint (30-500mW range) drove environmental solutions: black copper patina absorbs heat efficiently, morning sunlight provides all-day energy storage, and the minimal engraving maintains 85-90% heat absorption while creating artistic moon phase indicators. These aren\'t compromises but integrated solutions where aesthetic choices serve thermal performance and power generation simultaneously.\n\nThe project demonstrates creative engineering thinking through extensive planning before component ordering. Strategic sourcing used AliExpress for expensive items (TEG modules, NEMA 8 motor, supercapacitors) and Amazon Prime for fast delivery parts (regulators, drivers), saving £20-30 while maintaining quality. The gear system pivot from PTX05 to NEMA 8 with 1:100 worm gear reduction solved mounting challenges while achieving required precision. Component selection balanced power consumption (0.2A motor vs 0.8A alternatives), backup duration (4.0F vs original 0.2F spec), and long-term reliability (crystal oscillators, solid-state electronics). The result is a system designed to last decades through thoughtful planning rather than expensive redundancy.',
-    route: 'lunascope',
-    status: 'in-progress',
-    progress: 40,
-    previewTags: ['Hardware', 'Creative Engineering', 'Sustainability'],
-    tags: [
-      // Domains
-      'Hardware',
-      'Creative Engineering',
-      'Sustainability',
-    ],
-    category: 'hardware',
+    category: 'web-development',
   },
   {
     id: 'nexus',
@@ -113,6 +110,51 @@ export const projects: Project[] = [
       'Systems',
     ],
     category: 'enterprise',
+  },
+  {
+    id: 'lunascope',
+    name: 'Lunascope',
+    tagline: 'Creative Hardware Project',
+    description: 'Art + tech fusion with sustainable design principles',
+    previewDescription:
+      'Lunascope is a self-powered lunar phase clock using thermoelectric generator (TEG) energy harvesting to run indefinitely without external power or maintenance. The design captures ambient temperature differences and sunlight through a black-patinated copper clockface, generating 40-200mW to power ultra-low consumption electronics that track lunar cycles with 0.001125° precision. A 4.0F supercapacitor provides 91-day backup power for seasonal variations. The system is engineered for 20-30 year operation at 27.5mW average power, with conservative estimates showing 95%+ uptime across decades.\n\nI started Lunascope to explore constraint-driven innovation where limitations become design advantages. The $128 budget forced simplification that improved reliability—fewer components mean fewer failure points. The TEG power constraint (30-500mW range) drove environmental solutions: black copper patina absorbs heat efficiently, morning sunlight provides all-day energy storage, and the minimal engraving maintains 85-90% heat absorption while creating artistic moon phase indicators. These aren\'t compromises but integrated solutions where aesthetic choices serve thermal performance and power generation simultaneously.\n\nThe project demonstrates creative engineering thinking through extensive planning before component ordering. Strategic sourcing used AliExpress for expensive items (TEG modules, NEMA 8 motor, supercapacitors) and Amazon Prime for fast delivery parts (regulators, drivers), saving £20-30 while maintaining quality. The gear system pivot from PTX05 to NEMA 8 with 1:100 worm gear reduction solved mounting challenges while achieving required precision. Component selection balanced power consumption (0.2A motor vs 0.8A alternatives), backup duration (4.0F vs original 0.2F spec), and long-term reliability (crystal oscillators, solid-state electronics). The result is a system designed to last decades through thoughtful planning rather than expensive redundancy.',
+    route: 'lunascope',
+    status: 'in-progress',
+    progress: 40,
+    previewTags: ['Hardware', 'Creative Engineering', 'Sustainability'],
+    tags: [
+      // Domains
+      'Hardware',
+      'Creative Engineering',
+      'Sustainability',
+    ],
+    category: 'hardware',
+  },
+  {
+    id: 'atlantis',
+    name: 'Atlantis',
+    tagline: 'Underwater Robotics Platform',
+    description: 'Hardware + software integration for autonomous underwater exploration',
+    previewDescription:
+      'Atlantis began as an ambitious underwater exploration drone project with a $500 budget constraint. The initial design featured autonomous navigation, a hybrid Raspberry Pi 4 + Pico processing architecture, brushless motor propulsion, camera systems, and comprehensive safety mechanisms including emergency weight release and acoustic beacons. The drone was named "The Momo" after a graphic novel character, and the project emphasized "Survivability Over Perfection"—prioritizing systems that ensure safe return over technical sophistication.\n\nI started Atlantis to expand from web development into robotics and hardware integration, demonstrating cross-domain engineering capabilities. The project evolved significantly through development: from autonomous underwater drone to surface boat with towed probe, from complex motor systems to simpler mapping-focused architecture, from ambitious AI navigation to practical lake bed surveying. These pivots weren\'t failures but responses to practical constraints—component damage during assembly, testing limitations, and clearer understanding of achievable scope within timeline and budget.\n\nThe project demonstrates hardware engineering through extensive 3D-printed enclosure design iterations, systematic component testing and failure analysis, and practical problem-solving when components fail. The controller enclosure went through multiple design attempts, learning that PLA+ clips are too brittle, that raised platforms solve alignment issues, and that 2mm clearances provide reliable friction fits. Component damage from soldering revealed the importance of breadboard testing before permanent assembly. The evolution from grand vision to practical implementation shows engineering maturity: recognizing when to pivot, learning from component failures, and building systems that actually work rather than chasing perfect designs that never finish.',
+    route: 'atlantis',
+    status: 'in-progress',
+    progress: 20,
+    previewTags: ['Robotics', 'Hardware', 'Embedded Systems', 'Python', 'Raspberry Pi', 'C++', 'Linux'],
+    tags: [
+      // Languages
+      'Python',
+      'C++',
+      // Technologies
+      'Linux',
+      'Git',
+      // Domains
+      'Robotics',
+      'Hardware',
+      'Embedded Systems',
+      'Raspberry Pi',
+    ],
+    category: 'robotics',
   },
   {
     id: 'cirrus',
@@ -152,48 +194,6 @@ export const projects: Project[] = [
       'NOAA Data',
     ],
     category: 'ai-ml',
-  },
-  {
-    id: 'portfolio-website',
-    name: 'Portfolio Project',
-    tagline: 'This Site - React Portfolio with Theatrical Diorama System',
-    description: 'The site you\'re viewing now - a modern portfolio built with React, TypeScript, and styled-components featuring a unique theatrical diorama design system',
-    previewDescription:
-      'This site you\'re currently viewing is itself a portfolio project, built with modern web technologies and featuring a unique theatrical diorama design system inspired by shadow theatre and paper lantern aesthetics.\n\nThe site demonstrates React/TypeScript expertise through a reusable component architecture. The theatrical diorama system uses layered SVG animations with a color spectrum that transitions from dark tech surfaces to warm paper lantern colors, creating visual depth. Each layer is independently animated using a "clockwork" timing system for synchronized movement.\n\nKey technical features include a configuration-driven diorama system supporting multiple shapes and animations, route-driven project previews with URL state management, a comprehensive article system with reusable block components (text, code, demos), responsive two-panel layouts with shared components, and systematic refactoring documented through 40+ development sessions showing iterative problem-solving and architectural evolution.',
-    route: 'portfolio-website',
-    status: 'complete',
-    progress: 100,
-    previewTags: ['React', 'TypeScript', 'styled-components', 'Design Systems', 'Component Architecture'],
-    tags: [
-      // Languages
-      'React',
-      'TypeScript',
-      // Build Tools
-      'Vite',
-      // Styling
-      'styled-components',
-      // Routing
-      'React Router',
-      // Optimization
-      'SVG Optimization',
-      'Performance Optimization',
-      // Architecture
-      'Design Systems',
-      'Component Architecture',
-      'Theme Systems',
-      'State Management',
-      'Navigation Patterns',
-      // Design
-      'Responsive Design',
-      'Mobile-First Design',
-      'Animation',
-      'CSS Masking',
-      'Accessibility',
-      // Practices
-      'Code Refactoring',
-      'Documentation',
-    ],
-    category: 'web-development',
   },
 ];
 

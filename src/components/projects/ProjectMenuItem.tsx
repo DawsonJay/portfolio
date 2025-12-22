@@ -170,7 +170,7 @@ const ProjectMenuItem = ({ project, isSelected, onSelect }: ProjectMenuItemProps
   return (
     <MenuItemContainer $isSelected={isSelected} onClick={onSelect}>
       <ContentSection>
-        <ProjectTitle>The {project.name} Project</ProjectTitle>
+        <ProjectTitle>{project.name}</ProjectTitle>
         <IconsContainer>
           {technologyIconGroups.map((group, groupIndex) => (
             <React.Fragment key={group.category}>

@@ -223,7 +223,7 @@ const ProjectPreviewPanel = ({ project }: ProjectPreviewPanelProps) => {
 
   return (
     <PreviewContainer>
-      <Title>The {project.name} Project</Title>
+      <Title>{project.name}</Title>
 
       <IconsContainer>
         {technologyIconGroups.map((group, groupIndex) => (
