@@ -62,8 +62,8 @@ const Projects = () => {
           ) : (
             <EmptyState>
               <EmptyStateText>
-                <DesktopText>Select a project on the left to view its preview.</DesktopText>
-                <MobileText>Select a project on the menu below to view it's preview.</MobileText>
+                <DesktopText>Select a project on the left to view.</DesktopText>
+                <MobileText>Select a project on the menu below to view.</MobileText>
               </EmptyStateText>
             </EmptyState>
           )}
