@@ -81,82 +81,6 @@ const AvailabilityText = styled.p`
   margin: ${(props) => props.theme.spacing.md} 0 0 0;
 `;
 
-// Progress Indicator Components
-const ProgressContainer = styled.div`
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 0;
-  margin-bottom: ${(props) => props.theme.spacing.lg};
-  position: relative;
-  flex-wrap: wrap;
-  padding: 20px 0;
-`;
-
-const ProgressItem = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  z-index: 2;
-`;
-
-const ProgressCircle = styled.div<{ $complete: boolean }>`
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: ${(props) => 
-    props.$complete 
-      ? props.theme.colors.accent 
-      : props.theme.colors.surface};
-  border: 2px solid ${(props) => props.theme.colors.accent};
-  color: ${(props) => 
-    props.$complete 
-      ? props.theme.colors.layers.layer11 
-      : props.theme.colors.accent};
-  font-size: ${(props) => props.theme.fontSizes.lg};
-  font-weight: 600;
-  flex-shrink: 0;
-  position: relative;
-  z-index: 2;
-  
-  &::after {
-    content: '${(props) => (props.$complete ? '✓' : '')}';
-  }
-`;
-
-const ProgressLabel = styled.span`
-  font-size: ${(props) => props.theme.fontSizes.sm};
-  color: ${(props) => props.theme.colors.layers.layer11};
-  margin-top: ${(props) => props.theme.spacing.xs};
-  text-align: center;
-  font-weight: 500;
-`;
-
-const ProgressLine = styled.div<{ $complete: boolean; $dashed?: boolean }>`
-  flex: 1;
-  height: 2px;
-  min-width: 40px;
-  max-width: 80px;
-  margin: 0 -20px;
-  position: relative;
-  z-index: 1;
-  align-self: flex-start;
-  margin-top: 20px;
-  border-top: ${(props) => 
-    props.$dashed 
-      ? `2px dashed ${props.theme.colors.accent}` 
-      : 'none'};
-  background: ${(props) => 
-    props.$dashed 
-      ? 'transparent' 
-      : (props.$complete 
-          ? props.theme.colors.accent 
-          : props.theme.colors.layers.layer1)};
-`;
 
 // Form Components
 const FormContainer = styled.form`
@@ -356,13 +280,6 @@ interface FormErrors {
   message?: string;
 }
 
-// Progress Indicator Data (no longer used, but kept for potential future use)
-const PROGRESS_ITEMS = [
-  { label: 'IELTS', complete: true },
-  { label: 'WES', complete: true },
-  { label: 'Passport', complete: true },
-  { label: 'Job Offer', complete: false },
-] as const;
 
 const Contact = () => {
   const [formData, setFormData] = useState<FormData>({
@@ -455,26 +372,6 @@ const Contact = () => {
       setIsSubmitting(false);
     }
   };
-
-  const renderProgressIndicator = () => (
-    <ProgressContainer>
-      {PROGRESS_ITEMS.map((item, index) => (
-        <>
-          <ProgressItem key={item.label}>
-            <ProgressCircle $complete={item.complete} />
-            <ProgressLabel>{item.label}</ProgressLabel>
-          </ProgressItem>
-          {index < PROGRESS_ITEMS.length - 1 && (
-            <ProgressLine 
-              key={`line-${index}`}
-              $complete={item.complete} 
-              $dashed={!item.complete}
-            />
-          )}
-        </>
-      ))}
-    </ProgressContainer>
-  );
 
   const renderErrorMessage = () => {
     if (!submitError) return null;
