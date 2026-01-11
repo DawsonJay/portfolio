@@ -7,7 +7,7 @@ const SystemUnderstandingFirst = () => {
     <Article>
       <TitleBlock title="System Understanding First" />
       <TextBlock 
-        text="Processing Threads (job producers) vs Worker Threads (job consumers). DueCount is key health metric. Dashboard shows patterns, not precise numbers."
+        text="I learned that Processing Threads (job producers) differ from Worker Threads (job consumers). DueCount is the key health metric. The dashboard shows patterns, not precise numbers."
         sectionTitle="Overview" 
       />
       <TextBlock 
@@ -15,7 +15,7 @@ const SystemUnderstandingFirst = () => {
         sectionTitle="Understanding First"
       />
       <TextBlock 
-        text={'The most critical insight came from distinguishing two types of "threads" that sound similar but serve completely different purposes. Processing Threads are job producers—named, event-driven components like "EmailCampaignThread" or "FileMonitorThread" that create jobs when events occur (file changes, schedules, webhooks). Worker Threads are job consumers—anonymous execution slots configured per queue (e.g., "Send": 5, "Mab": 3) that poll the dispatcher for jobs, execute work, and report completion. This distinction fundamentally shapes the UI: Processing Threads are about configuration and monitoring specific producers, while Worker Threads are about capacity allocation and throughput.'}
+        text="The most critical insight came from distinguishing two types of 'threads' that sound similar but serve completely different purposes. Processing Threads are job producers—named, event-driven components like 'EmailCampaignThread' or 'FileMonitorThread' that create jobs when events occur (file changes, schedules, webhooks). Worker Threads are job consumers—anonymous execution slots configured per queue (e.g., 'Send': 5, 'Mab': 3) that poll the dispatcher for jobs, execute work, and report completion. This distinction fundamentally shapes the UI: Processing Threads are about configuration and monitoring specific producers, while Worker Threads are about capacity allocation and throughput."
         sectionTitle="Two Types of Threads"
       />
       <TextBlock 
@@ -27,12 +27,16 @@ const SystemUnderstandingFirst = () => {
         sectionTitle="Design Decisions"
       />
       <TextBlock 
-        text={'The atomic notes I created during this analysis became the foundation for team knowledge. Twelve notes covering concepts like "Job Dispatcher orchestrates distributed job processing," "Processing Threads create jobs from events," "Queue metrics indicate system health," and "Dashboard shows visual patterns not precise data." These notes aren\'t just documentation—they\'re the shared understanding that enables the entire team to make informed decisions about the UI. You can\'t build effective enterprise software without this depth of system understanding. The time invested in analysis pays dividends in every design decision that follows.'}
+        text="The atomic notes I created during this analysis became the foundation for team knowledge. Twelve notes covering concepts like 'Job Dispatcher orchestrates distributed job processing,' 'Processing Threads create jobs from events,' 'Queue metrics indicate system health,' and 'Dashboard shows visual patterns not precise data.' These notes aren't just documentation—they're the shared understanding that enables the entire team to make informed decisions about the UI. You can't build effective enterprise software without this depth of system understanding. The time I invested in analysis pays dividends in every design decision that follows."
         sectionTitle="Team Knowledge"
+      />
+      
+      <TextBlock 
+        text="This deep system analysis demonstrates my approach to enterprise software: understanding before building. I spent significant time analyzing a 340,000-line API response and the JobDispatcher codebase before writing a single component. This upfront investment prevented costly redesigns later and ensured the dashboard actually solved real problems. The distinction between Processing Threads and Worker Threads fundamentally shaped the UI architecture—without this understanding, I would have built the wrong interface. This shows I can work with complex legacy systems, extract key insights from large codebases, and design solutions that match system architecture rather than fighting against it."
+        sectionTitle="Professional Value"
       />
     </Article>
   );
 };
 
 export default SystemUnderstandingFirst;
-

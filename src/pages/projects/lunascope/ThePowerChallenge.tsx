@@ -8,11 +8,11 @@ const ThePowerChallenge = () => {
     <Article>
       <TitleBlock title="The Power Challenge" />
       <TextBlock 
-        text="TEG harvests 0.96-14.4Wh/day from temperature gradients. 4.0F supercapacitors provide 91-day backup. System draws 27.5mW average. Black copper patina maximizes heat absorption."
+        text="I use TEG to harvest 0.96-14.4Wh/day from temperature gradients. I chose 4.0F supercapacitors that provide 91-day backup. The system draws 27.5mW average. I applied black copper patina to maximize heat absorption."
         sectionTitle="Overview" 
       />
       <TextBlock 
-        text="The Lunascope's core challenge is straightforward: track lunar phases for 20-30 years without external power or maintenance. Most clocks rely on batteries or wall power—both require periodic intervention. Batteries need replacement every few years. Wall power requires accessible outlets and creates dependency. The solution: harvest energy from the environment itself using thermoelectric generators (TEGs) that convert temperature differences into electricity. TEGs have no moving parts, degrade slowly, and generate power as long as temperature gradients exist. This approach eliminates maintenance while demonstrating energy harvesting applicable to extreme environments where traditional power isn't viable." 
+        text="The Lunascope's core challenge is straightforward: track lunar phases for 20-30 years without external power or maintenance. Most clocks rely on batteries or wall power—both require periodic intervention. Batteries need replacement every few years. Wall power requires accessible outlets and creates dependency. My solution: harvest energy from the environment itself using thermoelectric generators (TEGs) that convert temperature differences into electricity. TEGs have no moving parts, degrade slowly, and generate power as long as temperature gradients exist. This approach eliminates maintenance while demonstrating energy harvesting applicable to extreme environments where traditional power isn't viable." 
         sectionTitle="Energy Harvesting Approach" 
       />
       <TextBlock 
@@ -70,7 +70,7 @@ print(f"Daily surplus: {typical_surplus:.2f} Wh")
 print(f"Energy ratio: {typical_generation/total_daily_consumption:.1f}x")`}
       />
       <TextBlock 
-        text="The original specification called for 0.2F supercapacitors providing 3.8 days backup. During planning, I recognized this was insufficient for seasonal variations—winter months with less sunlight, heating cycles that reduce temperature gradients, extended cloudy periods. The solution: upgrade to 4.0F supercapacitors storing 60.4Wh, providing 91-day backup power. This three-month buffer handles worst-case scenarios: cloudy winter weeks, heating season with minimal gradients, placement away from windows. The supercapacitor choice demonstrates systems thinking—understanding that average conditions don't capture edge cases, and long-term reliability requires designing for extremes." 
+        text="The original specification called for 0.2F supercapacitors providing 3.8 days backup. During planning, I recognized this was insufficient for seasonal variations—winter months with less sunlight, heating cycles that reduce temperature gradients, extended cloudy periods. My solution: upgrade to 4.0F supercapacitors storing 60.4Wh, providing 91-day backup power. This three-month buffer handles worst-case scenarios: cloudy winter weeks, heating season with minimal gradients, placement away from windows. The supercapacitor choice demonstrates systems thinking—understanding that average conditions don't capture edge cases, and long-term reliability requires designing for extremes." 
         sectionTitle="Energy Storage Strategy" 
       />
       <TextBlock 
@@ -78,7 +78,7 @@ print(f"Energy ratio: {typical_generation/total_daily_consumption:.1f}x")`}
         sectionTitle="Power Management" 
       />
       <TextBlock 
-        text="The power strategy reveals a key design principle: environmental solutions over adding equipment. Rather than larger TEG modules (more expensive, harder to mount), the black copper patina improves heat absorption. Rather than complex power management circuits (more components, more failure points), simple voltage regulation with massive safety margin. Rather than trying to generate more power, reduce consumption through efficient components (0.2A motor vs 0.8A alternatives). This approach works because constraints force examining the entire system—power generation, storage, consumption, and regulation as interconnected elements where optimizing one enables simplification elsewhere." 
+        text="The power strategy reveals a key design principle I've learned: environmental solutions over adding equipment. Rather than larger TEG modules (more expensive, harder to mount), I went with the black copper patina to improve heat absorption. Rather than complex power management circuits (more components, more failure points), simple voltage regulation with massive safety margin. Rather than trying to generate more power, reduce consumption through efficient components (0.2A motor vs 0.8A alternatives). This approach works because constraints force examining the entire system—power generation, storage, consumption, and regulation as interconnected elements where optimizing one enables simplification elsewhere." 
         sectionTitle="Systems Optimization" 
       />
       <TextBlock 
@@ -94,4 +94,3 @@ print(f"Energy ratio: {typical_generation/total_daily_consumption:.1f}x")`}
 };
 
 export default ThePowerChallenge;
-

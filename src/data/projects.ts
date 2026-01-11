@@ -87,6 +87,49 @@ export const projects: Project[] = [
     category: 'web-development',
   },
   {
+    id: 'moh-ami',
+    name: 'moh-ami',
+    tagline: 'French Learning Translation Tool',
+    description: 'LLM-powered translation tool with detailed explanations and word-by-word mappings',
+    previewDescription:
+      'moh-ami (pronounced "moh-ah-mee", from "mot ami" meaning "word friend") is a French learning translation tool that goes beyond simple translation—it provides detailed explanations for each part of the text. Built with Next.js 14, the application uses OpenAI GPT-4o-mini to translate English to French while providing word-by-word mappings, grammar rules, cultural context, and alternative translations. The system features a GraphQL API with Apollo Server, PostgreSQL database via Prisma ORM, and Redux Toolkit for state management. Users see synchronized side-by-side text comparison with interactive chunk selection, hover highlighting, and expandable explanation panels.\n\nI started moh-ami to demonstrate end-to-end LLM integration in a production application while learning French. Simple translation tools don\'t explain why words are translated certain ways or what grammar rules apply. I wanted to build a learning tool that helps understand the translation process, not just see the result. The goal was to show full-stack development skills with modern technologies: Next.js App Router, GraphQL API design, LLM prompt engineering, and production deployment with proper build patterns.\n\nThe project demonstrates systematic problem-solving through iterative refinement: from complex text matching to simplified ID-based chunk selection, from eager to lazy initialization for deployment compatibility, and from generic prompts to structured JSON responses with validation. It shows the ability to integrate external APIs (OpenAI), design interactive user experiences (synchronized scrolling, chunk highlighting), implement proper state management patterns (Redux Toolkit), and deploy full-stack applications to production (Railway with PostgreSQL). The focus was on building a complete, production-ready application that solves a real learning problem while demonstrating modern web development expertise.',
+    route: 'moh-ami',
+    status: 'complete',
+    previewTags: ['Next.js', 'React', 'TypeScript', 'GraphQL', 'OpenAI', 'PostgreSQL', 'Redux'],
+    tags: [
+      // Languages
+      'TypeScript',
+      'JavaScript',
+      // Frameworks
+      'Next.js',
+      'React',
+      // State Management
+      'Redux',
+      'Redux Toolkit',
+      // API
+      'GraphQL',
+      'Apollo Server',
+      'Apollo Client',
+      // Database
+      'PostgreSQL',
+      'Prisma',
+      'Docker',
+      // AI/ML
+      'OpenAI',
+      'AI/ML',
+      'LLM Integration',
+      'Prompt Engineering',
+      // Styling
+      'Tailwind CSS',
+      // Deployment
+      'Railway',
+      // Tools
+      'Git',
+      'Linux',
+    ],
+    category: 'web-development',
+  },
+  {
     id: 'nexus',
     name: 'Nexus',
     tagline: 'Enterprise Component Systems',

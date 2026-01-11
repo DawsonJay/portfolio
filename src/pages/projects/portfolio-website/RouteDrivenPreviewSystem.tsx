@@ -9,7 +9,7 @@ const RouteDrivenPreviewSystem = () => {
       <TitleBlock title="Route-Driven Previews" />
 
       <TextBlock
-        text="URL as state makes previews bookmarkable and shareable at /projects/preview/:projectName. useParams hook drives UI from route parameters. NavBar highlights when pathname starts with path (not just exact match), and active items remain clickable to navigate back to base routes. Mobile drawer closes automatically when project selected."
+        text="I used URL as state to make previews bookmarkable and shareable at /projects/preview/:projectName. The useParams hook drives UI from route parameters. I configured NavBar to highlight when pathname starts with path (not just exact match), and active items remain clickable to navigate back to base routes. The mobile drawer closes automatically when a project is selected."
         sectionTitle="Overview"
       />
 
@@ -17,12 +17,12 @@ const RouteDrivenPreviewSystem = () => {
         text="The Projects page needed a way for users to see project details before committing to the full article page. The initial design showed a static placeholder when no project was selected, but clicking a project should show a preview panel on the right with comprehensive information: project title formatted as 'The X Project', technology icons grouped by category, progress bar with percentage, three-paragraph description, and a 'Read on' button linking to the full article page.
 
 The key architectural decision was using the URL to drive this state rather than React component state. Routes became /projects (empty state), /projects/preview/:projectName (preview showing), and /projects/:projectName (full article page). This makes previews bookmarkable—users can link directly to /projects/preview/what-now—and shareable, with the URL accurately reflecting application state. It also enables browser back/forward navigation to work intuitively."
-        sectionTitle="URL as Application State"
+        sectionTitle="URL as State"
       />
 
       <CodeBlock
         language="typescript"
-        sectionTitle="Route Structure in App.tsx"
+        sectionTitle="Route Structure"
         caption="Nested routes with explicit preview segment"
         code={`import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Projects from './pages/Projects';
@@ -49,10 +49,10 @@ function App() {
       />
 
       <TextBlock
-        text="The Projects page component uses useParams to extract the projectName from the URL, finds the matching project from the data array, and conditionally renders either the preview panel or an empty state message. The useNavigate hook provides programmatic navigation when users click menu items, pushing new routes to /projects/preview/:projectName. This pattern separates routing logic (useParams, useNavigate) from UI rendering (preview panel, menu items), making both testable independently.
+        text="The Projects page component uses useParams to extract the projectName from the URL, finds the matching project from the data array, and conditionally renders either the preview panel or an empty state message. I use the useNavigate hook for programmatic navigation when users click menu items, pushing new routes to /projects/preview/:projectName. This pattern separates routing logic (useParams, useNavigate) from UI rendering (preview panel, menu items), making both testable independently.
 
 The ProjectsMenu component accepts selectedRoute and onSelect props, making it unaware of routing implementation details. It simply calls onSelect(route) when a project is clicked, and the parent Projects component handles the navigation. This separation means ProjectsMenu could theoretically work with a different routing system or no routing at all—it's just a controlled component that reports user actions."
-        sectionTitle="useParams for Route-Driven UI"
+        sectionTitle="Route-Driven UI"
       />
 
       <CodeBlock
@@ -102,10 +102,10 @@ const Projects = () => {
       />
 
       <TextBlock
-        text="The NavBar needed enhancement to work well with nested routes. Originally it only highlighted items for exact path matches—visiting /projects/preview/what-now left 'Projects' unhighlighted even though you're conceptually still in the projects section. The solution checks if the current pathname starts with the item's path (plus a trailing slash), making /projects highlight for any route beginning with /projects/.
+        text="The NavBar needed enhancement to work well with nested routes. Originally it only highlighted items for exact path matches—visiting /projects/preview/what-now left 'Projects' unhighlighted even though you're conceptually still in the projects section. I solved this by checking if the current pathname starts with the item's path (plus a trailing slash), making /projects highlight for any route beginning with /projects/.
 
 The home route requires special handling because every path technically starts with '/', so it only highlights for exact matches. This creates intuitive behavior: Projects highlights for /projects, /projects/preview/what-now, and /projects/what-now. About highlights for /about and /about/anything. Home only highlights when you're exactly on /."
-        sectionTitle="NavBar Route Highlighting"
+        sectionTitle="NavBar Highlighting"
       />
 
       <CodeBlock
@@ -156,7 +156,7 @@ const NavBar = () => {
         text="A subtle but important UX improvement: active navigation items remain clickable. Users can click 'Projects' from /projects/preview/what-now to return to /projects, or click 'Home' from any subpage to return to the homepage. This required changing ActiveNavLink from a span element to a Link component—a small change that significantly improves navigation discoverability.
 
 The mobile drawer integration required ensuring the menu closes when a project is selected. ProjectsMenu accepts an optional onItemClick prop that gets called alongside onSelect, and MobileDrawer provides this callback to close itself. This creates a clean data flow: user clicks item → onSelect navigates to new route → onItemClick closes drawer → user sees the new preview content. The mobile drawer also automatically closes when clicking its backdrop (the semi-transparent overlay), providing two intuitive ways to dismiss it."
-        sectionTitle="Clickable Active Items"
+        sectionTitle="Mobile Experience"
       />
 
       <CodeBlock
@@ -200,12 +200,11 @@ The mobile drawer integration required ensuring the menu closes when a project i
       />
 
       <TextBlock
-        text="This architecture demonstrates several React Router best practices: using URL parameters for shareable state, extracting route logic to hook level (useParams, useNavigate), keeping components routing-agnostic through props, and handling nested routes with explicit segments. The pattern scales well—adding more preview features or route parameters doesn't require refactoring the component structure."
-        sectionTitle="Architectural Benefits"
+        text="This architecture demonstrates several React Router best practices I've learned: using URL parameters for shareable state, extracting route logic to hook level (useParams, useNavigate), keeping components routing-agnostic through props, and handling nested routes with explicit segments. The pattern scales well—adding more preview features or route parameters doesn't require refactoring the component structure."
+        sectionTitle="What I Learned"
       />
     </Article>
   );
 };
 
 export default RouteDrivenPreviewSystem;
-

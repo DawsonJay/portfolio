@@ -5,7 +5,7 @@ import DemoBlock from '../../../components/article/DemoBlock';
 const Demos = () => {
   return (
     <Article>
-      <TitleBlock title="Demos & Resources" />
+      <TitleBlock title="Resources" />
       <DemoBlock
         sectionTitle="Source Code"
         text="The Atlantis Project repository contains Python sensor integration code, hardware documentation, development logs, and technical specifications. The codebase includes sensor testing scripts, UART communication protocols for Raspberry Pi coordination, component wiring diagrams, and comprehensive troubleshooting documentation demonstrating embedded systems development methodology."
@@ -22,4 +22,3 @@ const Demos = () => {
 };
 
 export default Demos;
-

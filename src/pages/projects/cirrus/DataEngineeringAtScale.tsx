@@ -8,7 +8,7 @@ const DataEngineeringAtScale = () => {
     <Article>
       <TitleBlock title="Data Engineering at Scale" />
       <TextBlock 
-        text="6-stage pipeline processes 56M weather records + 438K wildfire events. Chunked loading bypasses fiona validation errors. Wide format schema optimizes ML queries. Modular stages enable independent testing."
+        text="I built a 6-stage pipeline that processes 56M weather records + 438K wildfire events. I used chunked loading to bypass fiona validation errors. I chose wide format schema to optimize ML queries. Modular stages enable independent testing."
         sectionTitle="Overview" 
       />
       <TextBlock 
@@ -16,7 +16,7 @@ const DataEngineeringAtScale = () => {
         sectionTitle="Pipeline Overview"
       />
       <TextBlock 
-        text="This wasn't simple data loading—it required downloading multi-gigabyte datasets, filtering by geography (southern Canada only) and time (1930-2025), handling corrupted records, validating data quality, and structuring everything for efficient machine learning access. The pipeline ran as a sequence of six stages, each building on the previous stage's output, with comprehensive error handling and progress logging throughout."
+        text="This wasn't simple data loading—it required downloading multi-gigabyte datasets, filtering by geography (southern Canada only) and time (1930-2025), handling corrupted records, validating data quality, and structuring everything for efficient machine learning access. I designed the pipeline as a sequence of six stages, each building on the previous stage's output, with comprehensive error handling and progress logging throughout."
         sectionTitle="Pipeline Complexity"
       />
       
@@ -60,46 +60,32 @@ def load_wildfire_data_chunked(shapefile_path, chunk_size=50000):
         gdf_valid = gdf_chunk[~invalid_dates]
         all_fires.append(gdf_valid)
         
-        print(f"Loaded {end}/{total_records}, "
-              f"filtered {invalid_dates.sum()} invalid records")
+        print(f"Loaded {end}/{total_records} records, "
+              f"filtered {invalid_dates.sum()} invalid dates")
     
-    # Combine all chunks
-    return pd.concat(all_fires, ignore_index=True)
+    return gpd.GeoDataFrame(pd.concat(all_fires, ignore_index=True))
 
-# Result: 438,356 valid records from 442,403 total (0.9% loss)`}
+# Result: 438,000 valid wildfire events from 1930-2025`}
       />
       <TextBlock 
-        text="The solution used chunked loading to bypass fiona's date validation, then filtered invalid records post-load. Of 442,403 total records, only 4,047 had invalid dates (0.9% loss), demonstrating that most data was valid despite the problematic placeholders. Each fire event included location, date, size, and cause—key features for AI training."
-        sectionTitle="Chunked Loading Solution"
+        text="This chunked loading approach demonstrated a practical problem-solving pattern I learned: when standard libraries fail due to data quality issues, work around the validation rather than trying to fix the source data. Fiona's date validation was too strict for this dataset, but loading in chunks bypassed validation, allowing filtering of invalid records after loading. The solution wasn't elegant, but it worked reliably for processing hundreds of thousands of records."
+        sectionTitle="Practical Solutions"
       />
-      
       <TextBlock 
-        text="Stage 3 performed comprehensive data validation before database loading. Weather data validation checked for missing coordinates, out-of-range values (temperatures between -70°C and 60°C for Canada), duplicate records, and inconsistent station metadata. Wildfire data validation verified geographic bounds, date ranges, and fire size reasonability. The validation stage generated detailed reports documenting data quality issues, enabling informed decisions about data cleaning strategies. Records failing critical validations were flagged for manual review or automatic filtering, while records with minor issues were marked but retained."
-        sectionTitle="Data Validation"
+        text="The database schema used wide format (one row per date per cell, all weather variables as columns) rather than long format (one row per variable per cell per date). This decision optimized for ML training queries that need all weather variables for a specific cell and date. Wide format meant a single query retrieved complete feature vectors, while long format would require joins across millions of rows. The trade-off was database size (wider tables use more storage), but query performance mattered more for iterative model training."
+        sectionTitle="Schema Design"
       />
-      
       <TextBlock 
-        text="Stage 4 created the raw weather database with schema optimized for subsequent interpolation. Rather than storing weather data in long format (one row per station-date-variable), the system used wide format (one row per station-date with columns for each variable). This eliminated expensive pivot operations during interpolation queries. Database indices on station_id and date enabled fast lookups during the billions of interpolation calculations. The wide format meant queries like 'get all weather variables for station X on date Y' required a single row retrieval rather than multiple joins."
-        sectionTitle="Database Optimization"
+        text="I designed modular stages to enable independent testing and debugging. Each stage produced intermediate outputs that could be inspected, validated, and cached. If Stage 4 had problems, I could rerun just that stage using cached Stage 3 output rather than reprocessing from the beginning. This modularity saved hours during development, making it easy to iterate on individual pipeline components without full pipeline reruns. The lesson: complex systems benefit from checkpointing and restart capabilities."
+        sectionTitle="Modular Design"
       />
       
       <TextBlock 
-        text="Stage 5 built the spatial index mapping each grid cell to its nearest weather stations using KD-tree algorithms. For 121,484 cells, the system calculated distances to all 9,000+ stations, then selected the nearest 30 stations per cell organized into quality tiers. This pre-computation took several hours but saved massive time during interpolation—station assignments were calculated once and reused billions of times. The spatial index database stored cell-station mappings, distances, and quality tiers, enabling Stage 6 to perform interpolation without recalculating spatial relationships."
-        sectionTitle="Spatial Index Creation"
-      />
-      
-      <TextBlock 
-        text="Stage 6 generated the interpolated weather grid by processing 2+ million cell-date combinations using the pre-computed spatial index. The optimized implementation used vectorized NumPy operations and batch database loading, achieving 21,000+ records per second. Memory management was critical—processing the full 3-year dataset required careful chunking to avoid exhausting RAM while maintaining efficiency. The stage included comprehensive progress logging (cells processed per hour, estimated time remaining, memory usage) enabling monitoring during the 10+ hour processing runs."
-        sectionTitle="Interpolation Processing"
-      />
-      
-      <TextBlock 
-        text="The multi-stage pipeline architecture demonstrated key data engineering principles: modular stages with clear inputs/outputs enabled testing each stage independently before running the full pipeline. Each stage wrote its output to disk (CSV files or databases), allowing pipeline restarts from any point without reprocessing early stages. Comprehensive logging captured processing rates, errors, and data quality metrics, enabling diagnosis of issues and optimization of bottlenecks. The staged approach transformed an overwhelmingly complex data engineering problem into a series of manageable, testable, debuggable components."
-        sectionTitle="Pipeline Architecture"
+        text="This data engineering work demonstrates my ability to build production-scale data pipelines. Processing 56 million weather records and 438,000 wildfire events into a 7.86GB database required handling data quality issues (chunked loading to bypass validation errors), schema design (wide format for ML queries), and modular architecture (checkpointing, independent stage testing). The chunked loading solution shows practical problem-solving when standard libraries fail. The wide format schema choice demonstrates understanding of query patterns for ML training. This work shows data engineering skills: large-scale data processing, schema design, pipeline architecture, and handling real-world data quality issues—all essential for ML infrastructure and data engineering roles."
+        sectionTitle="Professional Value"
       />
     </Article>
   );
 };
 
 export default DataEngineeringAtScale;
-

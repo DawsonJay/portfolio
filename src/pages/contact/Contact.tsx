@@ -356,7 +356,7 @@ interface FormErrors {
   message?: string;
 }
 
-// Progress Indicator Data
+// Progress Indicator Data (no longer used, but kept for potential future use)
 const PROGRESS_ITEMS = [
   { label: 'IELTS', complete: true },
   { label: 'WES', complete: true },
@@ -518,12 +518,11 @@ const Contact = () => {
       <NavBar />
       <ContentContainer>
         <PageTitle>Ready to Work Together</PageTitle>
-        <Subtitle>I'm immigration-ready and available to start.</Subtitle>
+        <Subtitle>Working Holiday Visa approved. No sponsorship needed.</Subtitle>
 
         <SectionCard>
-          {renderProgressIndicator()}
           <AvailabilityText>
-            Immigration ready. Open to anywhere in Canada.
+            I have a Working Holiday Visa for Canada—I can work immediately, no sponsorship required. Open to relocating anywhere in Canada for the right opportunity.
           </AvailabilityText>
         </SectionCard>
 

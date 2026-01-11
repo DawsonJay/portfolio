@@ -6,7 +6,7 @@ import CodeBlock from '../../../components/article/CodeBlock';
 const HardwareIntegration = () => {
   return (
     <Article>
-      <TitleBlock title="Hardware Integration Challenges" />
+      <TitleBlock title="Hardware Integration" />
       <TextBlock 
         text="Hardware failures are silent—no error messages. Datasheets show specs but not real-world behavior. Physical constraints can't be abstracted. Testing is manual and slow."
         sectionTitle="Overview" 
@@ -88,12 +88,16 @@ void setup() {
         sectionTitle="Testing Limitations" 
       />
       <TextBlock 
-        text="The hardware integration experience taught appreciation for embedded systems engineering as a distinct discipline from software engineering. The skills overlap—both require systematic debugging, understanding of abstraction layers, ability to read specifications—but hardware adds physical constraints, irreversible operations (soldering), material properties, manufacturing tolerances, and environmental factors that software developers rarely consider. The controller enclosure iterations, component damage recovery, and systematic troubleshooting demonstrated these hardware-specific challenges. Successfully navigating them requires different mindset and methods than pure software development, making cross-domain capability valuable for robotics and hardware integration projects." 
+        text="The hardware integration experience taught me appreciation for embedded systems engineering as a distinct discipline from software engineering. The skills overlap—both require systematic debugging, understanding of abstraction layers, ability to read specifications—but hardware adds physical constraints, irreversible operations (soldering), material properties, manufacturing tolerances, and environmental factors that software developers rarely consider. The controller enclosure iterations, component damage recovery, and systematic troubleshooting demonstrated these hardware-specific challenges. Successfully navigating them requires different mindset and methods than pure software development, making cross-domain capability valuable for robotics and hardware integration projects." 
         sectionTitle="Cross-Domain Skills" 
+      />
+      
+      <TextBlock 
+        text="This hardware integration work demonstrates my ability to work across domains—from software debugging (stack traces, logs) to hardware debugging (systematic isolation, physical testing). The systematic troubleshooting approach (verify power, then communication, then pins, then initialization) shows structured problem-solving applicable to any complex system. The component damage recovery and enclosure redesign iterations show resilience and iterative improvement. This cross-domain capability is valuable for IoT, robotics, and embedded systems work where software and hardware integration is essential. The ability to debug systems where failures are silent and testing is manual is a distinct skill from pure software development."
+        sectionTitle="Professional Value"
       />
     </Article>
   );
 };
 
 export default HardwareIntegration;
-

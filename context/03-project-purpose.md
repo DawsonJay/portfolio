@@ -2,15 +2,15 @@
 
 ## Primary Goal
 
-This portfolio website supports Canadian job applications and Express Entry immigration by January 2026. It serves as a professional showcase demonstrating React, TypeScript, and Tailwind CSS skills while positioning the developer as someone actively growing into AI/robotics.
+This portfolio website supports Canadian job applications and Working Holiday Visa immigration strategy. It serves as a professional showcase demonstrating React, TypeScript, and Tailwind CSS skills while positioning the developer as someone actively growing into AI/robotics.
 
 ## Portfolio Strategy
 
 ### Immigration Context
-- **Target**: Express Entry immigration by January 2026
-- **Timeline**: Active job search and portfolio development
-- **Strategy**: Demonstrate readiness and commitment to Canadian employers
-- **Competitive advantage**: Immigration-ready status de-risks hiring decision
+- **Status**: Working Holiday Visa approved (2 years validity)
+- **Strategy**: Work for a year, then apply for permanent residency
+- **Timeline**: Active job search to secure financial security, then relocate to Canada
+- **Competitive advantage**: No sponsorship required—can work immediately, flexible location, long-term commitment
 
 ### Professional Positioning
 - **Experience**: 3+ years full-stack web development

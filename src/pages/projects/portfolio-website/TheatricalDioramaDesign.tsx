@@ -14,10 +14,10 @@ const TheatricalDioramaDesign = () => {
       />
 
       <TextBlock
-        text="The portfolio needed a visual identity that felt both professional and theatrical—a dark, sleek tech surface that, when 'cut open,' reveals warm organic colors underneath. The theatrical diorama system emerged from this concept: layered SVG elements with carefully chosen colors creating visual depth through a shadow theatre aesthetic. Each layer is colored from a spectrum that transitions from dark navy at the surface to warm cream tones at the deepest layer, like paper lanterns glowing behind cut paper silhouettes.
+        text="I wanted a visual identity that felt both professional and theatrical—a dark, sleek tech surface that, when 'cut open,' reveals warm organic colors underneath. The theatrical diorama system emerged from this concept: layered SVG elements with carefully chosen colors creating visual depth through a shadow theatre aesthetic. Each layer is colored from a spectrum that transitions from dark navy at the surface to warm cream tones at the deepest layer, like paper lanterns glowing behind cut paper silhouettes.
 
-The color spectrum uses indices 0-10 (11 colors total) where darker colors represent surface layers closest to the viewer and lighter colors represent deeper layers furthest away. This creates the paper-cut diorama effect where the deepest layers appear almost white, as if lit from behind, while surface layers remain very dark. The metaphor is consistent: you're looking at a dark tech surface that's been cut to reveal the warm, theatrical world underneath."
-        sectionTitle="Shadow Theatre Aesthetic"
+I use indices 0-10 (11 colors total) where darker colors represent surface layers closest to the viewer and lighter colors represent deeper layers furthest away. This creates the paper-cut diorama effect where the deepest layers appear almost white, as if lit from behind, while surface layers remain very dark. The metaphor is consistent: you're looking at a dark tech surface that's been cut to reveal the warm, theatrical world underneath."
+        sectionTitle="The Visual Concept"
       />
 
       <CodeBlock
@@ -56,10 +56,10 @@ export const theme = {
       />
 
       <TextBlock
-        text="SVG assets needed significant optimization to work efficiently on the web. The initial exports from Krita were A4-sized (595.2 × 841.92) with actual content taking much less space, resulting in unnecessary whitespace and bloated file sizes. Three optimization steps transformed these files: SVGO reduced file sizes by 66% (1.1MB → 376KB), removing hardcoded stroke attributes and adding fill='currentColor' enabled CSS styling, and viewBox fitting eliminated whitespace by calculating actual bounding boxes.
+        text="The SVG assets needed significant optimization to work efficiently on the web. The initial exports from Krita were A4-sized (595.2 × 841.92) with actual content taking much less space, resulting in unnecessary whitespace and bloated file sizes. I ran three optimization steps: SVGO reduced file sizes by 66% (1.1MB → 376KB), I removed hardcoded stroke attributes and added fill='currentColor' for CSS styling, and viewBox fitting eliminated whitespace by calculating actual bounding boxes.
 
-The viewBox fitting process used the svg-path-bbox library to parse path data and calculate combined bounding boxes for all paths in each SVG file. For the ocean diorama, all six background layers had identical bounding boxes (520.44 × 520.44 starting at coordinates 37.38, 146.34), while whale entities had unique sizes based on their shapes. Adding 1% padding to the calculated bounds prevented edge clipping during rendering. This optimization dramatically improved the visual appearance by eliminating ghost whitespace around the SVG content."
-        sectionTitle="SVG Optimization Strategy"
+I used the svg-path-bbox library to parse path data and calculate combined bounding boxes for all paths in each SVG file. For the ocean diorama, all six background layers had identical bounding boxes (520.44 × 520.44 starting at coordinates 37.38, 146.34), while whale entities had unique sizes based on their shapes. I added 1% padding to the calculated bounds to prevent edge clipping during rendering. This optimization dramatically improved the visual appearance by eliminating ghost whitespace around the SVG content."
+        sectionTitle="SVG Optimization"
       />
 
       <CodeBlock
@@ -130,9 +130,9 @@ files.forEach(fitViewBox);`}
       />
 
       <TextBlock
-        text="The diorama layers needed drop-shadow filters to create depth between overlapping elements, but these shadows appeared around the outer circular edge as an unwanted halo effect. The goal was shadows only between layers—not around the outer perimeter. Multiple approaches failed: applying the filter to container divs created rectangular shadows, adjusting filter parameters couldn't prevent outer shadows, and CSS tricks like overflow:hidden clipped the content incorrectly.
+        text="The diorama layers needed drop-shadow filters to create depth between overlapping elements, but these shadows appeared around the outer circular edge as an unwanted halo effect. I wanted shadows only between layers—not around the outer perimeter. Multiple approaches failed: applying the filter to container divs created rectangular shadows, adjusting filter parameters couldn't prevent outer shadows, and CSS tricks like overflow:hidden clipped the content incorrectly.
 
-The solution used visual masking rather than preventing shadow generation. A DioramaFrame component sits on top of all layers with a z-index higher than any layer, extending 10px beyond the diorama container to cover shadows that extend outside. The frame uses an SVG mask with a white square and a black circular cutout—the mask allows the frame color to show through except where the circle cuts out. The circular cutout is 5px smaller than the diorama radius (195px vs 200px), causing the frame to overlap the outermost layer slightly and clip its outer shadow while the interior shadows between layers remain visible."
+I solved this with visual masking rather than preventing shadow generation. A DioramaFrame component sits on top of all layers with a z-index higher than any layer, extending 10px beyond the diorama container to cover shadows that extend outside. The frame uses an SVG mask with a white square and a black circular cutout—the mask allows the frame color to show through except where the circle cuts out. The circular cutout is 5px smaller than the diorama radius (195px vs 200px), causing the frame to overlap the outermost layer slightly and clip its outer shadow while the interior shadows between layers remain visible."
         sectionTitle="Shadow Masking Problem"
       />
 
@@ -202,10 +202,10 @@ const DioramaFrame = () => {
       />
 
       <TextBlock
-        text="The 5px overlap is critical—too small and the outer shadow shows through, too large and the frame becomes visually noticeable. The frame blends seamlessly because it uses the same color as the page background (colorSpectrum[0]), appearing invisible while still performing its masking function. This solution demonstrates a key problem-solving pattern: when you can't prevent an effect from rendering, mask it visually. The drop-shadow filter stays on the SVG elements where it belongs, and the frame simply obscures the parts we don't want to see.
+        text="The 5px overlap is critical—too small and the outer shadow shows through, too large and the frame becomes visually noticeable. The frame blends seamlessly because it uses the same color as the page background (colorSpectrum[0]), appearing invisible while still performing its masking function. This demonstrates something I've learned about problem-solving: when you can't prevent an effect from rendering, mask it visually. The drop-shadow filter stays on the SVG elements where it belongs, and the frame simply obscures the parts I don't want to see.
 
-The clockwork animation system uses predefined duration arrays to create synchronized, mechanical timing across all animated layers. Different dioramas can select different ranges from the array—the ocean diorama uses indices 4-8 (30s, 48s, 60s, 96s, 120s) for slow, ambient movement. This creates the feeling of a mechanical theatrical stage where everything moves at deliberately chosen speeds, reinforcing the shadow theatre aesthetic."
-        sectionTitle="Visual Masking Pattern"
+I use a clockwork animation system with predefined duration arrays to create synchronized, mechanical timing across all animated layers. Different dioramas can select different ranges from the array—the ocean diorama uses indices 4-8 (30s, 48s, 60s, 96s, 120s) for slow, ambient movement. This creates the feeling of a mechanical theatrical stage where everything moves at deliberately chosen speeds, reinforcing the shadow theatre aesthetic."
+        sectionTitle="Clockwork Animations"
       />
 
       <CodeBlock
@@ -256,9 +256,13 @@ const layer3Config = {
   },
 };`}
       />
+      
+      <TextBlock
+        text="The SVG optimization (66% file size reduction) and viewBox fitting demonstrate my ability to optimize web assets for performance while maintaining visual quality. The shadow masking solution shows creative problem-solving: when you can't prevent an effect, mask it visually. The clockwork animation system provides a reusable pattern for synchronized animations across different dioramas. This work demonstrates frontend engineering skills: SVG optimization, CSS animation systems, and creative visual problem-solving. The ability to balance aesthetic goals with technical constraints (file size, performance, maintainability) is essential for production frontend work."
+        sectionTitle="Professional Value"
+      />
     </Article>
   );
 };
 
 export default TheatricalDioramaDesign;
-

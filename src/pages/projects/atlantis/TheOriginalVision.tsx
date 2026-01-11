@@ -19,7 +19,7 @@ const TheOriginalVision = () => {
         sectionTitle="Hybrid Processing Architecture" 
       />
       <TextBlock 
-        text="Safety systems dominated the design, reflecting lessons from failed projects and realistic risk assessment. An emergency weight release mechanism using servo-actuated drops would ensure the drone could surface if anything went wrong. An acoustic beacon operating at 37kHz would help locate the drone if it became stuck. LED strobe lights and 3M reflective strips on a bright orange hull would make visual recovery easier. Software-based emergency detection would monitor for sinking, listing, or bladder failure using existing sensors—no additional hardware cost for safety monitoring." 
+        text="Safety systems dominated my design, reflecting lessons from failed projects and realistic risk assessment. An emergency weight release mechanism using servo-actuated drops would ensure the drone could surface if anything went wrong. An acoustic beacon operating at 37kHz would help locate the drone if it became stuck. LED strobe lights and 3M reflective strips on a bright orange hull would make visual recovery easier. Software-based emergency detection would monitor for sinking, listing, or bladder failure using existing sensors—no additional hardware cost for safety monitoring." 
         sectionTitle="Safety First Design" 
       />
       <TextBlock 
@@ -27,15 +27,15 @@ const TheOriginalVision = () => {
         sectionTitle="Naming The Momo" 
       />
       <TextBlock 
-        text="Budget optimization drove creative solutions throughout the design. Instead of a $300 professional underwater camera, a $35 Pi Camera Module in custom waterproof housing. Instead of $200 commercial waterproofing solutions, $70 of DIY materials and techniques. Instead of $150 professional emergency systems, $18 emergency weights and software-based monitoring. The $500 constraint forced more thoughtful engineering than unlimited resources would have—every component selection required justifying its necessity and exploring cheaper alternatives." 
+        text="Budget optimization drove creative solutions throughout the design. Instead of a $300 professional underwater camera, a $35 Pi Camera Module in custom waterproof housing. Instead of $200 commercial waterproofing solutions, $70 of DIY materials and techniques. Instead of $150 professional emergency systems, $18 emergency weights and software-based monitoring. The $500 constraint forced more thoughtful engineering than unlimited resources would've—every component selection required justifying its necessity and exploring cheaper alternatives." 
         sectionTitle="Constraint-Driven Innovation" 
       />
       <TextBlock 
-        text="The staged development approach reflected risk management thinking. Stage 1 ordered only sensors and breadboard components ($50) to validate the control system before committing to expensive motors. Stage 2 would develop software with existing hardware. Stage 3 would add motors and propulsion ($220-300) only after proving the control system worked. Stage 4 would integrate camera and lighting. Stage 5 would design and 3D print the hull last, after all components were validated and dimensions known. This approach minimized financial risk—if early stages revealed problems, the project wouldn't have wasted money on motors or 3D printing." 
+        text="My staged development approach reflected risk management thinking. Stage 1 ordered only sensors and breadboard components ($50) to validate the control system before committing to expensive motors. Stage 2 would develop software with existing hardware. Stage 3 would add motors and propulsion ($220-300) only after proving the control system worked. Stage 4 would integrate camera and lighting. Stage 5 would design and 3D print the hull last, after all components were validated and dimensions known. This approach minimized financial risk—if early stages revealed problems, the project wouldn't have wasted money on motors or 3D printing." 
         sectionTitle="Risk-Aware Development" 
       />
       <TextBlock 
-        text="The original vision was technically sound and well-planned, with comprehensive component research, detailed specifications, and careful risk management. But visions evolve when confronted with reality. The staged approach that seemed prudent for risk management inadvertently created opportunities for scope changes. Testing components revealed practical limitations. Assembly challenges emerged that weren't apparent in planning. The original underwater drone vision would transform significantly during development, but the foundational thinking—budget constraints, safety philosophy, systematic approach—would persist through all changes." 
+        text="The original vision was technically sound and well-planned, with comprehensive component research, detailed specifications, and careful risk management. But visions evolve when confronted with reality. My staged approach that seemed prudent for risk management inadvertently created opportunities for scope changes. Testing components revealed practical limitations. Assembly challenges emerged that weren't apparent in planning. The original underwater drone vision would transform significantly during development, but the foundational thinking—budget constraints, safety philosophy, systematic approach—would persist through all changes." 
         sectionTitle="Vision Meets Reality" 
       />
     </Article>
@@ -43,4 +43,3 @@ const TheOriginalVision = () => {
 };
 
 export default TheOriginalVision;
-

@@ -8,35 +8,31 @@ const FrontendEvolution = () => {
     <Article>
       <TitleBlock title="Frontend Evolution" />
       <TextBlock 
-        text="Started with vanilla JS prototype to validate UX. Migrated to React+TypeScript for state management. Did complete clean rebuild when codebase got janky. Mobile-first redesign after testing on real devices."
+        text="I started with vanilla JS to validate UX. Migrated to React+TypeScript for state management. Did a complete clean rebuild when the codebase got janky. Mobile-first redesign after testing on real devices."
         sectionTitle="Overview" 
       />
       <TextBlock 
-        text="WhatNow's frontend began as a single HTML file with vanilla JavaScript. The initial implementation proved the concept: users select tags from grouped buttons, click 'Start Game,' and see two activity cards side-by-side for comparison. The winner stays, the loser disappears, a new card appears. Simple, functional, zero dependencies. This vanilla approach validated the user experience before investing in modern frameworks. However, as Session AI complexity grew and state management needs increased, the limitations became apparent." 
+        text="WhatNow's frontend began as a single HTML file with vanilla JavaScript. The initial implementation proved the concept: users select tags from grouped buttons, click 'Start Game,' and see two activity cards side-by-side for comparison. The winner stays, the loser disappears, a new card appears. Simple, functional, zero dependencies. This vanilla approach validated the user experience before I invested in modern frameworks. But as Session AI complexity grew and state management needs increased, the limitations became apparent." 
         sectionTitle="Vanilla JavaScript Prototype" 
       />
       <TextBlock 
-        text="The migration to React happened quickly once the decision was made. Vite + React + TypeScript + Tailwind CSS became the stack, chosen for fast development iteration and strong type safety." 
+        text="The migration to React happened quickly once I made the decision. Vite + React + TypeScript + Tailwind CSS became the stack, chosen for fast development iteration and strong type safety. The initial React migration maintained all functionality while organizing code into proper components: TagSelector page, GamePage, ActivityCard, TagGroup, LoadingSpinner. Custom hooks (useGameState, useSessionAI) encapsulated complex logic, keeping components focused on rendering. This structure made adding features much easier than the sprawling vanilla JavaScript file." 
         sectionTitle="React Migration" 
       />
       <TextBlock 
-        text="The initial React migration maintained all functionality while organizing code into proper components: TagSelector page, GamePage, ActivityCard, TagGroup, LoadingSpinner. Custom hooks (useGameState, useSessionAI) encapsulated complex logic, keeping components focused on rendering. This structure made adding features much easier than the sprawling vanilla JavaScript file." 
-        sectionTitle="Component Organization" 
+        text="The React migration hit immediate challenges: infinite render loops, stale state in callbacks, and timing issues between API calls and state updates. One particularly nasty bug involved useEffect dependency arrays: the contextTags array was being recreated on every render, causing useEffect to retrigger infinitely. I solved this with useMemo to maintain referential equality for the tags array. These problems would've been harder to diagnose in vanilla JavaScript, where bugs hide in ad-hoc state management rather than causing obvious infinite loops." 
+        sectionTitle="React Challenges" 
       />
       <TextBlock 
-        text="The React migration encountered immediate challenges: infinite render loops, stale state in callbacks, and timing issues between API calls and state updates. One particularly nasty bug involved useEffect dependency arrays: the contextTags array was being recreated on every render, causing useEffect to retrigger infinitely. The solution used useMemo to maintain referential equality for the tags array. These problems would have been harder to diagnose in vanilla JavaScript, where bugs hide in ad-hoc state management rather than causing obvious infinite loops." 
-        sectionTitle="React Migration Challenges" 
-      />
-      <TextBlock 
-        text="Shortly after the React migration, I recognized the codebase had become 'janky.' Multiple development approaches left remnant files: the old vanilla JavaScript index.html coexisted with incomplete React components, multiple whatnow-frontend directories existed, backend code mixed with frontend code. The project structure confused even me. The solution was a complete clean rebuild: create whatnow-clean/ with separate backend/ and frontend/ directories, migrate only necessary files, delete everything else. Starting with a clear foundation proved faster than trying to clean up the mess." 
+        text="Shortly after the React migration, I recognized the codebase had become 'janky.' Multiple development approaches left remnant files: the old vanilla JavaScript index.html coexisted with incomplete React components, multiple whatnow-frontend directories existed, backend code mixed with frontend code. The project structure confused even me. I decided on a complete clean rebuild: create whatnow-clean/ with separate backend/ and frontend/ directories, migrate only necessary files, delete everything else. Starting with a clear foundation proved faster than trying to clean up the mess." 
         sectionTitle="The Clean Rebuild" 
       />
       <TextBlock 
         text="The clean rebuild established patterns that persisted through the rest of development. Backend and frontend stay completely separate. Configuration files live in obvious locations. Components have single responsibilities. Custom hooks encapsulate complex logic. Type definitions live in types.ts, configuration in config.ts, theme in theme.ts. This structure made subsequent features easier to implement because the mental model stayed consistent—no more hunting through tangled code to find where state lives or where API calls happen." 
-        sectionTitle="Architectural Patterns" 
+        sectionTitle="Clean Architecture" 
       />
       <TextBlock 
-        text="Embeddings management emerged as a critical technical challenge. Session AI needs activity embeddings (384-dimensional vectors) to rank recommendations, requiring all 1,249 activities with their embeddings loaded in the frontend. Initially, I tried useEmbeddingsCache in multiple components, causing race conditions: GamePage would initialize before embeddings finished loading." 
+        text="Embeddings management emerged as a critical technical challenge. Session AI needs activity embeddings (384-dimensional vectors) to rank recommendations, requiring all 1,249 activities with their embeddings loaded in the frontend. Initially, I tried useEmbeddingsCache in multiple components, causing race conditions: GamePage would initialize before embeddings finished loading. I solved this by creating EmbeddingsContext, a singleton provider that loads embeddings once at app startup and provides them globally. This pattern ensured embeddings load before any component tries to use them." 
         sectionTitle="Embeddings Management" 
       />
       <CodeBlock
@@ -93,10 +89,6 @@ export function useEmbeddings() {
 }`}
       />
       <TextBlock 
-        text="The solution created EmbeddingsContext, a singleton provider that loads embeddings once at app startup and provides them globally. This pattern ensured embeddings load before any component tries to use them." 
-        sectionTitle="Context Solution" 
-      />
-      <TextBlock 
         text="Mobile-first design became a priority when I tested the app on an actual phone and found it broken. The desktop version worked beautifully, but on mobile: tiny text, cramped cards, constant scrolling, touch targets too small for fat fingers. I restructured the entire UI around mobile constraints: activity cards shrunk from 250px to 180px height on mobile, padding reduced across the board, font sizes responsive with Tailwind's sm: breakpoint, and the entire game interface designed to fit on an iPhone SE (375px wide) without scrolling. Desktop became the enhanced version, not the default." 
         sectionTitle="Mobile-First Redesign" 
       />
@@ -109,12 +101,11 @@ export function useEmbeddings() {
         sectionTitle="Theme System" 
       />
       <TextBlock 
-        text="The frontend evolution from vanilla JavaScript to polished React application demonstrates the value of iterative improvement with willingness to rebuild when necessary. Each version built on learnings from the previous: vanilla validated UX, React migration organized code, clean rebuild established architecture, mobile redesign prioritized real usage, theme system enabled rapid iteration. The final product is maintainable, performant, mobile-first, and visually cohesive—but it got there through multiple cycles of building, recognizing problems, and fixing them systematically rather than trying to architect perfectly from the start." 
-        sectionTitle="Iterative Improvement" 
+        text="The frontend evolution from vanilla JavaScript to polished React application demonstrates something I've learned: iterative improvement with willingness to rebuild when necessary. Each version built on learnings from the previous: vanilla validated UX, React migration organized code, clean rebuild established architecture, mobile redesign prioritized real usage, theme system enabled rapid iteration. The final product is maintainable, performant, mobile-first, and visually cohesive—but it got there through multiple cycles of building, recognizing problems, and fixing them systematically rather than trying to architect perfectly from the start." 
+        sectionTitle="Iterative Approach" 
       />
     </Article>
   );
 };
 
 export default FrontendEvolution;
-

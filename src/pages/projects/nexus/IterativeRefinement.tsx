@@ -7,7 +7,7 @@ const IterativeRefinement = () => {
     <Article>
       <TitleBlock title="Iterative Refinement" />
       <TextBlock 
-        text="Multiple polish passes: badge extraction, floating labels, z-index layering. Separation of concerns localizes changes."
+        text="I went through multiple polish passes: badge extraction, floating labels, z-index layering. This separation of concerns localizes changes."
         sectionTitle="Overview" 
       />
       <TextBlock 
@@ -27,7 +27,7 @@ const IterativeRefinement = () => {
         sectionTitle="Floating Labels"
       />
       <TextBlock 
-        text={'Each refinement pass had clear criteria for "good enough" versus "needs another pass." I kept my focus on structure. The badge was good enough because it looked good, seemed stable, and was self-contained in a separate file - easy to come back to later without affecting the wider structure. The bits I was really painstaking on were the bits that everything else was built on top of, where changing them would cause cascading problems later. I try to make things in such a way that they\'re either self-contained or highly adaptable. Like the sx prop in the Block component - I could have just had flags for padding and boxShadow, but sx allows me a graceful way to solve similar problems in the future. I focus on structure because it keeps giving value. It makes every future component that depends on it better and more stable.'}
+        text="Each refinement pass had clear criteria for 'good enough' versus 'needs another pass.' I kept my focus on structure. The badge was good enough because it looked good, seemed stable, and was self-contained in a separate file - easy to come back to later without affecting the wider structure. The bits I was really painstaking on were the bits that everything else was built on top of, where changing them would cause cascading problems later. I try to make things in such a way that they're either self-contained or highly adaptable. Like the sx prop in the Block component - I could have just had flags for padding and boxShadow, but sx allows me a graceful way to solve similar problems in the future. I focus on structure because it keeps giving value. It makes every future component that depends on it better and more stable."
         sectionTitle="Good Enough Criteria"
       />
     </Article>
@@ -35,4 +35,3 @@ const IterativeRefinement = () => {
 };
 
 export default IterativeRefinement;
-

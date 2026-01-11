@@ -8,12 +8,12 @@ const FutureVision = () => {
       <TitleBlock title="Future Vision" />
 
       <TextBlock
-        text="Five-phase implementation: controller with LoRa communication, DNA-style error correction system, GPS-equipped surface boat with winch, two-part sphere probe with ultrasonic array, mapping software for 3D lake bed visualization. Current focus on 3D-printed controller design."
+        text="I planned a five-phase implementation: controller with LoRa communication, DNA-style error correction system, GPS-equipped surface boat with winch, two-part sphere probe with ultrasonic array, mapping software for 3D lake bed visualization. My current focus is on 3D-printed controller design."
         sectionTitle="Overview"
       />
 
       <TextBlock
-        text="The Atlantis system follows a five-phase development plan, starting with the most accessible component and building toward the complete mapping system. This approach allows each phase to be tested independently before integration, reducing risk and enabling iterative refinement. The current focus is Phase 1: designing and building the controller, which provides hands-on experience with 3D printing, Arduino programming, and LoRa communication before tackling the more complex boat and probe systems."
+        text="The Atlantis system follows a five-phase development plan, starting with the most accessible component and building toward the complete mapping system. This approach allows each phase to be tested independently before integration, reducing risk and enabling iterative refinement. My current focus is Phase 1: designing and building the controller, which provides hands-on experience with 3D printing, Arduino programming, and LoRa communication before tackling the more complex boat and probe systems."
         sectionTitle="Development Approach"
       />
 
@@ -35,7 +35,7 @@ The communication protocol uses a simple packet format: [Header][Command][Data][
         text="The surface boat houses GPS for positioning, automatic winch for cable management, remote-controlled motors, and LoRa communication. GPS positioning enables waypoint navigation and stop-and-wait mapping strategy—the boat moves in straight lines (lawnmower pattern), stops at turns, and waits for the probe to settle before continuing. This eliminates complex cable angle modeling during turns.
 
 The winch system automatically adjusts cable length based on distance from shore and target depth. A rotary encoder tracks cable length deployed. The winch can retract quickly if the probe detects obstacles (ruins, rocks) using ultrasonic sensors. Motor control responds to joystick commands from the controller, with smooth acceleration and deceleration. The challenge is integrating GPS, motor control, winch management, and LoRa communication on a single Raspberry Pi 4 while maintaining responsive control."
-        sectionTitle="Phase 3: Surface Boat Development"
+        sectionTitle="Phase 3: Surface Boat"
       />
 
       <TextBlock
@@ -55,7 +55,7 @@ Color mapping visualizes depth variations: shallow areas in warm colors, deep ar
       <TextBlock
         text="The complete system integrates mechanical design (boat hull, probe housing, winch system), electrical systems (motor control, sensor integration, power management), embedded programming (Arduino/Raspberry Pi, LoRa protocols, sensor reading), navigation (GPS waypoint following, stop-and-wait strategy), communication (long-range LoRa with error correction), and data processing (3D visualization, coordinate mapping). Each phase builds on previous work, with independent testing before integration.
 
-The five-phase approach reduces risk by starting with the most accessible component (controller) and building complexity gradually. Each phase produces a working subsystem that can be tested and validated independently. This differs from attempting to build everything simultaneously and hoping it works during final integration. The controller phase is currently underway, focusing on 3D printing skills and snap-fit enclosure design before moving to the more complex boat and probe systems."
+My five-phase approach reduces risk by starting with the most accessible component (controller) and building complexity gradually. Each phase produces a working subsystem that can be tested and validated independently. This differs from attempting to build everything simultaneously and hoping it works during final integration. The controller phase is currently underway, focusing on 3D printing skills and snap-fit enclosure design before moving to the more complex boat and probe systems."
         sectionTitle="System Integration"
       />
     </Article>

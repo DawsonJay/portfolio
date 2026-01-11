@@ -5,6 +5,7 @@ import Lunascope from './projects/lunascope/Lunascope';
 import Nexus from './projects/nexus/Nexus';
 import Cirrus from './projects/cirrus/Cirrus';
 import PortfolioWebsite from './projects/portfolio-website/PortfolioWebsite';
+import MohAmi from './projects/moh-ami/MohAmi';
 
 const Project = () => {
   const { projectName } = useParams<{ projectName: string }>();
@@ -22,6 +23,8 @@ const Project = () => {
       return <Cirrus />;
     case 'portfolio-website':
       return <PortfolioWebsite />;
+    case 'moh-ami':
+      return <MohAmi />;
     default:
       return <div>Project not found</div>;
   }

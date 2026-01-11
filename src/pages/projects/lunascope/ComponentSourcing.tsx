@@ -5,17 +5,17 @@ import TitleBlock from '../../../components/article/TitleBlock';
 const ComponentSourcing = () => {
   return (
     <Article>
-      <TitleBlock title="Component Sourcing Strategy" />
+      <TitleBlock title="Component Sourcing" />
       <TextBlock 
-        text="Hybrid sourcing: AliExpress for expensive long-lead items (£20-30 savings), Amazon Prime for testing components (immediate). Volume ordering provides spares and future project stock."
+        text="I used hybrid sourcing: AliExpress for expensive long-lead items (£20-30 savings), Amazon Prime for testing components (immediate). Volume ordering provides spares and future project stock."
         sectionTitle="Overview"
       />
       <TextBlock 
-        text="Component sourcing for the Lunascope required balancing cost, quality, delivery time, and availability across multiple suppliers. The total project budget of $128 (approximately £100) left minimal room for expensive mistakes or premium pricing. AliExpress offered significant savings (30-50% lower than Amazon) but required 2-4 week shipping. Amazon provided next-day delivery at premium prices. DigiKey and Mouser offered excellent selection and reliability at higher cost. The solution: hybrid sourcing strategy that captured benefits from each platform while minimizing weaknesses. This approach saved £20-30 while maintaining quality and providing fast delivery for critical testing components." 
+        text="Component sourcing for the Lunascope required balancing cost, quality, delivery time, and availability across multiple suppliers. The total project budget of $128 (approximately £100) left minimal room for expensive mistakes or premium pricing. AliExpress offered significant savings (30-50% lower than Amazon) but required 2-4 week shipping. Amazon provided next-day delivery at premium prices. DigiKey and Mouser offered excellent selection and reliability at higher cost. My solution: hybrid sourcing strategy that captured benefits from each platform while minimizing weaknesses. This approach saved £20-30 while maintaining quality and providing fast delivery for critical testing components." 
         sectionTitle="Multi-Platform Strategy" 
       />
       <TextBlock 
-        text="The ordering timeline optimized for parallel work rather than sequential completion. AliExpress components (TEG modules £14.93, NEMA 8 motor £13.62, supercapacitors £5.60, crystal oscillators £3.59) represented expensive long-lead items ordered first. These ship over 2-4 weeks but represent the bulk of component cost. Amazon Prime items (voltage regulators £4.99, stepper drivers £7.99, heatsinks £11.98) ordered for next-day delivery provided immediate testing capability while waiting for AliExpress shipments. This parallel approach enabled breadboard testing of power regulation and motor control circuits using Amazon parts while cost-critical items slowly shipped from overseas." 
+        text="The ordering timeline optimized for parallel work rather than sequential completion. AliExpress components (TEG modules £14.93, NEMA 8 motor £13.62, supercapacitors £5.60, crystal oscillators £3.59) represented expensive long-lead items I ordered first. These ship over 2-4 weeks but represent the bulk of component cost. Amazon Prime items (voltage regulators £4.99, stepper drivers £7.99, heatsinks £11.98) I ordered for next-day delivery provided immediate testing capability while waiting for AliExpress shipments. This parallel approach enabled breadboard testing of power regulation and motor control circuits using Amazon parts while cost-critical items slowly shipped from overseas." 
         sectionTitle="Parallel Ordering" 
       />
       <TextBlock 
@@ -31,11 +31,11 @@ const ComponentSourcing = () => {
         sectionTitle="Quality Hierarchy" 
       />
       <TextBlock 
-        text="Supplier selection considered factors beyond just price. AliExpress sellers with 95%+ ratings, thousands of orders, and detailed product photos provided confidence in receiving correct components despite long shipping times. Amazon sellers with Prime eligibility offered accountability and easy returns if components failed. DigiKey and Mouser provided guaranteed specifications and authentic parts for critical timing components. This risk assessment drove sourcing decisions: experimental components from AliExpress (can wait, cheaper), testing components from Amazon (need fast, return friendly), precision components from major distributors (need guaranteed specs). Each supplier served different risk profiles in the overall strategy." 
+        text="Supplier selection considered factors beyond just price. AliExpress sellers with 95%+ ratings, thousands of orders, and detailed product photos provided confidence in receiving correct components despite long shipping times. Amazon sellers with Prime eligibility offered accountability and easy returns if components failed. DigiKey and Mouser provided guaranteed specifications and authentic parts for critical timing components. This risk assessment drove my sourcing decisions: experimental components from AliExpress (can wait, cheaper), testing components from Amazon (need fast, return friendly), precision components from major distributors (need guaranteed specs). Each supplier served different risk profiles in my overall strategy." 
         sectionTitle="Risk Assessment" 
       />
       <TextBlock 
-        text="The sourcing strategy revealed broader principles about hardware project planning. First, identify long-lead items and order early—these drive timeline regardless of other preparations. Second, separate critical-path from parallel-path items—what needs to arrive first versus what enables early testing. Third, consider total cost including shipping rather than per-item cost—volume ordering often costs less overall than multiple small orders. Fourth, maintain flexibility for adaptive response—problems will emerge, having budget and timeline slack enables solutions. Fifth, document everything—supplier names, order dates, costs, specifications enable tracking and future reference. These practices transform sourcing from transaction to strategy." 
+        text="The sourcing strategy revealed broader principles about hardware project planning I've learned. First, identify long-lead items and order early—these drive timeline regardless of other preparations. Second, separate critical-path from parallel-path items—what needs to arrive first versus what enables early testing. Third, consider total cost including shipping rather than per-item cost—volume ordering often costs less overall than multiple small orders. Fourth, maintain flexibility for adaptive response—problems will emerge, having budget and timeline slack enables solutions. Fifth, document everything—supplier names, order dates, costs, specifications enable tracking and future reference. These practices transform sourcing from transaction to strategy." 
         sectionTitle="Strategic Principles" 
       />
     </Article>
@@ -43,4 +43,3 @@ const ComponentSourcing = () => {
 };
 
 export default ComponentSourcing;
-

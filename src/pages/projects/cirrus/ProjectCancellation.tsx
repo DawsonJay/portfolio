@@ -21,7 +21,7 @@ const ProjectCancellation = () => {
       />
       
       <TextBlock 
-        text="The interpolation system itself worked excellently from a technical perspective—achieving 100% grid coverage, processing 21,000+ records per second, using sophisticated dual-tier interpolation strategies. The problem wasn't implementation quality; it was that interpolation fundamentally cannot create data that doesn't exist in the source dataset. When precipitation data exists at only 83% of stations, interpolating to a grid doesn't improve coverage—it just spreads the same gaps across more locations. The sophisticated KD-tree spatial indexing and distance-weighted averaging could fill small gaps but couldn't compensate for systematic missing variables across the entire dataset."
+        text="My interpolation system itself worked excellently from a technical perspective—achieving 100% grid coverage, processing 21,000+ records per second, using sophisticated dual-tier interpolation strategies. The problem wasn't implementation quality; it was that interpolation fundamentally cannot create data that doesn't exist in the source dataset. When precipitation data exists at only 83% of stations, interpolating to a grid doesn't improve coverage—it just spreads the same gaps across more locations. The sophisticated KD-tree spatial indexing and distance-weighted averaging could fill small gaps but couldn't compensate for systematic missing variables across the entire dataset."
         sectionTitle="Technical vs Fundamental Limits"
       />
       
@@ -31,7 +31,7 @@ const ProjectCancellation = () => {
       />
       
       <TextBlock 
-        text="This experience taught critical lessons about data-driven projects: validate data quality before building complex systems. The Cirrus project built interpolation systems, genetic algorithms, and multi-stage pipelines before thoroughly validating that the source data could support the end goal. A better approach would have been: download sample data, check coverage of critical variables, validate that interpolation could achieve needed quality, then proceed with full implementation. The data validation should have been Stage 0, not discovered during Stage 6 testing. This lesson applies broadly—ML projects fail more often from bad data than bad algorithms."
+        text="This experience taught me critical lessons about data-driven projects: validate data quality before building complex systems. I built interpolation systems, genetic algorithms, and multi-stage pipelines before thoroughly validating that the source data could support the end goal. A better approach would've been: download sample data, check coverage of critical variables, validate that interpolation could achieve needed quality, then proceed with full implementation. The data validation should've been Stage 0, not discovered during Stage 6 testing. This lesson applies broadly—ML projects fail more often from bad data than bad algorithms."
         sectionTitle="Data Validation First"
       />
       
@@ -41,12 +41,16 @@ const ProjectCancellation = () => {
       />
       
       <TextBlock 
-        text="Stopping the project represented professional maturity rather than failure. Sunk cost fallacy would suggest continuing because weeks of work had been invested. Strategic thinking recognizes that investing more time into a fundamentally flawed approach wastes resources that could build something viable. The decision to cancel and document why demonstrates honest self-assessment, ability to recognize when assumptions were wrong, and willingness to cut losses rather than pursuing projects past their viability point. For a portfolio, this story of sophisticated technical work that ultimately couldn't overcome data constraints is more valuable than claiming everything always succeeds perfectly."
+        text="Stopping the project represented professional maturity rather than failure. Sunk cost fallacy would suggest continuing because weeks of work had been invested. Strategic thinking recognizes that investing more time into a fundamentally flawed approach wastes resources that could build something viable. My decision to cancel and document why demonstrates honest self-assessment, ability to recognize when assumptions were wrong, and willingness to cut losses rather than pursuing projects past their viability point. For a portfolio, this story of sophisticated technical work that ultimately couldn't overcome data constraints is more valuable than claiming everything always succeeds perfectly."
         sectionTitle="Professional Judgment"
+      />
+      
+      <TextBlock 
+        text="This cancellation demonstrates professional judgment and the ability to recognize when technical excellence can't overcome fundamental constraints. Despite building production-quality systems (21,000+ records/sec interpolation, sophisticated spatial indexing, genetic algorithm framework), I recognized that missing source data made the project unviable. This shows I can evaluate projects objectively, separate technical achievement from project viability, and make strategic decisions to stop rather than waste resources. The technical work remains valuable (reusable code, demonstrated skills), but the decision to cancel shows maturity in project management and resource allocation that's essential in professional development."
+        sectionTitle="What This Demonstrates"
       />
     </Article>
   );
 };
 
 export default ProjectCancellation;
-

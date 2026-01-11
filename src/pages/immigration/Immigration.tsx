@@ -173,13 +173,13 @@ const Immigration = () => {
     <PageContainer>
       <NavBar />
       <ContentContainer>
-        <PageTitle>Immigration Plan</PageTitle>
-        <Subtitle>18 months in. One step left.</Subtitle>
+        <PageTitle>Immigration Status</PageTitle>
+        <Subtitle>Working Holiday Visa approved. Ready to work in Canada.</Subtitle>
 
         <SectionCard>
-          <SectionTitle>The Plan</SectionTitle>
+          <SectionTitle>My Status</SectionTitle>
           <SectionText>
-            I'm immigrating to Canada through Express Entry, the skilled worker immigration program. The process requires three things: passing an English language test, getting educational credentials assessed, and securing a job offer from a Canadian employer. I've spent 18 months completing the first two steps. Now I'm looking for the job offer that will complete the application.
+            I have a Working Holiday Visa for Canada, valid for two years. This means I can work immediately—no sponsorship required, no job offer needed for the visa itself. I'm looking for the right opportunity to join a Canadian team, build financial security, and establish myself in the country. After working for a year, I'll apply for permanent residency and continue building my career in Canada long-term.
           </SectionText>
         </SectionCard>
 
@@ -194,13 +194,13 @@ const Immigration = () => {
         </SectionCard>
 
         <SectionCard>
-          <SectionTitle>What I've Already Completed</SectionTitle>
+          <SectionTitle>What This Means for Employers</SectionTitle>
           <ChecklistItem>
             <ChecklistIcon $complete />
             <ChecklistContent>
-              <ChecklistTitle>IELTS 8.5 — December 2024</ChecklistTitle>
+              <ChecklistTitle>No Sponsorship Required</ChecklistTitle>
               <ChecklistDescription>
-                Official English language test for Canadian immigration. Achieved overall band 8.5, with perfect 9.0 scores in Listening, Reading, and Speaking. CEFR Level C2.
+                I already have work authorization through my Working Holiday Visa. You don't need to sponsor me or navigate immigration paperwork—I can start working immediately.
               </ChecklistDescription>
             </ChecklistContent>
           </ChecklistItem>
@@ -208,9 +208,9 @@ const Immigration = () => {
           <ChecklistItem>
             <ChecklistIcon $complete />
             <ChecklistContent>
-              <ChecklistTitle>WES Assessment — March 2025</ChecklistTitle>
+              <ChecklistTitle>Flexible Location</ChecklistTitle>
               <ChecklistDescription>
-                World Education Services credential evaluation. Official confirmation of education for Canadian immigration requirements.
+                I'm open to relocating anywhere in Canada. Once I have a job offer, I'll move to wherever the role needs me—whether that's Vancouver, Toronto, Montreal, or anywhere else.
               </ChecklistDescription>
             </ChecklistContent>
           </ChecklistItem>
@@ -218,37 +218,37 @@ const Immigration = () => {
           <ChecklistItem>
             <ChecklistIcon $complete />
             <ChecklistContent>
-              <ChecklistTitle>Valid Passport</ChecklistTitle>
+              <ChecklistTitle>Long-Term Commitment</ChecklistTitle>
               <ChecklistDescription>
-                Current passport ready for travel and immigration processing.
+                My plan is to work for a year, then apply for permanent residency. I'm looking for a role I can grow into long-term, not a temporary position. I want to build my career in Canada.
               </ChecklistDescription>
             </ChecklistContent>
           </ChecklistItem>
 
           <ChecklistItem>
-            <ChecklistIcon />
+            <ChecklistIcon $complete />
             <ChecklistContent>
-              <ChecklistTitle>Job Offer — The Final Step</ChecklistTitle>
+              <ChecklistTitle>Ready to Start</ChecklistTitle>
               <ChecklistDescription>
-                The last piece needed to complete the Express Entry application. Finding the right team to join and contribute to in Canada.
+                I can begin working as soon as I have an offer. I'll handle my own relocation and setup—you just get a committed team member ready to contribute from day one.
               </ChecklistDescription>
             </ChecklistContent>
           </ChecklistItem>
         </SectionCard>
 
         <SectionCard>
-          <SectionTitle>What's Left</SectionTitle>
+          <SectionTitle>My Path Forward</SectionTitle>
           <SectionText>
-            With a job offer I can submit my Express Entry application. After that comes a lot of activity for me finding a place to live and moving, but through all of that I'll be able to work remotely, providing value from day one.
+            I'm looking for a job offer that gives me financial security and the chance to prove my value. Once I'm settled and working, I'll apply for permanent residency after a year. This isn't a short-term plan—I'm committed to building my life and career in Canada. The Working Holiday Visa is just the first step.
           </SectionText>
         </SectionCard>
 
         <CTASection>
-          <CTATitle>Let's Make This Happen</CTATitle>
+          <CTATitle>Ready to Work in Canada</CTATitle>
           <CTAText>
-            Everything's in place. Ready to bring me on board?
+            I have work authorization and I'm ready to start. No sponsorship needed—just the right opportunity.
           </CTAText>
-          <CTAButton to="/contact">Make an Offer</CTAButton>
+          <CTAButton to="/contact">Get in Touch</CTAButton>
         </CTASection>
       </ContentContainer>
     </PageContainer>

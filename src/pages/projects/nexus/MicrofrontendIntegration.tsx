@@ -7,7 +7,7 @@ const MicrofrontendIntegration = () => {
     <Article>
       <TitleBlock title="Microfrontend Integration" />
       <TextBlock 
-        text="Dashboard integrates into existing MFE architecture using Module Federation. Standalone development with shared dependencies. Consistent theming through MUI."
+        text="I integrated the dashboard into existing MFE architecture using Module Federation. I set up standalone development with shared dependencies. I ensured consistent theming through MUI."
         sectionTitle="Overview" 
       />
       <TextBlock 
@@ -23,7 +23,7 @@ const MicrofrontendIntegration = () => {
         sectionTitle="Dual Build Strategy"
       />
       <TextBlock 
-        text={'Module Federation\'s shared dependencies configuration was critical for avoiding version conflicts. React and React Query are marked as shared with singleton: true, ensuring only one copy loads even when multiple MFEs use them. This prevents the "multiple React instances" error that breaks hooks and context. The configuration also specifies requiredVersion to catch incompatibilities at build time rather than runtime.'}
+        text="Module Federation's shared dependencies configuration was critical for avoiding version conflicts. React and React Query are marked as shared with singleton: true, ensuring only one copy loads even when multiple MFEs use them. This prevents the 'multiple React instances' error that breaks hooks and context. The configuration also specifies requiredVersion to catch incompatibilities at build time rather than runtime."
         sectionTitle="Shared Dependencies"
       />
       <TextBlock 
@@ -35,4 +35,3 @@ const MicrofrontendIntegration = () => {
 };
 
 export default MicrofrontendIntegration;
-

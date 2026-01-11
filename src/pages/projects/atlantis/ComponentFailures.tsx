@@ -5,13 +5,13 @@ import TitleBlock from '../../../components/article/TitleBlock';
 const ComponentFailures = () => {
   return (
     <Article>
-      <TitleBlock title="Component Failures and Recovery" />
+      <TitleBlock title="Component Failures" />
       <TextBlock 
         text="LCD backlight glows but no text—traced to timing issues. IMU I2C conflicts. Joystick calibration drift. Hardware debugging requires systematic isolation, not stack traces."
         sectionTitle="Overview" 
       />
       <TextBlock 
-        text="The I2C LCD module failure revealed hidden risks in hardware assembly. After carefully soldering the LCD to the Arduino Nano following the incremental testing strategy, the backlight worked but no text appeared. Systematic troubleshooting confirmed I2C communication was perfect—100% success rate at address 0x3F, proper pin functionality on A4/A5, stable power supply. The I2C backpack chip (PCF8574) controlling the backlight functioned correctly, responding to commands. But the HD44780 LCD controller itself never initialized, never displayed text, never responded to any initialization sequence. The LCD had been damaged internally, likely from soldering heat, while the I2C backpack survived." 
+        text="The I2C LCD module failure revealed hidden risks in hardware assembly. After carefully soldering the LCD to the Arduino Nano following my incremental testing strategy, the backlight worked but no text appeared. Systematic troubleshooting confirmed I2C communication was perfect—100% success rate at address 0x3F, proper pin functionality on A4/A5, stable power supply. The I2C backpack chip (PCF8574) controlling the backlight functioned correctly, responding to commands. But the HD44780 LCD controller itself never initialized, never displayed text, never responded to any initialization sequence. The LCD had been damaged internally, likely from soldering heat, while the I2C backpack survived." 
         sectionTitle="The LCD Investigation" 
       />
       <TextBlock 
@@ -27,11 +27,11 @@ const ComponentFailures = () => {
         sectionTitle="Compounding Risk" 
       />
       <TextBlock 
-        text="The component failures prompted a break from controller assembly—a recognition that continuing with damaged parts and mounting damage risk would waste time and components. Taking a break wasn't giving up; it was acknowledging that the current approach had inherent problems requiring different strategy. Future work would need different techniques: perhaps lower soldering temperatures for sensitive components, socketed connections for frequently removed parts, maintaining better spare component inventory, or finding ways to test components before permanent assembly despite pin spacing challenges." 
+        text="The component failures prompted a break from controller assembly—a recognition that continuing with damaged parts and mounting damage risk would waste time and components. Taking a break wasn't giving up; it was acknowledging that my current approach had inherent problems requiring different strategy. Future work would need different techniques: perhaps lower soldering temperatures for sensitive components, socketed connections for frequently removed parts, maintaining better spare component inventory, or finding ways to test components before permanent assembly despite pin spacing challenges." 
         sectionTitle="Strategic Pause" 
       />
       <TextBlock 
-        text="The failures taught valuable lessons about hardware project management. First, component damage is a real risk even with careful work—heat-sensitive electronics can fail internally without visible external damage. Second, testing strategy matters—the order and methods of testing can determine whether problems get caught early or late. Third, maintaining spares is important for components that can't be removed once soldered. Fourth, incremental assembly reduces but doesn't eliminate damage risk—each solder joint is a potential failure point. Fifth, knowing when to pause and reassess prevents compounding problems and wasted effort." 
+        text="The failures taught me valuable lessons about hardware project management. First, component damage is a real risk even with careful work—heat-sensitive electronics can fail internally without visible external damage. Second, testing strategy matters—the order and methods of testing can determine whether problems get caught early or late. Third, maintaining spares is important for components that can't be removed once soldered. Fourth, incremental assembly reduces but doesn't eliminate damage risk—each solder joint is a potential failure point. Fifth, knowing when to pause and reassess prevents compounding problems and wasted effort." 
         sectionTitle="Risk Management Lessons" 
       />
       <TextBlock 
@@ -43,4 +43,3 @@ const ComponentFailures = () => {
 };
 
 export default ComponentFailures;
-

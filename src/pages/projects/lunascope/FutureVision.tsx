@@ -8,7 +8,7 @@ const FutureVision = () => {
       <TitleBlock title="Future Vision" />
 
       <TextBlock
-        text="Four-phase build: TEG power system with supercapacitor storage and voltage regulation, precision timing circuit with crystal oscillator and frequency dividers, copper clockface with heat treatment and black patina engraving, mechanical integration with stepper motor and long-term testing. Components sourced, design validated, ready for assembly."
+        text="I planned a four-phase build: TEG power system with supercapacitor storage and voltage regulation, precision timing circuit with crystal oscillator and frequency dividers, copper clockface with heat treatment and black patina engraving, mechanical integration with stepper motor and long-term testing. Components sourced, design validated, ready for assembly."
         sectionTitle="Overview"
       />
 
@@ -41,7 +41,7 @@ Liver of sulfur solution transforms the heat-treated copper into deep black pati
       <TextBlock
         text="The PTX05 HPM Nano Step stepper motor (13mm diameter, 0.5W) mounts behind the clockface with its shaft protruding through a center bearing. A 1:100 worm gear reduction connects motor output to the moon phase indicator mechanism. The worm gear self-locks, preventing the indicator from drifting backward when the motor isn't powered—critical for maintaining accurate phase display during low-power periods. Precise alignment ensures smooth motion without binding or excessive backlash.
 
-System integration brings together TEG power generation, voltage regulation, timing circuit, stepper driver, and mechanical drive. Each subsystem must work correctly in isolation before integration—integration reveals interaction effects not apparent during isolated testing. Calibration adjusts timing circuit frequency to match real-world crystal accuracy, compensates for temperature effects, and aligns stepper motor step count with actual lunar cycle timing. Power management parameters tune to balance TEG charging current against motor consumption, ensuring the supercapacitor stays charged without wasting harvested energy."
+System integration brings together TEG power generation, voltage regulation, timing circuit, stepper driver, and mechanical drive. Each subsystem must work correctly in isolation before integration—integration reveals interaction effects not apparent during isolated testing. I calibrate the timing circuit frequency to match real-world crystal accuracy, compensate for temperature effects, and align stepper motor step count with actual lunar cycle timing. Power management parameters tune to balance TEG charging current against motor consumption, ensuring the supercapacitor stays charged without wasting harvested energy."
         sectionTitle="Phase 4: Integration"
       />
 
@@ -55,7 +55,7 @@ Extended testing reveals issues impossible to catch during initial assembly: the
       <TextBlock
         text="The specification includes future enhancements for potential implementation after the base system proves reliable: temperature compensation for timing (automatic adjustment based on ambient temperature), power management sleep modes (reduce consumption during low-light periods), user-adjustable calibration (fine-tune timing without disassembly), and LED indicators for status (power level, charging state, system health). These aren't part of the core build—they're documented possibilities for after the fundamental system operates reliably.
 
-The four-phase approach emphasizes validated incremental assembly: build power system, verify it works; build timing circuit, verify it works; create clockface, verify aesthetics and thermal performance; integrate all systems, verify long-term operation. Each phase reduces risk by catching problems early rather than discovering integration issues after everything is assembled. The methodical progression builds confidence that the complete system will function as designed."
+My four-phase approach emphasizes validated incremental assembly: build power system, verify it works; build timing circuit, verify it works; create clockface, verify aesthetics and thermal performance; integrate all systems, verify long-term operation. Each phase reduces risk by catching problems early rather than discovering integration issues after everything is assembled. The methodical progression builds confidence that the complete system will function as designed."
         sectionTitle="Technical Scope"
       />
     </Article>

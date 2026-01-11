@@ -7,7 +7,7 @@ const EnterpriseConstraints = () => {
     <Article>
       <TitleBlock title="Enterprise Constraints" />
       <TextBlock 
-        text="Existing MFE architecture, shared dependencies, authentication integration. Must fit patterns while innovating within boundaries."
+        text="I worked with existing MFE architecture, shared dependencies, and authentication integration. I had to fit established patterns while innovating within boundaries."
         sectionTitle="Overview" 
       />
       <TextBlock 
@@ -27,7 +27,7 @@ const EnterpriseConstraints = () => {
         sectionTitle="Adaptable Architecture"
       />
       <TextBlock 
-        text="Team collaboration constraints influenced design decisions throughout. The ratio-specific wrappers (Block1x1, Block2x1, etc.) don't simplify the code—they simplify the metaphor the code follows and therefore the readability. The concept of 2x1 blocks and how they work in a grid is intuitive in a Lego kind of way. Creating standard shaped building blocks helps communicate what's going on in the code to the casual reader. I also find that when the code itself closely matches what the frontend shows, it creates far fewer problems. You're naturally steered towards working in a way that the structure works well with, rather than diverting more and more effort to maintaining an illusion that the code is one thing when it's actually another. These decisions prioritize long-term maintainability over short-term convenience, which is the essence of enterprise software engineering."
+        text="Team collaboration constraints influenced my design decisions throughout. The ratio-specific wrappers (Block1x1, Block2x1, etc.) don't simplify the code—they simplify the metaphor the code follows and therefore the readability. The concept of 2x1 blocks and how they work in a grid is intuitive in a Lego kind of way. Creating standard shaped building blocks helps communicate what's going on in the code to the casual reader. I also find that when the code itself closely matches what the frontend shows, it creates far fewer problems. You're naturally steered towards working in a way that the structure works well with, rather than diverting more and more effort to maintaining an illusion that the code is one thing when it's actually another. These decisions prioritize long-term maintainability over short-term convenience, which is the essence of enterprise software engineering."
         sectionTitle="Team Collaboration"
       />
     </Article>
@@ -35,4 +35,3 @@ const EnterpriseConstraints = () => {
 };
 
 export default EnterpriseConstraints;
-
